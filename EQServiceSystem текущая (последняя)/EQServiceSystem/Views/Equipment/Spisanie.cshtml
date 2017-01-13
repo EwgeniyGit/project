@@ -1,0 +1,24 @@
+﻿ @model EQServiceSystem.ViewModels.Spisanie_Model 
+
+<legend class = "text-info">Списание</legend>
+@using (Ajax.BeginForm("SpisaniePost", "movement", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "partial" }))
+  {
+<div class="box" id="Content">
+    <div class="subdeptfields">
+        Подразделение-сдатчик
+            <select name="SubDepts_sender" id="SubDepts_sender" class="filter-element" onchange="submit.click()" style="width: 170px; margin-left: 18px;">
+                @foreach (var item in Model.SubDepts_sender)
+                {       <option value = "@item">@item </option>
+                }
+            </select>
+    </div>
+      @Ajax.ActionLink("Выйти в архив", "history_spisanie", "movement", new AjaxOptions { UpdateTargetId = "LoadedContent", HttpMethod = "POST" }, new { @class = "btn" })
+</div>
+<div id="partial">
+    @{
+        Html.RenderPartial("~/Views/Equipment/spisanie_table.cshtml");
+    }
+</div>
+  <input type="submit" id="submit" value="POST" style="visibility:hidden"/>
+}
+@Styles.Render("~/Content/move_equipment.css")

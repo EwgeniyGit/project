@@ -1,0 +1,217 @@
+2017-01-13 08:41:32.2147|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 08:41:34.8718|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 08:42:15.4242|INFO|EQServiceSystem.Controllers.AccountController|Вход пользователя: Nikolaev
+2017-01-13 08:42:33.8772|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_CompHS.dof
+2017-01-13 08:42:34.1652|INFO|EQServiceSystem.MvcApplication|Application Error
+2017-01-13 08:43:06.7121|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_CompHS.dof
+2017-01-13 08:45:18.5786|INFO|EQServiceSystem.MvcApplication|Application Error
+2017-01-13 08:49:16.3232|INFO|EQServiceSystem.MvcApplication|Application End
+2017-01-13 08:54:28.6761|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 08:54:33.7544|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 08:55:22.1112|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Equipment\01392_4_1_Desert.jpg
+2017-01-13 08:59:03.8508|INFO|EQServiceSystem.MvcApplication|Application End
+2017-01-13 08:59:50.6965|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 08:59:55.7678|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 09:01:04.4087|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_Desert.jpg
+2017-01-13 09:02:29.5346|INFO|EQServiceSystem.MvcApplication|Application Error
+2017-01-13 09:02:44.1204|INFO|EQServiceSystem.MvcApplication|Application End
+2017-01-13 09:03:28.4410|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 09:03:33.4333|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 09:05:15.7181|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_Desert.jpg
+2017-01-13 09:06:54.1267|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 09:06:57.1039|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 09:07:18.0051|INFO|EQServiceSystem.MvcApplication|Application Error
+2017-01-13 09:08:05.3108|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 09:08:08.3590|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 09:08:39.1127|INFO|EQServiceSystem.Controllers.AccountController|Вход пользователя: Nikolaev
+2017-01-13 09:08:58.1468|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_filtr.txt
+2017-01-13 09:15:35.5226|INFO|EQServiceSystem.MvcApplication|Application End
+2017-01-13 09:16:27.4645|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 09:16:32.7458|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 09:17:38.7266|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_elitefon.ru-35519.jpg
+2017-01-13 09:17:38.7436|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_elitefon.ru-35519.jpg
+2017-01-13 09:17:54.8695|INFO|EQServiceSystem.MvcApplication|Application Error
+2017-01-13 09:25:49.5227|INFO|EQServiceSystem.MvcApplication|Application End
+2017-01-13 09:26:37.3024|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 09:26:42.6587|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 09:27:58.8971|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_Koala.jpg
+2017-01-13 09:27:58.8971|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_Koala.jpg
+2017-01-13 09:27:59.0151|INFO|EQServiceSystem.MvcApplication|Application Error
+2017-01-13 09:28:11.6618|INFO|EQServiceSystem.MvcApplication|Application Error
+2017-01-13 09:29:55.5537|INFO|EQServiceSystem.MvcApplication|Application End
+2017-01-13 09:30:42.1754|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 09:30:47.3497|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 09:31:40.1037|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_.gitignore
+2017-01-13 09:31:40.1147|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_.gitignore
+2017-01-13 09:31:40.1457|INFO|EQServiceSystem.MvcApplication|Application Error
+2017-01-13 09:31:44.1550|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_.gitignore
+2017-01-13 09:31:44.1870|INFO|EQServiceSystem.MvcApplication|Application Error
+2017-01-13 09:31:55.5876|INFO|EQServiceSystem.MvcApplication|Application Error
+2017-01-13 09:33:32.7702|INFO|EQServiceSystem.MvcApplication|Application End
+2017-01-13 09:34:19.7109|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 09:34:24.7771|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 09:35:20.0363|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_Chrysanthemum.jpg
+2017-01-13 09:35:20.2093|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_Chrysanthemum.jpg
+2017-01-13 09:35:20.2413|INFO|EQServiceSystem.MvcApplication|Application Error
+2017-01-13 09:35:33.7331|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_Chrysanthemum.jpg
+2017-01-13 09:35:33.7741|INFO|EQServiceSystem.MvcApplication|Application Error
+2017-01-13 09:35:39.9304|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_Chrysanthemum.jpg
+2017-01-13 09:35:39.9584|INFO|EQServiceSystem.MvcApplication|Application Error
+2017-01-13 09:36:36.6517|INFO|EQServiceSystem.MvcApplication|Application End
+2017-01-13 09:37:23.4284|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 09:37:28.8177|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 09:38:23.3438|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_IntroToVCS.xml
+2017-01-13 09:38:27.5570|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_IntroToVCS.xml
+2017-01-13 09:38:40.7068|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_IntroToVCS.xml
+2017-01-13 09:38:42.0679|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_Lighthouse.jpg
+2017-01-13 09:38:43.1909|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_Lighthouse.jpg
+2017-01-13 09:39:44.0724|INFO|EQServiceSystem.MvcApplication|Application End
+2017-01-13 09:40:31.5331|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 09:40:36.5214|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 09:41:53.6738|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_Penguins.jpg
+2017-01-13 09:41:55.4879|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_Penguins.jpg
+2017-01-13 09:46:07.0543|INFO|EQServiceSystem.MvcApplication|Application End
+2017-01-13 09:46:54.8440|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 09:46:59.8913|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 09:47:42.6398|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_CompHS.dof
+2017-01-13 09:47:42.6398|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_CompHS.dof
+2017-01-13 09:51:01.7242|INFO|EQServiceSystem.MvcApplication|Application End
+2017-01-13 09:51:48.4698|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 09:51:53.7001|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 09:52:42.2539|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1__license.txt
+2017-01-13 09:52:42.3779|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1__license.txt
+2017-01-13 09:52:46.1701|INFO|EQServiceSystem.MvcApplication|Application Error
+2017-01-13 09:53:43.7044|INFO|EQServiceSystem.MvcApplication|Application Error
+2017-01-13 09:56:32.7071|INFO|EQServiceSystem.MvcApplication|Application End
+2017-01-13 09:57:20.1728|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 09:57:25.2121|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 09:58:05.3994|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_2_Desert.jpg
+2017-01-13 09:58:05.3994|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_2_Desert.jpg
+2017-01-13 09:58:08.8356|INFO|EQServiceSystem.MvcApplication|Application Error
+2017-01-13 10:07:21.0472|INFO|EQServiceSystem.MvcApplication|Application End
+2017-01-13 10:08:15.1893|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 10:08:20.5976|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 10:09:27.2334|INFO|EQServiceSystem.MvcApplication|Application Error
+2017-01-13 10:10:05.3596|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 10:10:08.5388|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 10:11:21.3019|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_БД из практики.PNG
+2017-01-13 10:11:21.3139|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_БД из практики.PNG
+2017-01-13 10:15:00.6105|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 10:15:03.6816|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 10:16:43.1363|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_universal_restore.dll
+2017-01-13 10:16:43.1493|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_universal_restore.dll
+2017-01-13 10:24:50.1502|INFO|EQServiceSystem.MvcApplication|Application End
+2017-01-13 10:25:39.7120|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 10:25:44.8583|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 10:26:52.9712|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_filtered_Users.xml
+2017-01-13 10:26:52.9912|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_filtered_Users.xml
+2017-01-13 10:27:13.1794|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_elitefon.ru-11788.jpg
+2017-01-13 10:27:13.1954|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_elitefon.ru-11788.jpg
+2017-01-13 10:27:13.1954|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_filtered_Users.xml
+2017-01-13 10:27:20.1558|INFO|EQServiceSystem.MvcApplication|Application Error
+2017-01-13 10:27:57.6189|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_2_elitefon.ru-21204.jpg
+2017-01-13 10:27:57.6409|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_2_elitefon.ru-21204.jpg
+2017-01-13 10:28:00.6391|INFO|EQServiceSystem.MvcApplication|Application Error
+2017-01-13 10:29:06.3178|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 10:29:09.4540|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 10:30:42.1253|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_2_Lighthouse.jpg
+2017-01-13 10:30:42.1653|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_2_Lighthouse.jpg
+2017-01-13 10:30:44.9235|INFO|EQServiceSystem.MvcApplication|Application Error
+2017-01-13 10:34:18.9617|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 10:34:22.0649|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 10:35:51.9270|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_2__fox.dll
+2017-01-13 10:35:51.9270|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_2__fox.dll
+2017-01-13 10:36:04.0587|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_3_elitefon.ru-9772.jpg
+2017-01-13 10:36:04.0587|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_3_elitefon.ru-9772.jpg
+2017-01-13 10:36:46.6462|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 10:36:49.9794|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 10:48:46.0593|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 10:48:49.4855|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 10:59:57.2687|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 11:00:00.4589|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 11:01:04.6136|INFO|EQServiceSystem.Controllers.AccountController|Вход пользователя: Nikolaev
+2017-01-13 11:02:30.7855|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_4_BrowseFolderHelper.exe
+2017-01-13 11:02:30.8285|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_4_BrowseFolderHelper.exe
+2017-01-13 11:02:30.8285|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_4_Desert.jpg
+2017-01-13 11:02:30.8375|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_4_Desert.jpg
+2017-01-13 11:02:30.9465|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_4_filtered_Users.xml
+2017-01-13 11:02:30.9605|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_4_filtered_Users.xml
+2017-01-13 11:21:10.9696|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 11:21:14.1527|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 11:22:07.8998|INFO|EQServiceSystem.MvcApplication|Application Error
+2017-01-13 11:22:43.7599|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 11:22:46.7760|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 11:23:28.9544|INFO|EQServiceSystem.Controllers.AccountController|Вход пользователя: Nikolaev
+2017-01-13 11:26:36.8712|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 11:26:39.8784|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 11:28:32.2698|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 11:28:35.2190|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 11:29:17.0544|INFO|EQServiceSystem.Controllers.AccountController|Вход пользователя: Nikolaev
+2017-01-13 11:29:40.9247|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_2_filtr.txt
+2017-01-13 11:29:40.9397|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_2_filtr.txt
+2017-01-13 11:29:45.5540|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_5_Jellyfish.jpg
+2017-01-13 11:29:45.5750|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_5_Jellyfish.jpg
+2017-01-13 11:29:49.8542|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_4_Jellyfish.jpg
+2017-01-13 11:29:49.8712|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_4_Jellyfish.jpg
+2017-01-13 11:29:49.8772|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_4_Lighthouse.jpg
+2017-01-13 11:29:49.8772|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_4_Lighthouse.jpg
+2017-01-13 11:29:49.8772|INFO|EQServiceSystem.Controllers.EquipmentController|Попытка удаления файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_4_Tulips.jpg
+2017-01-13 11:29:49.8932|INFO|EQServiceSystem.Controllers.EquipmentController|Удален файл: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_4_Tulips.jpg
+2017-01-13 11:30:23.9362|INFO|EQServiceSystem.MvcApplication|Application End
+2017-01-13 11:43:02.5696|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 11:43:08.3649|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 11:43:36.4535|INFO|EQServiceSystem.Controllers.AccountController|Вход пользователя: Nikolaev
+2017-01-13 11:45:42.4617|INFO|EQServiceSystem.MvcApplication|Application End
+2017-01-13 11:58:12.5976|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 11:58:19.3210|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 12:00:09.5793|INFO|EQServiceSystem.Controllers.AccountController|Вход пользователя: Nikolaev
+2017-01-13 12:00:40.6421|INFO|EQServiceSystem.Controllers.EquipmentController|Добавление файла: Acrobat.exe
+2017-01-13 12:00:40.6421|INFO|EQServiceSystem.Controllers.EquipmentController|Добавление файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_Acrobat.exe
+2017-01-13 12:01:45.8148|INFO|EQServiceSystem.MvcApplication|Application End
+2017-01-13 12:31:12.8269|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 12:31:16.1501|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 12:31:37.4183|INFO|EQServiceSystem.Controllers.AccountController|Вход пользователя: Nikolaev
+2017-01-13 12:32:15.7175|INFO|EQServiceSystem.MvcApplication|Application Error
+2017-01-13 12:33:30.7158|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 12:33:33.9690|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 12:34:26.0349|INFO|EQServiceSystem.MvcApplication|Application Error
+2017-01-13 12:49:20.9171|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 12:49:24.3093|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 12:49:56.7732|INFO|EQServiceSystem.Controllers.AccountController|Вход пользователя: Nikolaev
+2017-01-13 12:50:35.3864|INFO|EQServiceSystem.Controllers.EquipmentController|Добавление файла: Acrobat.exe
+2017-01-13 12:50:35.3864|INFO|EQServiceSystem.Controllers.EquipmentController|Добавление файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_2_Acrobat.exe
+2017-01-13 12:51:06.7982|INFO|EQServiceSystem.MvcApplication|Application End
+2017-01-13 13:10:06.2604|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 13:10:09.8246|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 13:10:56.4602|INFO|EQServiceSystem.Controllers.AccountController|Вход пользователя: Nikolaev
+2017-01-13 13:14:17.1867|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 13:14:21.0119|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 13:16:22.9559|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 13:16:25.9051|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 13:16:46.2852|INFO|EQServiceSystem.Controllers.AccountController|Вход пользователя: Nikolaev
+2017-01-13 13:18:27.1620|INFO|EQServiceSystem.Controllers.EquipmentController|Добавление файла: 1302-14.xlsx
+2017-01-13 13:18:27.1620|INFO|EQServiceSystem.Controllers.EquipmentController|Добавление файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4__1302-14.xlsx
+2017-01-13 13:20:06.6237|INFO|EQServiceSystem.MvcApplication|Application End
+2017-01-13 13:20:50.4802|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 13:20:58.3917|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 13:22:15.0160|INFO|EQServiceSystem.Controllers.EquipmentController|Добавление файла: XBASEVIEW.DBF
+2017-01-13 13:22:15.0160|INFO|EQServiceSystem.Controllers.EquipmentController|Добавление файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_XBASEVIEW.DBF
+2017-01-13 13:22:37.4393|INFO|EQServiceSystem.MvcApplication|Application End
+2017-01-13 13:29:24.4716|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 13:29:27.3058|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 13:30:53.6467|INFO|EQServiceSystem.MvcApplication|Application End
+2017-01-13 13:31:36.3851|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 13:31:41.2974|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 13:32:07.3209|INFO|EQServiceSystem.Controllers.AccountController|Вход пользователя: Nikolaev
+2017-01-13 13:32:37.8587|INFO|EQServiceSystem.Controllers.EquipmentController|Добавление файла: Анти-Гаи Димитровград.html
+2017-01-13 13:32:37.8587|INFO|EQServiceSystem.Controllers.EquipmentController|Добавление файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_1_Анти-Гаи Димитровград.html
+2017-01-13 13:33:42.5504|INFO|EQServiceSystem.MvcApplication|Application End
+2017-01-13 14:04:06.9457|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 14:04:12.1370|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 14:04:41.3997|INFO|EQServiceSystem.Controllers.AccountController|Вход пользователя: Nikolaev
+2017-01-13 14:05:56.4430|INFO|EQServiceSystem.App_Start.PreStartApp|Application PreStart
+2017-01-13 14:05:59.6302|INFO|EQServiceSystem.MvcApplication|Application Start
+2017-01-13 14:06:36.7333|INFO|EQServiceSystem.Controllers.AccountController|Вход пользователя: Skulkin
+2017-01-13 14:07:37.3117|INFO|EQServiceSystem.Controllers.EquipmentController|Добавление файла: XBASEVIEW.CDX
+2017-01-13 14:07:37.3117|INFO|EQServiceSystem.Controllers.EquipmentController|Добавление файла: C:\Users\Aleshin\Desktop\ППР ПРОЕКТЫ\EQServiceSystem текущая (последняя)\EQServiceSystem\Files\01392_4_2_XBASEVIEW.CDX
+2017-01-13 14:09:14.0553|INFO|EQServiceSystem.MvcApplication|Application End

@@ -1,0 +1,14 @@
+﻿@model IEnumerable<FileInfo>
+
+<ul>
+    @foreach (var item in @Model)
+    {
+       
+        <li>
+            <div name="documents" id="SendDocs">
+            <input type="checkbox" name="@item.Name" value="@item.Name"/>   
+            @Html.ActionLink(@item.Name, "GetFile", "Equipment", new { fileName = @item.Name }, null)
+            </div>
+        </li>
+    }
+</ul>

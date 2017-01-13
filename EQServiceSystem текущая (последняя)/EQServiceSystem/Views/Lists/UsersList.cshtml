@@ -1,0 +1,30 @@
+﻿@model List<EQDataModel.tUsers>
+
+<legend class = "text-info">Пользователи</legend>
+
+@using (Ajax.BeginForm("NewUser", "Lists", new AjaxOptions { HttpMethod = "GET", UpdateTargetId = "LoadedContent" }))
+{
+    @ViewBag.Message
+    <div class="container" id ="UsersList">
+        <input type="submit" value="Добавить пользователя" />
+        <table class ="table table-striped">
+            <tr>                
+                <th>ФИО</th>
+                <th>Логин</th>
+                <th>Должность</th>
+                <th style="visibility:hidden">ID пользователя</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>                    
+                    <td>@Ajax.ActionLink(@item.FIO, "UserInfo", "Lists", new {SelectedUserID = @item.ID}, new AjaxOptions{UpdateTargetId="LoadedContent"}, null)</td>
+                    <td>@item.Login</td>
+                    <td>@item.Position</td>
+                    <td style="visibility:hidden">@item.ID</td>
+                </tr>
+            }
+        </table>
+    </div>
+}
+
+@Styles.Render("~/Content/bootstrap.css")

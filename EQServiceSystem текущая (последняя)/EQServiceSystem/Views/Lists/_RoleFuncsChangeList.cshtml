@@ -1,0 +1,34 @@
+﻿@model EQServiceSystem.Models.UserInfo
+
+@using (Ajax.BeginForm("ChangeUserFunc", "Lists", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "LoadedRoleFuncsList" }))
+{
+
+       <div class="container">
+        <input name="UserID" value="@Model.UserID" hidden="hidden">
+        Функции доступа:
+        <table class="table-bordered">
+            <tr class="row">
+                <th>Полное название</th>
+                <th>Доступ</th>
+            </tr>
+
+        @foreach (var app in Model.AllFunctions)
+        {
+               <tr class="row">
+                  @if (Model.RoleFuncsList.Contains(app.FunctionName))
+                  {
+                  <th style="color:green">@app.FunctionName</th>
+                  <th style="text-align:center"><input type="checkbox" checked="checked" disabled></th>
+                  @Html.CheckBox("UserAccess", false, new { id="u"+app.FunctionID, hidden="hidden" })    
+                  }
+                  else 
+                  {
+                  <th>@app.FunctionName</th>                  
+                  <th style="text-align:center">@Html.CheckBox("UserAccess", (Model.UserFunctions.Contains(app.FunctionName)), new { id="u"+app.FunctionID })</th>
+                  }
+                </tr>
+        }
+            </table>
+        <input type="submit" value="Сохранить функции"/>
+    </div>
+}

@@ -1,0 +1,41 @@
+﻿@model EQServiceSystem.ViewModels.CalculationNormEditor
+
+@using (Ajax.BeginForm("SaveNewRepairCalculationNorms", "Lists", new AjaxOptions { UpdateTargetId = "LoadedContent", HttpMethod = "POST" }))
+{
+    <input class="filter-element" type="submit" value="Добавить и сохранить"/>
+    
+    <table class="main-table" style="overflow:hidden">
+            <thead>
+            <tr>
+                <th class="column-header" style="width:118px">Код подразделения</th>
+                <th class="column-header" style ="width:204px">Подразделение</th>
+                <th class="column-header" style="width:41px">Год</th>
+                <th class="column-header" style="width:60px">Квартал</th>
+                <th class="column-header" style="width:126px">Стоимость ремонта/Ц</th>
+                <th class="column-header" style="width:148px">Стоимость материалов/Ц</th>
+                <th class="column-header" style="width:127px">Стоимость ремонта/П</th>
+                <th class="column-header" style="width:149px">Стоимость материалов/П</th>
+                <th class="column-header" style="width:128px">Стоимость ремонта/О</th>
+                <th class="column-header" style="width:115px">Стоимость материалов/О</th>
+                <th style ="visibility:hidden">Номер записи</th>
+            </tr>
+            </thead>
+            
+                @for (int i = 0; i < Model.NewQuarterTemplate.Count; i++)
+                {
+                    <tr>
+                        <td style ="width: 118px;">@Model.NewQuarterTemplate[i].SubDeptID</td>
+                        <td style ="width: 180px;">@Model.NewQuarterTemplate[i].SubDeptName</td>
+                        <td style ="width: 38px;">@Model.NewQuarterTemplate[i].Year</td>
+                        <td style ="width: 64px;">@Model.NewQuarterTemplate[i].QuarterNumber</td>
+                        <td style ="width: 120px;">@Html.TextBoxFor(m=>m.NewQuarterTemplate[i].RepairPriceC)</td>
+                        <td style ="width: 137px;">@Html.TextBoxFor(m=>m.NewQuarterTemplate[i].MaterialPriceC)</td>
+                        <td style ="width: 120px;">@Html.TextBoxFor(m=>m.NewQuarterTemplate[i].RepairPriceP)</td>
+                        <td style ="width: 140px;">@Html.TextBoxFor(m=>m.NewQuarterTemplate[i].MaterialPriceP)</td>
+                        <td style ="width: 116px;">@Html.TextBoxFor(m=>m.NewQuarterTemplate[i].RepairPriceO)</td>
+                        <td style ="width: 110px;">@Html.TextBoxFor(m=>m.NewQuarterTemplate[i].MaterialPriceO)</td>
+                        <td style ="visibility:hidden">@Html.HiddenFor(m => m.NewQuarterTemplate[i].RecordID)</td>
+                    </tr>
+                }
+        </table>
+}

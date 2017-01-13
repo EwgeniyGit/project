@@ -1,0 +1,225 @@
+﻿@model EQServiceSystem.Models.Equipment.Equipment
+<link href="\Content\Pasport.css" rel="stylesheet" type="text/css"></p>
+
+<table  border="0">
+    <tr>
+     <td  rowspan="4" width="340px">
+         <div id="captions"> Электронный паспорт</br>оборудования</br><rn> Регистрационный № @Html.EditorFor(m => m.REGNO) </rn></div>
+        </td>
+     <td align="right">Вид</td>
+     <td colspan="2"><input type="text" size="50" width="100"/><input type="text" size="3"/></td>
+    <td class="ttitle">Категория оборудования</td>
+    </tr>
+    <tr>
+     <td  align="right">Группа</td>   
+        <td><input type="text" size="50" width="100"><input type="text" size="3"/></td>
+        <td><input name="check" type="checkbox" value="false"></td>
+        <td>систем, важных для безопасности РУ</td>
+    </tr>
+    <tr>
+        <td align="right">Подгруппа</td>
+        <td><input type="text" size="50" width="100"><input type="text" size="3"/></td>
+        <td></td>
+        <td>Класс безопасности<input  size="10" type="text"></td>
+    </tr>
+    <tr>
+        <td align="right">Модель</td>
+        <td><input type="text" size="50" width="100"><input type="text" size="3"/></td>
+        <td><input name="check" type="checkbox" value="false"></td>
+        <td>основное(ОГЭ)</td>
+    </tr>
+    <tr>
+        <td align="center" style="background:blue;color:white;">Инвентарный №<input type="text" size="10" class="colortext"></td>
+        <td align="right">Марка</td>
+        <td><input type="text" size="50" width="100"><input type="text" size="3"/></td>
+        <td><input name="check" type="checkbox" value="false"></td>
+        <td>Подлежащее освидетельствованию</td>
+    </tr>
+    <tr>
+   </tr>
+     <tr>
+        <td align="center" style="background:blue;color:white;">Подразделение
+            <select id="mymenu" class="colortext" >
+            <option>Подразделения</option>
+            <option>рик</option>
+            <option>рхо</option>
+            <option>орм</option>
+        </select></td>
+        <td align="right">Принадлежность к агрегату</td> 
+         <td><input type="text" size="50" width="100"><input type="text" size="3"/></td>
+
+         <td><input name="check" type="checkbox" value="false"></td>
+         <td>подведомственное  Ростехнадзору</td>
+     </tr>
+     <tr>
+         <td align="center">Здание <select id="mymenu" >
+            <option>Здания</option>
+            <option>123</option>
+            <option>23</option>
+            <option>432</option>
+        </select</td>
+         <td  align="right">Наименование /1</td>
+         <td><input type="text" size="58" width="100"></td>
+         <td></td>
+         <td>Региональный №<input  size="10" type="text" /></td>
+     </tr>
+     <tr>
+         <td align="center">Помещение <input type="text" size="10"></td>
+         <td  align="right">Наименование /2</td> 
+         <td><input type="text" size="58" width="100"></td>
+         <td></td>
+         <td>Шифр установок,сетей,систем <input type="text" size="3"/><input type="text" size="3"/><input type="text" size="3"/> </td>
+     </tr>
+     <tr>
+         <td class="ttitle">Дата ввода</td>
+
+         <td  colspan="3" class="rem"></td>
+            <td class="rem">Ремонтные работы</td>
+
+     </tr>
+     <tr>
+         <td align="center">Месяц <input type="text" size="2"/> Год  <input type="text" size="4"/></td>
+         <td>Шифр возможных ремонтов</td>
+         <td colspan="2"> <input type="text" size="2"/> <input type="text" size="2"/></td>
+         <td  class="ttitle"> Коэффициенты условий труда</td>
+     </tr>
+     <tr>
+         <td></td>
+         <td>Способ ремонта</td>
+         <td> &nbsp;&nbsp;&nbsp;&nbsp; К&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Т&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;О&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Сменность <input type="text" size="5"/></td>
+         <td></td>
+        <td>Механическая часть <input type="text" size="5"/>Электрическая часть <input type="text" size="5"/></td>
+     </tr>
+         <tr>
+             <td>Завод изготовитель</td><td></td>
+
+         <td><input type="text" size="1"/><input type="text" size="1"/><input type="text" size="1"/></td>
+         </tr>
+
+     <tr>
+         <td align="center"><input type="text" size="40"/></td>   
+         <td></td>
+         <td  class="ttitle">Ремонтный цикл</td>
+         <td></td>
+         <td  class="ttitle">Категории ремонтной сложности</td>
+    </tr>
+</table>
+
+    <table border="0">
+       <tr>
+           <td width="341px">Заводской №<input type="text" size="8"/></td>
+           <td>Вид расчета</td> 
+           <td><input type="text" size="1"/></td>
+           <td></td>
+           <td></td>
+           <td colspan="2">Интервалы/мес/:</td>
+           <td></td>
+           <td></td>
+           <td width="493">механическая часть<input type="text" size="8"/>электрическая часть<input type="text" size="8"/></td> 
+       </tr>
+        <tr>
+             <td>Год выпуска<input type="text" size="8"/></td>
+             <td>Структура</td>
+             <td><input type="text" size="1"/></td>
+             <td><input type="text" size="1"/></td>
+             <td><input type="text" size="1"/></td>
+             <td>Ремонт ТО</td>
+             <td><input type="text" size="3"/></td>
+             <td></td>
+             <td></td>
+             <td></td>
+        </tr>
+         <tr>
+             <td>Обозначение по схеме</td>
+             <td>Период</td>
+             <td><input type="text" size="1"/></td>
+             <td></td>
+             <td></td>
+             <td>Т/Т</td>
+             <td><input type="text" size="3"/></td>
+             <td></td>
+             <td></td>
+             <td  class="ttitle">Трудоемкость энергообслуживания</td>
+        </tr>
+        <tr>
+             <td align="right"><input type="text" size="40"/></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td>К/К</td>
+             <td><input type="text" size="3"/></td>
+             <td></td>
+             <td></td>
+             <td>кап.ремонт<input type="text" size="3"/>тек.ремонт <input type="text" size="3"/> &nbsp; &nbsp; &nbsp; ТО <input type="text" size="3"/></td>
+        </tr>
+        <tr>
+             <td>Стоимость<input type="text" size="10"/></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td class="ttitle" colspan="3">Трудоемкость (н/ч)</td>
+             <td></td>
+             <td class="ttitle">Последний ремонт</td>
+        </tr>
+        <tr>
+             <td><div><a class="button13" href="#">История ремонтов</a></div></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td align="center">К</td>
+             <td align="center">Т</td>
+             <td align="center">О</td>
+             <td></td>
+             <td>месяц <input type="text" size="2"/> год<input type="text" size="4"/>вид <input type="text" size="15"/> №<input type="text" size="3"/></td>
+        </tr>
+             <tr>
+             <td><div><a class="button13" href="#">Движение</a></div></td>
+             <td colspan="4">механическая часть</td>
+             <td align="center"><input type="text" size="3"/></td>
+             <td align="center"><input type="text" size="3"/></td>
+             <td align="center"><input type="text" size="3"/></td>
+             <td></td>
+             <td></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td colspan="4">электрическая часть</td>
+            <td align="center"><input type="text" size="3"/></td>
+            <td align="center"><input type="text" size="3"/></td>
+            <td align="center"><input type="text" size="3"/></td>
+            <td></td>
+            <td class="ttitle">Последний кап.ремонт</td>
+       </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td align="right">
+                месяц<input type="text" size="2"/>
+                год<input type="text" size="4"/>
+                Количество кап.ремонтов<input type="text" size="10"/></td>
+       </tr>
+            <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td ></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td align="right">Последний тек.ремонт<input type="text" size="10"/></td>
+       </tr>
+    </table>
+

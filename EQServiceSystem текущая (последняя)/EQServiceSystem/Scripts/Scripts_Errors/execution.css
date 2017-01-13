@@ -1,0 +1,25 @@
+﻿ .LockOff { 
+         display: none; 
+         visibility: hidden; 
+      }
+
+.LockOn {
+    display: block;
+    position: absolute;
+    z-index: 999;
+    top: 0px;
+    left: 0px;
+    width: 105%;
+    height: 105%;
+    text-align: center;
+    font-size:25px;
+    padding-top: 20%;
+    background-repeat: no-repeat;
+    background-image: url('/Content/Images/loading.gif');
+    background-position: center center;
+    opacity: 0.8;
+    filter: alpha(opacity=80);/*для IE*/
+    background-color: #CCCCCC;
+    visibility: visible;
+    background-size: 5% auto;
+}

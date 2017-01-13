@@ -1,0 +1,103 @@
+﻿@model EQServiceSystem.Models.ElectronicArchives.ElectronicArchives
+<style>
+    .container {
+    border-collapse: collapse;
+    background-color: #4150C8;
+    border-radius: 20px 20px 20px 0px;
+    width:300px;
+    text-align:center;
+    color:white;
+    font-size: 1.07em;
+}
+</style>
+<script>
+    function uploadFiles(id_doc, id, regno) {      
+        var files = document.getElementById('uploadFile').files;
+        if (files.length > 0) {
+            if (window.FormData !== undefined) { 
+                var dataf = new FormData();
+                for (var x = 0; x < files.length; x++) {
+                    dataf.append("file" + x, files[x]);
+                }
+                dataf.append("ID",id);
+                dataf.append("REGNO",regno);
+                dataf.append("types",id_doc);
+                $.ajax({
+                    type: "POST",
+                    url:  "@Url.Action("Upload", "Equipment")",  
+                    contentType: false,
+                    processData: false,
+                    async: true,
+                    data: dataf,
+                    success: function (result) {
+                        alert(result);
+                        $('#submit').click();
+                        $('#Actionlink').click();
+                    },
+                    error: function (xhr, status, p3) {
+                        alert(xhr.responseText);
+                    }
+                });
+            }
+            else {
+                alert("Файл не выбран или браузер не поддерживает загрузку файлов HTML5!");
+            }
+        }
+    }
+    function deletedFiles() {
+        if (confirm("Вы подтверждаете удаление?")) 
+        {
+            var list = null;
+        var res = '';
+        list = $(':checkbox:checked');
+        list.each( function(ind) {
+            res += $(this).val();
+            if (ind < list.length - 1) res +=', '; // например через запятую
+        });  
+        var arr = res.split(', ');    
+        var data = { data: arr, EquipmentID:@Model.Unit.ID};
+            $.post('@Url.Action("DeleteFiles", "Equipment")', $.param(data, true));
+            $('#Actionlink').click();
+        } else {
+            return false;
+        }
+
+    }
+</script>
+<link href="~/Content/Images/Site.css" rel="stylesheet" />
+@*@using (Ajax.BeginForm("ArchiveUp", "Equipment", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "LoadedContent" }, new { EquipmentID=4 }))
+{
+*@<div class="container">
+        <p>Регистрационный № оборудования: @Html.DisplayFor(m => m.Unit.REGNO)</p>
+        <p>Инвентарный № оборудования: @Html.DisplayFor(m => m.Unit.INWNOM)</p>                
+    </div>           
+        <input type="file" name="upload" id="uploadFile"/><br />
+        <input type="submit" hidden id="submit" value="Загрузить"/> 
+    <ul>
+        @foreach (var node in Model.ElectronicArchive)
+        {         
+            <li>
+                <div class="tree">
+                    <div class="drop"> <a href="#" class="drag" name="type_doc" value="@node.id_doc">@node.Title</a></div>
+                    <div class="add" title="Добавить" onclick='uploadFiles(@node.id_doc,@Model.Unit.ID,"@Model.Unit.REGNO")'></div>
+                    @if ((ViewBag.UserRole == "Администратор") || (ViewBag.UserRole == "Разработчик") || (ViewBag.UserRole=="Главный администратор"))
+                    {      
+                    <div class="remove" title="Удалить"  onclick='deletedFiles()'></div>
+                    }
+                    <ul>    
+                        
+                        <div name="documents" id="LoadedDocs">
+                            
+                          @*  @Html.Action("GetAttachedFiles", "Equipment", new { ID = @Model.Unit.ID, REGNO = @Model.Unit.REGNO })*@
+                            @Html.Action("GetAttachedFiles", "Equipment", new { type_doc = node.id_doc, REGNO = @Model.Unit.REGNO, ID = @Model.Unit.ID, })                   
+                        </div>
+                    </ul>
+              </div>
+            </li>
+        }
+    </ul> 
+<div style="visibility:hidden">
+@Ajax.ActionLink("GetAction", "GetAction", "Equipment", new { EquipmentID = @Model.Unit.ID, actions = "GetElectronicArchive" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "LoadedContent" }, new { id = "Actionlink" })
+</div>
+@Ajax.ActionLink("<<Назад", "GetEqiupmentPassport", "Equipment", new { EquipmentID = @Model.Unit.ID }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "LoadedContent" })
+@*}*@

@@ -1,0 +1,46 @@
+﻿@model EQServiceSystem.Models.Reports.VedMTASubDeptBuild4
+<html>
+ <script>
+     $("select#idSubDept").change(function () {
+            var depId = $(this).val();
+            $.ajax({
+                url: 'vedomosti/SelectedSubDept',
+                type: 'POST',
+                data: JSON.stringify({ depId: depId }),
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function (data) {
+                    $("select#BuildingID").html("");
+                    $('select#BuildingID').append('<option value="0">Здание</option>');
+                    $.each(data, function (i, mod) {
+                        $("select#BuildingID").append(
+                            $('<option></option>').val(mod.Id).html(mod.Name));
+                    });
+                }
+            });
+        });
+</script>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ведомость наличия механического, технологического оборудования и агрегатов по подразделению</title>
+    <legend class = "text-info">Ведомость наличия механического, технологического оборудования и агрегатов по подразделению</legend>  
+</head>
+ @using (Html.BeginForm("VedMTASubDeptBuild4", "vedomosti", FormMethod.Post))
+  {
+<body>
+  <select selected  id="idSubDept" name="idSubDept">
+                @foreach (var item in Model.sprSubDept.ToList())
+                {
+                    <option value = "@item.IdSubDept">@item.ShortName</option>
+                } 
+  </select>
+ <select  id="BuildingID" name="BuildingID">
+               @* @for (int i = 0; i < Model.sprSubs.sprBuildings.Count();i++ )
+                {
+                    <option value = "@Model.sprSubs.sprBuildings.ToList()[i].BuildingID">@Model.sprSubs.sprBuildings.ToList()[i].BuldingName</option>
+                } *@
+ </select>
+      <input name="All" type="submit" value="Сформировать ведомость">
+</body>
+ }
+ </html>

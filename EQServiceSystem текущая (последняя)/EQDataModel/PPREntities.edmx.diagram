@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c6ab5cb6177f4cf993e716b5fcd76b1b" Name="Диаграмма1">
+        <EntityTypeShape EntityType="TOROModel.logDataChanges" Width="1.5" PointX="10.5" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.NALICH" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.SBEZRU" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.sprBrigad" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.sprBuildings" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.sprEquipment" Width="1.5" PointX="15" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.sprEquipmentGroup" Width="1.5" PointX="12.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.sprGroup" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.sprMark" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.sprModel" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.sprNetsSystemsFacility" Width="1.5" PointX="0.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.sprReactOperationMode" Width="1.5" PointX="17.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.sprReactors" Width="1.5" PointX="8.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.sprReactSafetyClasses" Width="1.5" PointX="8.25" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.sprReairWork" Width="1.5" PointX="17.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.sprReasonSheduleDeviation" Width="1.5" PointX="17.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.sprRepairCalc" Width="1.5" PointX="5.25" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.sprRepairCycles" Width="1.5" PointX="17.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.sprRepairMethods" Width="1.5" PointX="18.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.sprRepairTypes" Width="1.5" PointX="19.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.sprSeasonRepair" Width="1.5" PointX="19.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.sprSHPZ" Width="1.5" PointX="5.25" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.sprStartStopWorkLimit" Width="1.5" PointX="19.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.sprSubDept" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.sprSubGroup" Width="1.5" PointX="0.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.sprTypeOfEquipment" Width="1.5" PointX="0.75" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.tAggregateCodifer" Width="1.5" PointX="3" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.tChangesTypes" Width="1.5" PointX="8.25" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.tFactWorkTime" Width="1.5" PointX="7.5" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.tFunctionAccess" Width="1.5" PointX="15" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.tImportantEquipment" Width="1.5" PointX="10.5" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.tMainMenuItems" Width="1.5" PointX="15" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.tTypeEquipmentCatalog" Width="1.5" PointX="19.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.tUserFunctions" Width="1.5" PointX="12.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.tUsers" Width="1.5" PointX="8.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.TypeISGroup" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.webpages_Membership" Width="1.5" PointX="10.5" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.webpages_OAuthMembership" Width="1.5" PointX="19.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.webpages_Roles" Width="1.5" PointX="6" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.vRolesFunctionAccess" Width="1.5" PointX="12.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.vsprSeasonRepairDepend" Width="1.5" PointX="0.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.vSubdeptsInBuildings" Width="1.5" PointX="20.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.vUserFuncionAccess" Width="1.5" PointX="20.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TOROModel.vUsersRoles" Width="1.5" PointX="21.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="TOROModel.FK_logDataChanges_tChangesTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="TOROModel.FK_logDataChanges_tUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="TOROModel.FK_NALICH_sprBuildings" ManuallyRouted="false" />
+        <AssociationConnector Association="TOROModel.FK_NALICH_sprSubDept" ManuallyRouted="false" />
+        <AssociationConnector Association="TOROModel.FK_NALICH_tAggregateCodifer" ManuallyRouted="false" />
+        <AssociationConnector Association="TOROModel.FK_NALICH_TypeISGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="TOROModel.FK_tFactWorkTime_NALICH" ManuallyRouted="false" />
+        <AssociationConnector Association="TOROModel.FK_tImportantEquipment_NALICH" ManuallyRouted="false" />
+        <AssociationConnector Association="TOROModel.FK_sprEquipment_sprEquipmentGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="TOROModel.FK_sprRepairCycles_sprEquipment" ManuallyRouted="false" />
+        <AssociationConnector Association="TOROModel.FK_TypeISGroup_sprGroup1" ManuallyRouted="false" />
+        <AssociationConnector Association="TOROModel.FK_TypeISGroup_sprMark" ManuallyRouted="false" />
+        <AssociationConnector Association="TOROModel.FK_TypeISGroup_sprModel" ManuallyRouted="false" />
+        <AssociationConnector Association="TOROModel.FK_tImportantEquipment_sprReactors" ManuallyRouted="false" />
+        <AssociationConnector Association="TOROModel.FK_tImportantEquipment_sprReactSafetyClasses" ManuallyRouted="false" />
+        <AssociationConnector Association="TOROModel.FK_sprRepairCalc_sprSubDept" ManuallyRouted="false" />
+        <AssociationConnector Association="TOROModel.FK_sprSHPZ_sprSubDept" ManuallyRouted="false" />
+        <AssociationConnector Association="TOROModel.FK_tUsers_sprSubDept" ManuallyRouted="false" />
+        <AssociationConnector Association="TOROModel.FK_TypeISGroup_sprSubGroup1" ManuallyRouted="false" />
+        <AssociationConnector Association="TOROModel.FK_TypeISGroup_sprTypeOfEquipment" ManuallyRouted="false" />
+        <AssociationConnector Association="TOROModel.FK_tFunctionAccess_tUserFunctions" ManuallyRouted="false" />
+        <AssociationConnector Association="TOROModel.FK_tMainMenuItems_tUserFunctions" ManuallyRouted="false" />
+        <AssociationConnector Association="TOROModel.FK_webpages_Membership_tUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="TOROModel.sprSubDeptsInBuildings" ManuallyRouted="false" />
+        <AssociationConnector Association="TOROModel.webpages_UsersInRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TOROModel.history_move" Width="1.5" PointX="7.375" PointY="8.5" />
+        <EntityTypeShape EntityType="TOROModel.History_movement" Width="1.5" PointX="11.932869460402461" PointY="19.098237940621672" />
+        <AssociationConnector Association="TOROModel.FK_History_movement_NALICH" />
+        <AssociationConnector Association="TOROModel.FK_History_movement_sprSubDept" />
+        <AssociationConnector Association="TOROModel.FK_History_movement_sprSubDept1" />
+        <AssociationConnector Association="TOROModel.FK_History_movement_tUsers" />
+        <EntityTypeShape EntityType="TOROModel.History_spisanie" Width="1.5" PointX="2.6111453355341894" PointY="26.448245478071385" />
+        <AssociationConnector Association="TOROModel.FK_History_spisanie_NALICH" />
+        <AssociationConnector Association="TOROModel.FK_History_spisanie_sprSubDept" />
+        <AssociationConnector Association="TOROModel.FK_History_spisanie_tUsers" />
+        <EntityTypeShape EntityType="TOROModel.spisanie_history" Width="1.5" PointX="2.6412159607937635" PointY="13.608037105578946" />
+        <EntityTypeShape EntityType="TOROModel.ElectronicArchive" Width="1.5" PointX="2.1093760906296675" PointY="30.701857461920874" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

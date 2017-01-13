@@ -1,0 +1,36 @@
+﻿@model EQServiceSystem.Models.RoleInfo
+
+@using (Ajax.BeginForm("ChangeRoleFunc", "Lists", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "LoadedContent" }))
+{
+
+<legend class = "text-info">Роль: @Html.DisplayFor(m => m.Name)</legend>
+
+<div class="container">
+    ID: 
+    @Html.DisplayFor(m => m.ID)
+    <select name ="RoleID" hidden="hidden"> <option value="@Model.ID"> </option> </select>
+    <br />        
+    Доступные функции: 
+    <br />
+    <div class="container">
+      <table class="table-bordered">
+        <tr class="row">
+            <th>Полное название</th>
+            <th>Доступ</th>
+        </tr>
+          @foreach (var app in Model.AllFunctions)
+        {
+              <tr class="row">
+                  <th>@app.FunctionName</th>
+                  <th style="text-align:center">@Html.CheckBox("RoleAccess", Model.RoleFuncsList.Contains(app.FunctionName), new { id="u"+app.FunctionID })</th>
+              </tr>
+        }
+        </table>
+        <input type="submit" value="Сохранить функции"/>
+@*        @for (int i=0; i<@Model.RoleFunctions.Count; i++)
+        {
+            @Html.DisplayFor(m=> m.RoleFunctions[i].FunctionName) <br />
+        }*@
+    </div>
+</div>
+}

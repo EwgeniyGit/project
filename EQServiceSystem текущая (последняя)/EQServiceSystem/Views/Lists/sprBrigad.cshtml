@@ -1,0 +1,37 @@
+﻿@model List<EQDataModel.sprBrigad>
+
+<legend class = "text-info">Справочник бригад</legend>
+
+    @ViewBag.Message
+    <div class="container" id ="RepairWorksList">
+        <table class="main-table">
+            <tr>
+                <th class="column-header">Код бригады</th>
+                <th class="column-header">Мастер</th>
+                <th class="column-header">Бригадир</th>
+                <th class="column-header">Количество работников?</th>
+                <th class="column-header">NKW?</th>
+                <th class="column-header">PLF?</th>
+                <th class="column-header">TRPPR?</th>
+                <th class="column-header">NKOR?</th>
+                <th class="column-header">TRBR?</th>
+            </tr>
+            
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+                        <td class="table-label">@Html.DisplayFor(m => m[i].KBR)</td>
+                        <td class="table-label">@Html.DisplayFor(m => m[i].MASTER)</td>
+                        <td class="table-label">@Html.DisplayFor(m => m[i].FIOBR)</td>
+                        <td class="table-label">@Html.DisplayFor(m => m[i].KOLRAB)</td>
+                        <td class="table-label">@Html.DisplayFor(m => m[i].NKW)</td>
+                        <td class="table-label">@Html.DisplayFor(m => m[i].PLF)</td>
+                        <td class="table-label">@Html.DisplayFor(m => m[i].TRPPR)</td>
+                        <td class="table-label">@Html.DisplayFor(m => m[i].NKOR)</td>
+                        <td class="table-label">@Html.DisplayFor(m => m[i].TRBR)</td>
+                    </tr>
+                }
+        </table>
+    </div>
+
+@Styles.Render("~/Content/tables-styles.css")

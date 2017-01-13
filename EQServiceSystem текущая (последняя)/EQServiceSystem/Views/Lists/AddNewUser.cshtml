@@ -1,0 +1,50 @@
+﻿@model EQServiceSystem.ViewModels.UserCreator
+
+@using (Ajax.BeginForm("NewUser", "Lists", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "LoadedContent" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+     <legend class = "text-info">Добавление пользователя</legend>
+    
+    <div id ="NewUserInfo" class="container">
+        <input type="submit" value="Сохранить в базе" />
+
+        <div class="editor-label">
+            ФИО пользователя
+        </div>
+        @Html.EditorFor(m => m.UserFIO)
+
+        <div class="editor-label">
+            Логин пользователя
+        </div>
+        @Html.EditorFor(m => m.UserLogin)
+
+        <div class="editor-label">
+            Должность
+        </div>
+        @Html.EditorFor(m=>m.UserPosition)
+
+        <div class="editor-label">
+            Пароль
+        </div>
+        @Html.PasswordFor(m => m.UserPassword)
+
+        <div class="editor-label">
+            Подтверждение пароля
+        </div>
+        @Html.PasswordFor(m => m.UserPasswordConfirm)
+
+        <div class="editor-label">
+            Роль пользователя
+        </div>
+        <select name="SelectedRoleID" class="editor-field">
+                @foreach(var item in Model.UserRoles)
+                {
+                    <option value = @item.RoleId> @item.RoleName </option>
+                }
+        </select>
+    </div>
+}
+
+@Styles.Render("~/Content/bootstrap.css")

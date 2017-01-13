@@ -1,0 +1,71 @@
+﻿@model EQServiceSystem.ViewModels.history_move_Model
+<style type="text/css">
+        .fixed_headers td:nth-child(1),
+        .fixed_headers th:nth-child(1) {
+          min-width: 20px;
+        }
+        .fixed_headers td:nth-child(2),
+        .fixed_headers th:nth-child(2) {
+          min-width: 200px;
+        }
+        .fixed_headers td:nth-child(3),
+        .fixed_headers th:nth-child(3) {
+          min-width: 200px;
+        }
+         .fixed_headers td:nth-child(4),
+        .fixed_headers th:nth-child(4) {
+          min-width: 100px;
+        }
+        .fixed_headers td:nth-child(5),
+        .fixed_headers th:nth-child(5) {
+          min-width: 100px;
+        }
+        .fixed_headers td:nth-child(6),
+        .fixed_headers th:nth-child(6) {
+          min-width: 150px;
+        }
+        .fixed_headers td:nth-child(7),
+        .fixed_headers th:nth-child(7) {
+          min-width: 372px;
+        }     
+    </style>
+@if (Model.History_full.Count()!=0)
+{
+<legend class="text-info">@Model.History_full[0].NAIMOB Инв.№: @Model.History_full[0].InvNum Рег.№: @Model.History_full[0].RegNum</legend>
+<div class="container">
+        <table class="fixed_headers">
+            <thead>
+            <tr>
+                <th>№</th> 
+                <th>Подразделение-сдатчик</th>
+                <th>Подразделение-приёмщик</th>
+                <th>Здание</th>
+                <th>Помещение</th>
+                <th>Дата операции</th>
+                <th>Исполнитель</th>
+            </tr>
+            </thead>
+           @for (int i = 0; i < Model.History_full.Count; i++)
+            {
+                <tr>
+                    <td>@(i+1)</td>                   
+                    <td>@Html.DisplayFor(x=>x.History_full[i].Subdept_send)</td>
+                    <td>@Html.DisplayFor(x=>x.History_full[i].Subdept_rec)</td>
+                    <td>@Html.DisplayFor(x=>x.History_full[i].Building)</td>
+                    <td>@Html.DisplayFor(x=>x.History_full[i].Room)</td>
+                    <td>@Html.DisplayFor(x=>x.History_full[i].Data)</td>
+                    <td>@Html.DisplayFor(x=>x.History_full[i].userFIO)</td>
+                </tr>
+            }
+        </table>
+    </div>  
+}
+else
+{
+<div class="bg-danger">Истории по данному оборудованию не найдено</div>
+}
+ <div>
+    @Ajax.ActionLink("<<Назад", "GetEqiupmentPassport", "Equipment", new { EquipmentID=Model.IDEquipment }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "LoadedContent" })
+ </div>
+
+@Styles.Render("~/Content/StickyHeader.css")

@@ -1,0 +1,78 @@
+﻿@model EQServiceSystem.ViewModels.movement_equipment_Model 
+<script>
+    function show() {
+        document.getElementById('buttongroup').style.display = 'block';
+        document.getElementById('partial').style.display = 'none';
+    }
+    function hide() {
+        document.getElementById('buttongroup').style.display = 'none';
+        document.getElementById('partial').style.display = 'block';
+    }
+    function DialogShow()
+    {
+        if (confirm("Вы уверены что хотите сохранить изменения?"))
+        {
+            var subs = document.getElementById('SubDepts_sender').value;
+            var subr = document.getElementById('SubDepts_recipient').value;
+            var type = document.getElementsByName('type');
+            var type_value;
+            for(i=0;i<(type).length;i++){
+                if (type[i].getAttribute('type') == 'radio' && type[i].checked) {
+                    type_value = type[i].getAttribute('value');
+                }
+             }
+            var pstData = { SubDepts_sender: subs, SubDepts_recipient: subr, type: type_value }; // отправка в контроллер
+            $.post('@Url.Action("FullMovenent", "Eq")', $.param(pstData, true));
+            }
+        else
+        {
+            alert("Операция отменена");
+            //тут просто остаемся на странице
+        }
+    }
+</script>
+@using  (Ajax.BeginForm("MovementPost", "movement", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "partial"}))
+  {
+    <legend class="text-info">Движение оборудования</legend>
+@*<div class="borderstyle">*@
+<div class="box" id="Content">
+    <div class="subdeptfields">
+        Подразделение-сдатчик
+            <select name="SubDepts_sender" id="SubDepts_sender" class="filter-element" onchange="submit.click()" style="width: 170px; margin-left: 18px;">
+                @foreach (var item in Model.SubDepts_sender)
+                {       <option value = "@item">@item </option>
+                }
+            </select>
+    </div>
+    <div class="subdeptfields">
+        Подразделение-приемщик
+            <select name="SubDepts_recipient" id="SubDepts_recipient" class="filter-element" style="width: 170px;">
+                @foreach (var item in Model.SubDepts_recipient)
+                {       <option value = "@item">@item </option>
+                }
+            </select>
+    </div>
+</div>
+<div class="radiobut">
+    <label>
+        <input name="type" type="radio" id="full_moved" value="full_moved" checked="checked" onchange="show()">
+        Полная передача оборудования</label>
+    <label>
+        <input name="type" type="radio" id="partial_moved" value="partial_moved" onchange="hide()">
+        Частичная передача оборудования</label>
+</div>
+<div id="buttongroup" style="display: block">
+    <button type="submit"@* name="actions"*@ @*value="FullMovenent"*@ class="btn" style="width:125px" onmouseup="DialogShow()">Передать</button>
+</div>
+@*</div>*@
+<div id="partial" style="display: none">
+    @{
+      Html.RenderPartial("tablemove");
+    }
+</div>
+     <input type="submit" id="submit" value="POST" style="visibility:hidden"/>
+  }
+@*}*@
+
+@Styles.Render("~/Content/move_equipment.css")
+@*@Styles.Render("~/Content/tables-styles.css")*@

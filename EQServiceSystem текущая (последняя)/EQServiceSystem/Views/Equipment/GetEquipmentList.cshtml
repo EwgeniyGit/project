@@ -1,0 +1,115 @@
+﻿@model EQServiceSystem.ViewModels.EquipmentCollection
+@using PagedList.Mvc;
+
+<legend class = "text-info">Оборудование</legend>
+    <div class="bg-danger">@ViewBag.Message</div>
+
+@using (Ajax.BeginForm("GetEquipmentList", "Equipment", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "LoadedContent"}))
+{
+    <style type="text/css">
+    tbody
+    {
+        float:left;
+        overflow:scroll;
+        height: 700px;
+    }
+    thead
+    {
+        float: left;
+    }
+    </style>
+    
+    <div class="container" id ="EquipmentList">
+
+        <div class="filters">
+            <div class="filter-element">Вид</div>
+            <select name="all_W" class="filter-element">
+                @foreach (var item in Model.All_Type_name_items)
+                {
+                    <option value = "@item"> @item </option>
+                }
+            </select>
+
+            <div class="filter-element">Группа</div>
+            <select name="all_G" class="filter-element">
+                @foreach (var item in Model.All_Group_name_items)
+                {
+                    <option value = "@item"> @item </option>
+                }
+            </select>
+             <br/>
+            <div class="filter-element">Подгруппа</div>
+            <select name="all_P" class="filter-element">
+                @foreach (var item in Model.All_SubGroup_name_items)
+                {
+                    <option value = "@item"> @item </option>
+                }
+            </select>
+           
+            <div class="filter-element">Марка</div>
+            <select name="all_Marks" class="filter-element">
+                @foreach (var item in Model.All_Marks_name_items)
+                {
+                    <option value = "@item"> @item </option>
+                }
+            </select>
+            <br/>
+             <div class="filter-element">Подразделение</div>
+            <select name="SubDepts" class="filter-element">
+                @foreach (var item in Model.SubDept_items)
+                {
+                    <option value = "@item"> @item </option>
+                }
+            </select>          
+            <div class="filter-element">Здание</div>
+            <select name="Buildings" class="filter-element">
+                @foreach (var item in Model.Buildings_items)
+                {
+                    <option value = "@item"> @item </option>
+                }
+            </select>
+
+            <div class="filter-element">Помещение</div>
+            <select name="Rooms" class="filter-element">
+                @foreach (var item in Model.Rooms_items)
+                {
+                    <option value = "@item"> @item </option>
+                }
+            </select>
+
+            <input class="filter-element" type="submit" value="Применить фильтр"/>
+            
+        </div>
+
+        <table id ="eqTable" class="main-table">
+            <thead>
+            <tr>
+                <th class="column-header" style = "width: 120px">Подразделение</th>
+                <th class="column-header" style = "width: 55px">Здание</th>
+                <th class="column-header" style = "width: 100px">Помещение</th>
+                <th class="column-header" style = "width: 50px">Рег. №</th>
+                <th class="column-header" style = "width: 55px">Инв. №</th>
+                <th class="column-header" style = "width: 124px">Тип агрегата</th>
+                <th class="column-header" style = "width: 470px">Наименование</th>
+            </tr>
+            </thead>
+            @for (int i = 0; i < Model.CurrentPageSize; i++)
+            {
+                <tr>
+                    <td>@Html.TextBoxFor(m => m.PagedEquipment[i].SubDeptName, new { style = "width: 120px;" })</td>
+                    <td>@Html.TextBoxFor(m => m.PagedEquipment[i].BuildingName, new { style = "width: 55px;" })</td>
+                    <td>@Html.TextBoxFor(m => m.PagedEquipment[i].Room, new { style = "width: 100px;" })</td>
+                    <td>@Html.TextBoxFor(m => m.PagedEquipment[i].RegNumber, new { style = "width: 50px;" })</td>
+                    <td>@Html.TextBoxFor(m => m.PagedEquipment[i].InvNumber, new { style = "width: 55px;" })</td>
+                    <td>@Html.TextBoxFor(m => m.PagedEquipment[i].TypeCode, new { style = "width: 124px;" })</td>
+                    <td style = "width: 470px">@Ajax.ActionLink(@Model.PagedEquipment[i].Name,"GetEqiupmentPassport", "Equipment", new {EquipmentID = @Model.PagedEquipment[i].ID}, new AjaxOptions{UpdateTargetId="LoadedContent", HttpMethod="POST"}, null)</td>
+                </tr>
+            }
+        </table>
+        Страница @(Model.PagedEquipment.PageCount < Model.PagedEquipment.PageNumber ? 0 : Model.PagedEquipment.PageNumber) из @Model.PagedEquipment.PageCount 
+        Всего единиц оборудования в списке: @Model.Equipment.Count
+ 
+     @Html.PagedListPager(Model.PagedEquipment, page => Url.Action("GetEquipmentList", "Equipment",  new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing( new AjaxOptions {UpdateTargetId="LoadedContent", HttpMethod="GET"}))
+    </div>
+}
+ @Styles.Render("~/Content/tables-styles.css")

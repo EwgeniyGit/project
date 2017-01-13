@@ -1,0 +1,26 @@
+﻿@model List<EQDataModel.sprNetsSystemsFacility>
+
+<legend class = "text-info">Справочник вида установок, сетей, систем</legend>
+
+@using (Ajax.BeginForm("sprNetsSystemsFacility", "Lists", new AjaxOptions { UpdateTargetId = "LoadedContent", HttpMethod = "POST" }))
+{
+    @ViewBag.Message
+    <div class="container" id ="NetsSystemsFacilitiesList">
+        <table class="main-table">
+            <tr>
+                <th class="column-header">Код</th>
+                <th class="column-header">Наименование</th>
+            </tr>
+            
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+                        <td class="table-label">@Html.DisplayFor(m => m[i].TypeID)</td>
+                        <td class="table-label">@Html.DisplayFor(m => m[i].TypeName)</td>
+                    </tr>
+                }
+        </table>
+    </div>
+}
+
+@Styles.Render("~/Content/tables-styles.css")

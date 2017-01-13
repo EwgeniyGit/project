@@ -1,0 +1,20 @@
+﻿@model EQServiceSystem.ViewModels.FunctionAccessManager
+
+@using (Ajax.BeginForm("ShowItemsToSelect", "Lists", new AjaxOptions { UpdateTargetId = "LoadedItemsToSelecting" }))
+{        
+        <div class="editor-label">
+            Выбор пользователя для назначения функции
+        </div>
+        <div class="editor-field" id="UsersField">
+            <select name="SelectedObjectID">
+                @foreach (var item in Model.AllUsers)
+                {
+                    <option value = @item.ID> @item.FIO</option>
+                }
+            </select>
+        </div>
+    
+        <p>
+            <input type="submit" value="Создать" name=@ViewBag.AccessType />
+        </p>
+}

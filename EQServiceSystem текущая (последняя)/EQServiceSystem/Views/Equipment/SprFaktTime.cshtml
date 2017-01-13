@@ -1,0 +1,179 @@
+﻿ @model EQServiceSystem.Models.sprFaktTime
+@*   </script><link rel="stylesheet" href="~/Content/tables-styles.css" />*@
+<script type="text/javascript" src="~/Scripts/Datepicker/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="~/Scripts/Datepicker/js/moment-with-locales.min.js"></script>
+<script type="text/javascript" src="~/Scripts/Datepicker/js/bootstrap.min.js"></script>
+@*<script type="text/javascript" src="~/Scripts/Datepicker/js/bootstrap-datetimepicker.min.js"></script>*@ @*повторялся календарь на каждой странице*@
+<link rel="stylesheet" href="~/Scripts/Datepicker/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/Scripts/Datepicker/css/bootstrap-datetimepicker.min.css" />
+<script src="~/Scripts/Scripts_Errors/prov.js"></script>@*скрипт проверки на ввод только чисел*@
+<script src="~/Scripts/Scripts_Errors/execution.js"></script>
+<link href="~/Scripts/Scripts_Errors/execution.css" rel="stylesheet" />
+<script src="~/Scripts/UserScripts/tables/jquery.stickytableheaders.js"></script>
+<link href="~/Scripts/UserScripts/tables/css/tablesorter.css" rel="stylesheet" />
+<script src="~/Scripts/UserScripts/tables/jquery.tablesorter.js"></script>
+<link href="~/Scripts/UserScripts/button_top/css/ui.totop.css" media="screen,projection" rel="stylesheet" />
+<script src="~/Scripts/UserScripts/button_top/js/easing.js"></script>
+<script src="~/Scripts/UserScripts/button_top/js/jquery.ui.totop.js"></script>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <legend class = "text-info" style="text-align:center">@Model.PodrName[0]</legend>
+    <legend class = "text-info">Фактическое время работы оборудования </legend>  
+ @*   <link rel="stylesheet" href="~/Scripts/Datepicker/datePicker.css">
+    <script src="~/Scripts/Datepicker/jquery.js"></script>
+    <script src="~/Scripts/Datepicker/date.js"></script>
+    <script src="~/Scripts/Datepicker/jquery.datePicker-2.1.2.js"></script>*@
+   @* <div class="alert alert-success">@Model.MSG</div> *@
+    <div class = "alert alert-success">@ViewBag.message</div> 
+</head>
+
+<script type="text/javascript">
+    $(function () {
+        $('.form-control').datetimepicker({ pickTime: false, defaultDate: "", language: 'ru' });
+        for (var i = 0; i < 3; i++) {
+            $('tbody tr').clone().appendTo('main-table');
+        }
+        $('.main-table').tablesorter();
+        $('.main-table').stickyTableHeaders();
+        $().UItoTop({ easingType: 'easeOutQuart' });
+    })
+</script>
+<style>
+.tableFloatingHeader
+{
+    background-color: RGB(65, 80, 200);
+    color:white;
+    font-weight:bold;
+    border: 1px solid black;
+    text-align: center;
+
+    background-image: url(../Scripts/UserScripts/tables/css/bg.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+}
+ 
+.main-table thead tr .headerSortUp
+{
+	background-image: url(../Scripts/UserScripts/tables/css/asc.gif);
+}
+.main-table thead tr .headerSortDown
+{
+	background-image: url(../Scripts/UserScripts/tables/css/desc.gif);
+}
+.main-table thead tr .headerSortDown, .main-table thead tr .headerSortUp
+{
+	color: #00FF00;
+}
+
+.main-table tr:nth-child(2n+1) .text-box
+{
+    background-color: RGB(220, 220, 220);
+}
+
+.main-table tr:nth-child(2n+1) input
+{
+    background-color: RGB(220, 220, 220);
+}
+
+.main-table tr:nth-child(2n+1) .table-label
+{
+    background-color: RGB(220, 220, 220);
+}
+
+.main-table tr:nth-child(2n+1) td
+{
+    background: RGB(220, 220, 220);
+}
+
+.main-table tr .table-label
+{
+    padding-left:4px;
+    border: 1px solid grey;
+}
+
+.main-table
+{
+    overflow-y:scroll;
+    overflow-x:hidden;
+    /*display:block;
+    height:700px;*/
+    margin:8px;
+    line-height:none;
+}
+
+/*.datepicker {
+  max-width:150px;
+  text-align:center;
+}*/
+</style>
+  <div class="modal"><img src="~/Content/Images/loading.gif"></div>
+<body>
+    <table style="margin:8px;">
+        <thead>
+        <tr>
+            <td>Рег. номер</td>
+            <td>
+                   @using (Ajax.BeginForm("Finds", "FaktTimes", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "LoadedContent" }))
+                   {
+                <input name="rn" id="rn"  onkeyup="return proverka(this);" onchange="return proverka(this);" type="text" size="5px;"/>
+                <input name="Find" type="submit"  onkeyup="return proverka(this);" onchange="return proverka(this);" value="Искать">
+                   }
+            </td>
+            <td>
+                @using (Ajax.BeginForm("FaktT", "FaktTimes", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "LoadedContent" }))
+                {
+                <input name="New" type="submit" value="Добавить">
+                }
+            </td>
+            <td>
+                       <button type="button" id="save-btn" onclick="Save.click()"> Сохранить </button> 
+            </td>
+            <td>
+                @using (Ajax.BeginForm("SprFaktTime", "Lists", new AjaxOptions { HttpMethod = "GET", UpdateTargetId = "LoadedContent" }))
+                {
+                <input name="All" type="submit" value="Отобразить все">
+                }</td>
+        </tr>
+            </thead>
+    </table>
+ @using (Ajax.BeginForm("Update", "FaktTimes", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "LoadedContent" }))
+ {
+     <input name="Save" id="Save" type="submit" style="display:none" onclick="skm_LockScreen('Подождите... Выполняется...');" value="Сохранить"> 
+<table class="main-table">
+	<thead>	
+    <tr>
+			<th class="tableFloatingHeader" style="min-width:100px;text-align:center;">Рег.номер</th>
+			<th class="tableFloatingHeader">Принадлежность к агрегату</th>
+			<th class="tableFloatingHeader">Наименование</th>
+			<th class="tableFloatingHeader">Факт.время</th>
+			<th class="tableFloatingHeader">Средне-статистич. время</th>
+			<th class="tableFloatingHeader">Дата</th>
+            <th class="tableFloatingHeader">Начало периода</th>
+            <th class="tableFloatingHeader">Конец периода</th>
+		</tr>
+    </thead>
+    <tbody>
+	   @for (int i = 0; i < Model.myFactWorkTimeList.Count; i++)
+    {
+                <tr>
+                    @Html.HiddenFor(x => x.myFactWorkTimeList[i].EquipmentID)
+                    @Html.HiddenFor(x => x.myFactWorkTimeList[i].Id)
+                    @Html.HiddenFor(x => x.myFactWorkTimeList[i].IdSubDepth)
+                    <td>@Html.DisplayFor(x => x.myFactWorkTimeList[i].EquipmentRegNum)</td>
+                    <td>@Html.DisplayFor(x => x.myFactWorkTimeList[i].SignName)</td>
+                @*    @Html.DisplayFor(x => x.myFactWorkTimeList[i].NAIMOB*@
+                    <td>@Ajax.ActionLink(Model.myFactWorkTimeList[i].NAIMOB, "GetEqiupmentPassport", "FaktTimes", new {EquipmentID = @Model.myFactWorkTimeList[i].EquipmentID}, new AjaxOptions {UpdateTargetId ="LoadedContent",HttpMethod = "POST"},null)</td>
+                    <td>@Html.TextBoxFor(x => x.myFactWorkTimeList[i].FactWorkHours, new {onkeyup="return proverka(this);", onchange="return proverka(this);"})</td>
+                    <td>@Html.DisplayFor(x => x.myFactWorkTimeList[i].AverageStatHours)</td>
+                    <td>@Html.DisplayFor(x => x.myFactWorkTimeList[i].RecordDate)</td>
+                    <td>@Html.TextBoxFor(x => x.myFactWorkTimeList[i].LastPeriodStart, new{@class="form-control", id="dts_"+i})</td>
+                    <td>@Html.TextBoxFor(x => x.myFactWorkTimeList[i].LastPeriodEnd, new{@class="form-control",  id="dte_"+i})</td>
+                </tr>
+    }
+    </tbody>
+</table>
+ }
+  <div id="skm_LockPane" class="LockOff"></div> 
+</body>    
+@* @Styles.Render("~/Scripts/Scripts_Errors/execution.css")*@

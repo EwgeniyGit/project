@@ -1,0 +1,18 @@
+﻿@model EQServiceSystem.Models.Reports.vedMTA_inst
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ведомость наличия механического, технологического оборудования и агрегатов по подразделению</title>
+    <legend class = "text-info">Ведомость наличия механического, технологического оборудования и агрегатов по подразделению</legend>  
+</head>
+ @using (Html.BeginForm("vedMTA_SubDept_adm", "vedomosti", FormMethod.Post))
+  {
+<body>
+  <select selected  id="idSubDept" name="idSubDept">
+                @foreach (var item in Model.sprSubDept.ToList())
+                {
+                    <option value = "@item.IdSubDept">@item.ShortName</option>
+                } 
+  </select>
+      <input name="All" type="submit" value="Сформировать ведомость">
+</body>
+ }

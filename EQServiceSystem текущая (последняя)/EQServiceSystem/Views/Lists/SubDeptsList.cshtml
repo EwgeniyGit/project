@@ -1,0 +1,51 @@
+﻿@model List<EQDataModel.sprSubDept>
+
+@using (Ajax.BeginForm("SubDeptsList", "Lists", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "LoadedContent" }))
+{
+    <style type="text/css">
+    tbody
+    {
+        float:left;
+        overflow:scroll;
+        height: 700px;
+    }
+    thead
+    {
+        float: left;
+    }
+    </style>    
+    
+    <legend class = "text-info">Справочник подразделений</legend>
+    <div class="bg-danger">@ViewBag.Message</div>
+        
+    <div class="container" id ="SubDeptsList">
+        <input type="submit" value="Сохранить изменения" />
+        <input type="submit" value="Добавить подразделение" />
+        <table id ="sdTable" class="main-table" style="overflow:hidden">
+            <thead>
+            <tr>
+                <th class="column-header" style="width:50px">Код</th>
+                <th class="column-header" style="width:700px">Название</th>
+                <th class="column-header" style="width:180px">Дата корректировки</th>
+                <th class="column-header" style="width:180px">Краткое название</th>                
+            </tr>
+            </thead>
+            @for (int i=0; i<Model.Count;i++)
+            {
+                <tr>
+                    <td style ="width:50px">@Html.TextBoxFor(m => m[i].SubDeptCode, new { Style = "width: 50px;" } )</td>
+                    <td style ="width:696px">@Html.TextBoxFor(m => m[i].SubDeptName, new { Style = "width: 696px;" } )</td>
+                    <td style ="width:176px">@Html.TextBoxFor(m => m[i].AdjustmentDate, new { Style = "width: 176px;" } )</td>
+                    <td style ="width:176px">@Html.TextBoxFor(m => m[i].ShortName, new { Style = "width: 176px;" } )</td>
+                    <td>@Html.HiddenFor(m => m[i].IdSubDept)</td>
+                    <!--<th >Html.CheckBoxFor(m => m[i].IsModified, new { id = "checkbox"+i })</th>-->
+                </tr>
+            }
+            
+        </table>
+    </div>
+        
+    @Scripts.Render("~/bundles/editchecker")
+    @Scripts.Render("~/Scripts/UserScripts/TableResize.js")
+    @Styles.Render("~/Content/tables-styles.css")
+}

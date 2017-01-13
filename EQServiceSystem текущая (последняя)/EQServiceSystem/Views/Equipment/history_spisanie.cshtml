@@ -1,0 +1,204 @@
+﻿@model EQServiceSystem.ViewModels.history_spisanie_Model
+
+<script src="~/Scripts/UserScripts/jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+<script src="~/Scripts/UserScripts/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+<link href="~/Scripts/UserScripts/jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet" />
+<script src="~/Scripts/UserScripts/jquery-ui-1.12.1.custom/localization.js"></script>
+<style type="text/css">
+    /*tbody {
+        float: left;
+        overflow: scroll;
+        height: 600px;
+        width:1240px;
+    }*/
+    /*thead {
+        border: 2px;
+        float: left;
+    }*/
+    #table {
+        width: 1250px;
+    }
+
+    .fixed_headers td:nth-child(2),
+    .fixed_headers th:nth-child(2) {
+        min-width: 15px;
+    }
+
+    .fixed_headers td:nth-child(3),
+    .fixed_headers th:nth-child(3) {
+        min-width: 90px;
+    }
+
+    .fixed_headers td:nth-child(4),
+    .fixed_headers th:nth-child(4) {
+        min-width: 38px;
+    }
+
+    .fixed_headers td:nth-child(5),
+    .fixed_headers th:nth-child(5) {
+        min-width: 63px;
+    }
+
+    .fixed_headers td:nth-child(6),
+    .fixed_headers th:nth-child(6) {
+        min-width: 38px;
+    }
+
+    .fixed_headers td:nth-child(7),
+    .fixed_headers th:nth-child(7) {
+        min-width: 41px;
+    }
+
+    .fixed_headers td:nth-child(8),
+    .fixed_headers th:nth-child(8) {
+        min-width: 138px;
+    }
+
+    .fixed_headers td:nth-child(9),
+    .fixed_headers th:nth-child(9) {
+        min-width: 244px;
+    }
+
+    .fixed_headers td:nth-child(10),
+    .fixed_headers th:nth-child(10) {
+        min-width: 21px;
+    }
+
+    .fixed_headers td:nth-child(11),
+    .fixed_headers th:nth-child(11) {
+        min-width: 40px;
+    }
+
+    .fixed_headers td:nth-child(12),
+    .fixed_headers th:nth-child(12) {
+        width: 60px;
+    }
+
+    .fixed_headers td:nth-child(13),
+    .fixed_headers th:nth-child(13) {
+        min-width: 60px;
+    }
+
+    .fixed_headers td:nth-child(14),
+    .fixed_headers th:nth-child(14) {
+        width: 80px;
+    }
+
+    .fixed_headers td:nth-child(15),
+    .fixed_headers th:nth-child(15) {
+        width: 90px;
+    }
+
+    .fixed_headers td:nth-child(16),
+    .fixed_headers th:nth-child(16) {
+        width: 20px;
+    }
+
+    .fixed_headers tbody {
+        overflow-x: hidden;
+    }
+</style>
+<script>
+    $("#datepicker1").datepicker({
+        inline: true,
+        language: 'ru',
+        changeYear: true,
+        changeMonth: true,
+        dateFormat: 'dd-mm-yy'
+    });
+    $("#datepicker2").datepicker({
+        inline: true,
+        language: 'ru',
+        changeYear: true,
+        changeMonth: true,
+        dateFormat: 'dd-mm-yy'
+    });
+    function reset() {
+        document.getElementById('name').value = '';
+        document.getElementById('invnum').value = '';
+        document.getElementById('regnum').value = '';
+    };
+</script>
+@using (Ajax.BeginForm("Spisanie_Find", "movement", new AjaxOptions { UpdateTargetId = "LoadedContent" }))
+{
+    <legend class="text-info">Архив списания</legend>
+    <div class="filter-element">Период списания</div>
+    <input type="text" id="datepicker1" name="beginDate" value="@Model.beginDate.Date">
+    <input type="text" id="datepicker2" name="endDate" value="@Model.endDate.Date"> 
+
+    <div class="filter-element">Подразделение</div>
+    <select name="SubDepts" id="D" class="filter-element">
+        @foreach (var item in Model.SubDept_items)
+        {
+            <option value = "@item">@item </option>
+        }
+    </select>
+    <br>
+    <div class="filter-element">Наименование</div>
+    <input type="text" name="name" id="name" value ="@Model.Nameobr">
+
+    <div class="filter-element">Инвентарный №</div>
+    <input type="text" name="invnum" id="invnum" value ="@Model.InvNums">
+
+    <div class="filter-element">Рег. №</div>
+    <input type="text" name="regnum" id="regnum" value ="@Model.RegNums">
+    <a href="#" class="btn" onclick="reset();">Сброс</a>   
+    <input type="submit" class="btn" id="Find" value="Поиск"> 
+    <div style="text-align: right; width: 1220px;">
+        <input type="submit" class="btn" id="status" value="Восстановить">
+    </div>
+    <table id="table1" class="fixed_headers" style="font-size: 12px;">
+        <thead>
+            <tr>
+                <th style="display: none"></th>
+                <th>№</th>
+                <th>Подразделение</th>
+                <th>Здание</th>
+                <th>Помещение</th>
+                <th>Рег. №</th>
+                <th>Инв. №</th>
+                <th>Тип агрегата</th>
+                <th>Наименование</th>
+                <th>Вид</th>
+                <th>Группа</th>
+                <th>Подгруппа</th>
+                <th>Марка</th>
+                <th>Дата списания</th>
+                <th>Исполнитель</th>
+                <th>
+                    <img src="~/Content/undo-icon.png" width="25" height="25" alt="Статус" title="Поставьте галочку для отмены списания оборудования">
+                </th>
+            </tr>
+        </thead>
+        @foreach (var item in Model.History_List.AsEnumerable())
+        {
+            <tr>
+                <td style="display: none">@(item.Equipment_ID)</td>
+                <td>@(item.ID_sp)</td>
+                <td>@Html.DisplayFor(m => item.SubDeptName)</td>
+                <td>@Html.DisplayFor(m => item.Building)</td>
+                <td>@Html.DisplayFor(m => item.Room)</td>
+                <td>@Html.DisplayFor(m => item.RegNum)</td>
+                <td>@Html.DisplayFor(m => item.InvNum)</td>
+                <td>@Html.DisplayFor(m => item.AgrSignName)</td>
+                <td>@Html.DisplayFor(m => item.NAIMOB)</td>
+                <td>@Html.DisplayFor(m => item.TypeCode)</td>
+                <td>@Html.DisplayFor(m => item.idGroup)</td>
+                <td>@Html.DisplayFor(m => item.idSubgroupOld)</td>
+                <td>@Html.DisplayFor(m => item.Mark)</td>
+                <td>@Html.DisplayFor(m => item.Data)</td>
+                <td>@Html.DisplayFor(m => item.userFIO)</td>
+                <td title="Поставьте галочку для отмены списания оборудования">
+                    @if (item.status_sp_bd == false)
+                    {  <input type="checkbox" name="status" value="@item.Equipment_ID" />}
+
+                </td>
+            </tr>
+        }
+    </table>
+    <div>
+    @Ajax.ActionLink("<<Назад", "SpisanieEquipment","Lists", new AjaxOptions { HttpMethod="GET", UpdateTargetId="LoadedContent" })
+    </div>
+}
+@Styles.Render("~/Content/StickyHeader.css")
+@Styles.Render("~/Content/tables-styles.css")

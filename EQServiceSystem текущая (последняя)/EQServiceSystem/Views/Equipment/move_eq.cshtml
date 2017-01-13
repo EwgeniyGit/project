@@ -1,0 +1,35 @@
+﻿@model IEnumerable<EQServiceSystem.Models.Units.EquipmentElement>
+<script>
+</script>
+<table id="ttable">
+    <tbody id="scroll_body">
+        @*  @for (int i = 0; i < Model.Count(); i++)
+                {
+                    <tr onclick='select_row_table1(this)'>
+                        <td id="id">@(Model.Id)</td>
+                        <td id="col1">@Html.DisplayFor(m => m.Equipment[i].SubDeptName)</td>
+                        <td id="col2">@Html.DisplayFor(m => m.Equipment[i].RegNumber)</td>
+                        <td id="col3">@Html.DisplayFor(m => m.Equipment[i].InvNumber)</td>
+                        <td id="col4">@Html.DisplayFor(m => m.Equipment[i].AggregateOfType)</td>
+                        <td id="col5">@Html.DisplayFor(m => m.Equipment[i].W)</td>
+                        <td id="col6">@Html.DisplayFor(m => m.Equipment[i].G)</td>
+                        <td id="col7">@Html.DisplayFor(m => m.Equipment[i].P)</td>
+                        <td id="col8">@Html.DisplayFor(m => m.Equipment[i].Name)</td>
+                    </tr>
+                }*@
+        @foreach (var item in Model)
+        {
+            <tr onclick='select_row_table1(this)'>
+                <td id="id">@(item.ID)</td>
+                <td id="col1">@Html.DisplayFor(m => item.SubDeptName)</td>
+                <td id="col2">@Html.DisplayFor(m => item.RegNumber)</td>
+                <td id="col3">@Html.DisplayFor(m => item.InvNumber)</td>
+                <td id="col4">@Html.DisplayFor(m => item.AggregateOfType)</td>
+                <td id="col5">@Html.DisplayFor(m => item.W)</td>
+                <td id="col6">@Html.DisplayFor(m => item.G)</td>
+                <td id="col7">@Html.DisplayFor(m => item.P)</td>
+                <td id="col8">@Html.DisplayFor(m => item.Name)</td>
+            </tr>
+        }
+    </tbody>
+</table>

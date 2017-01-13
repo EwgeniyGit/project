@@ -1,0 +1,12 @@
+﻿@model EQServiceSystem.ViewModels.UserCreator
+
+@using (Ajax.BeginForm("SearchEquipment", "Eq", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "LoadedContent" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+     <legend class = "text-info">Введите регистрационный номер оборудования</legend>
+    
+    <input type="text" name ="EquipmentID"/> <br />
+    <input type="submit" value="Поиск по номеру" />
+}

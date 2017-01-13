@@ -1,0 +1,101 @@
+﻿@model EQServiceSystem.Models.FactTimeModels
+@using (Ajax.BeginForm("Create", "FaktTimes", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "LoadedContent" }))
+{
+   <h1  align="right"></h1>
+       <legend class = "text-info">Фактическое время работы оборудования</legend>
+      <legend class = "alert alert-success">@Model.MSG</legend>
+    <script type="text/javascript" src="~/Scripts/Datepicker/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/Datepicker/js/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/Datepicker/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/Datepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <link rel="stylesheet" href="~/Scripts/Datepicker/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Scripts/Datepicker/css/bootstrap-datetimepicker.min.css" />
+    <script src="~/Scripts/Scripts_Errors/prov.js"></script>
+    <script src="~/Scripts/Scripts_Errors/execution.js"></script> 
+    <link href="~/Scripts/Scripts_Errors/execution.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(function () {
+            $('.form-control').datetimepicker({ pickTime: false, defaultDate: "", language: 'ru' });
+        });
+     </script>
+    <style>
+        .column-header {
+            background-color: RGB(65, 80, 200);
+            color: white;
+            font-weight: bold;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        body {
+            font-size: 14px;
+            font-style: normal;
+            margin-left: 20px;
+        }
+    </style>
+    <body>
+    <table>
+        <tr>
+            <th class="column-header">Рег№</th>
+            <th class="column-header">Принадлежность к агрегату</th>
+            <th class="column-header">Наименование /1</th>
+            <th class="column-header">Фактическое время за месяц</th>
+            <th class="column-header" hidden="hidden">Средне/статистическое</th>
+            <th class="column-header">Начало периода</th>
+            <th class="column-header">Конец периода</th>
+            <th class="column-header"></th>
+        </tr>
+        <style>
+            select {
+                min-width: 100px;
+                height: 26px;
+            }
+        </style>
+
+        <script>
+            $(document).ready(function () {
+                $('#RegNum').click()
+            })
+
+            function Go() {
+                var name,type,id,regnum;
+                type = document.getElementById('RegNum').value.substring(document.getElementById('RegNum').value.indexOf('¤') + 1, document.getElementById('RegNum').value.indexOf('¦'));
+                name = document.getElementById('RegNum').value.substring(document.getElementById('RegNum').value.indexOf('¢') + 1, document.getElementById('RegNum').value.indexOf('¤'));
+                id = document.getElementById('RegNum').value.substring(document.getElementById('RegNum').value.indexOf('µ') + 1, document.getElementById('RegNum').value.indexOf('¢'));
+                regnum = document.getElementById('RegNum').value.substring(document.getElementById('RegNum').value.indexOf('¦') + 1, document.getElementById('RegNum').value.indexOf('§'));
+                document.getElementById('naim').value = name;
+                document.getElementById('type').value = type;
+                document.getElementById('EquipmentID').value = id;
+                document.getElementById('EquipmentRegNum').value = regnum;
+            }
+        </script>
+        <td>
+            <select selected  id="RegNum" name="RegNum" onclick="Go()">
+                @foreach (var item in Model.Na)
+                {
+                    <option value = "µ @item.EquipmentID¢@item.Name¤@item.Type¦@item.EquipmentRegNum§">@item.EquipmentRegNum</option>
+                } 
+            </select>
+        </td>
+        <td>
+              <input type="text" id="type" style="min-width:200px"/>
+        </td>
+        <td>
+                  <input type="text" id="naim" style="width:300px"/>
+        </td>
+        <td>
+            @Html.TextBoxFor(model => Model.FactWorkHours, new { onkeyup = "return proverka(this);", onchange = "return proverka(this);", size = "25px" })
+          @*  @Html.ValidationMessageFor(model => Model.FactWorkHours)*@
+        </td>
+       <td>@Html.TextBoxFor(model => model.LastPeriodStart, new { @class = "form-control", id = "dts" })</td>
+        <td>@Html.TextBoxFor(model => model.LastPeriodEnd, new { @class = "form-control", id = "dte" })</td>
+         <td>
+            <input type="submit" class="btn-block" value="Сохранить"  onclick="skm_LockScreen('Подождите... Выполняется...');" />
+            @*  <div id="content"></div>  *@
+         </td>
+         <input style="visibility:hidden;" name="EquipmentID"  id="EquipmentID"></input>
+        <input style="visibility:hidden;" name="EquipmentRegNum"  id="EquipmentRegNum"></input>
+    </table> 
+         <div id="skm_LockPane" class="LockOff"></div> 
+        </body>
+}

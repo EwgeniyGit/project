@@ -1,0 +1,26 @@
+﻿@model List<EQDataModel.sprReairWork>
+
+<legend class = "text-info">Справочник ремонтных работ</legend>
+
+@using (Ajax.BeginForm("sprRepairWork", "Lists", new AjaxOptions { UpdateTargetId = "LoadedContent", HttpMethod = "POST" }))
+{
+    @ViewBag.Message
+    <div class="container" id ="RepairWorksList">
+        <table class="main-table">
+            <tr>
+                <th class="column-header">Код вида ремонта</th>
+                <th class="column-header">Наименование вида ремонта</th>
+            </tr>
+            
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+                        <td class="table-label">@Html.DisplayFor(m => m[i].WorkID)</td>
+                        <td class="table-label">@Html.DisplayFor(m => m[i].WorkName)</td>
+                    </tr>
+                }
+        </table>
+    </div>
+}
+
+@Styles.Render("~/Content/tables-styles.css")

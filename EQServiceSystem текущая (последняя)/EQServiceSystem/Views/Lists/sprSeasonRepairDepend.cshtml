@@ -1,0 +1,55 @@
+﻿<style>
+    .bordered
+    {
+        width: 200px;
+    }
+    table
+    {
+        border-spacing: 0px;
+        border-collapse: collapse;
+    }
+</style>
+
+
+<legend class = "text-info">Справочник зависимости проведения ремонта оборудования от времени года</legend>
+
+    <div class="container" id ="SeasonRepairDependList">
+        <h4>Шифр: ⚹<sup>1</sup> ⚹<sup>2</sup> ⚹<sup>3</sup></h4>
+        <table>
+            <thead>
+                <tr class="row">
+                    <th class="bordered">⚹<sup>1</sup></th>
+                    <th class="bordered">⚹<sup>2</sup></th>
+                    <th class="bordered">⚹<sup>3</sup></th>
+                </tr>
+            </thead>
+            <tr class="row">
+                <td class="bordered">Время возможного ремонта</td>
+                <td class="bordered">Раннее начало ремонта</td>
+                <td class="bordered">Позднее начало ремонта</td>
+            </tr>
+            <tr class="row">
+                <td style="border-left:1px solid #808080;"></td>
+                <td class="bordered" style="border-bottom:none" colspan="2" align="center">Режимы работы РУ</td>
+            </tr>
+            <tr class="row">
+                <td class="bordered" style="text-align: left; padding: 8px; border-top:none">
+                    1. - ремонт проводится в любое время года<br>
+                    2. - возможен только в летнее время (с апреля по сентябрь)<br>
+                    3. - только в зимнее время (с октября по март)<br>
+                    4. - только в весенний период (апрель, май)<br>
+                    5. - только в осенний период (сентябрь, октябрь)<br>
+                    6. - возможен весной или осенью (апрель-май, сентябрь-октябрь)
+                </td>
+                <td class="bordered" style="text-align: left; padding: 8px; vertical-align: top; border-top:none" colspan="2">
+                    1 - установка на мощности<br>
+                    2 - режим расхолаживания<br>
+                    3 - режим дезактивации<br>
+                    4 - режим перегрузки<br>
+                    5 - режим остановки установки<br>
+                    6 - режим остановки системы<br>
+                    7 - режим подготовки выхода на мощность
+                </td>
+            </tr>
+        </table>
+    </div>

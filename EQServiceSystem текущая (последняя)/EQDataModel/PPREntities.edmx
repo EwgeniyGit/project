@@ -1,0 +1,3222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище TOROModel" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="Хранилище TOROModelContainer">
+          <EntitySet Name="ElectronicArchive" EntityType="Хранилище TOROModel.ElectronicArchive" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="History_movement" EntityType="Хранилище TOROModel.History_movement" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="History_spisanie" EntityType="Хранилище TOROModel.History_spisanie" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="logDataChanges" EntityType="Хранилище TOROModel.logDataChanges" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NALICH" EntityType="Хранилище TOROModel.NALICH" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SBEZRU" EntityType="Хранилище TOROModel.SBEZRU" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sprBrigad" EntityType="Хранилище TOROModel.sprBrigad" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sprBuildings" EntityType="Хранилище TOROModel.sprBuildings" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sprEquipment" EntityType="Хранилище TOROModel.sprEquipment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sprEquipmentGroup" EntityType="Хранилище TOROModel.sprEquipmentGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sprGroup" EntityType="Хранилище TOROModel.sprGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sprMark" EntityType="Хранилище TOROModel.sprMark" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sprModel" EntityType="Хранилище TOROModel.sprModel" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sprNetsSystemsFacility" EntityType="Хранилище TOROModel.sprNetsSystemsFacility" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sprReactOperationMode" EntityType="Хранилище TOROModel.sprReactOperationMode" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sprReactors" EntityType="Хранилище TOROModel.sprReactors" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sprReactSafetyClasses" EntityType="Хранилище TOROModel.sprReactSafetyClasses" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sprReairWork" EntityType="Хранилище TOROModel.sprReairWork" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sprReasonSheduleDeviation" EntityType="Хранилище TOROModel.sprReasonSheduleDeviation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sprRepairCalc" EntityType="Хранилище TOROModel.sprRepairCalc" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sprRepairCycles" EntityType="Хранилище TOROModel.sprRepairCycles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sprRepairMethods" EntityType="Хранилище TOROModel.sprRepairMethods" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sprRepairTypes" EntityType="Хранилище TOROModel.sprRepairTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sprSeasonRepair" EntityType="Хранилище TOROModel.sprSeasonRepair" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sprSHPZ" EntityType="Хранилище TOROModel.sprSHPZ" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sprStartStopWorkLimit" EntityType="Хранилище TOROModel.sprStartStopWorkLimit" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sprSubDept" EntityType="Хранилище TOROModel.sprSubDept" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sprSubDeptsInBuildings" EntityType="Хранилище TOROModel.sprSubDeptsInBuildings" store:Type="Tables" store:Schema="dbo" store:Name="sprSubDeptsInBuildings">
+            <DefiningQuery>SELECT 
+      [sprSubDeptsInBuildings].[SubDeptID] AS [SubDeptID], 
+      [sprSubDeptsInBuildings].[BuildingID] AS [BuildingID]
+      FROM [dbo].[sprSubDeptsInBuildings] AS [sprSubDeptsInBuildings]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="sprSubGroup" EntityType="Хранилище TOROModel.sprSubGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sprTypeOfEquipment" EntityType="Хранилище TOROModel.sprTypeOfEquipment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="Хранилище TOROModel.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tAggregateCodifer" EntityType="Хранилище TOROModel.tAggregateCodifer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tChangesTypes" EntityType="Хранилище TOROModel.tChangesTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tFactWorkTime" EntityType="Хранилище TOROModel.tFactWorkTime" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tFunctionAccess" EntityType="Хранилище TOROModel.tFunctionAccess" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tImportantEquipment" EntityType="Хранилище TOROModel.tImportantEquipment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tMainMenuItems" EntityType="Хранилище TOROModel.tMainMenuItems" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tTypeEquipmentCatalog" EntityType="Хранилище TOROModel.tTypeEquipmentCatalog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tUserFunctions" EntityType="Хранилище TOROModel.tUserFunctions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tUsers" EntityType="Хранилище TOROModel.tUsers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TypeISGroup" EntityType="Хранилище TOROModel.TypeISGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="webpages_Membership" EntityType="Хранилище TOROModel.webpages_Membership" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="webpages_OAuthMembership" EntityType="Хранилище TOROModel.webpages_OAuthMembership" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="webpages_Roles" EntityType="Хранилище TOROModel.webpages_Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="webpages_UsersInRoles" EntityType="Хранилище TOROModel.webpages_UsersInRoles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="history_move" EntityType="Хранилище TOROModel.history_move" store:Type="Views" store:Schema="dbo" store:Name="history_move">
+            <DefiningQuery>SELECT 
+      [history_move].[SubdeptID_sender] AS [SubdeptID_sender], 
+      [history_move].[SubdeptID_recipient] AS [SubdeptID_recipient], 
+      [history_move].[Send] AS [Send], 
+      [history_move].[Rec] AS [Rec], 
+      [history_move].[FIO] AS [FIO], 
+      [history_move].[Equipment_ID] AS [Equipment_ID], 
+      [history_move].[NAIMOB] AS [NAIMOB], 
+      [history_move].[REGNO] AS [REGNO], 
+      [history_move].[id_Hist] AS [id_Hist], 
+      [history_move].[Data_isp] AS [Data_isp], 
+      [history_move].[Room] AS [Room], 
+      [history_move].[Building] AS [Building], 
+      [history_move].[BuildingID] AS [BuildingID], 
+      [history_move].[BuldingName] AS [BuldingName], 
+      [history_move].[BuildnameOld] AS [BuildnameOld], 
+      [history_move].[BuildIDOld] AS [BuildIDOld]
+      FROM [dbo].[history_move] AS [history_move]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="spisanie_history" EntityType="Хранилище TOROModel.spisanie_history" store:Type="Views" store:Schema="dbo" store:Name="spisanie_history">
+            <DefiningQuery>SELECT 
+      [spisanie_history].[id_sp] AS [id_sp], 
+      [spisanie_history].[ID] AS [ID], 
+      [spisanie_history].[TypeCode] AS [TypeCode], 
+      [spisanie_history].[TypeOfEquipment] AS [TypeOfEquipment], 
+      [spisanie_history].[idGroup] AS [idGroup], 
+      [spisanie_history].[GroupName] AS [GroupName], 
+      [spisanie_history].[oldValue] AS [oldValue], 
+      [spisanie_history].[SubGroupName] AS [SubGroupName], 
+      [spisanie_history].[mark] AS [mark], 
+      [spisanie_history].[model] AS [model], 
+      [spisanie_history].[Data] AS [Data], 
+      [spisanie_history].[FIO] AS [FIO], 
+      [spisanie_history].[SubDeptCode] AS [SubDeptCode], 
+      [spisanie_history].[ShortName] AS [ShortName], 
+      [spisanie_history].[NAIMOB] AS [NAIMOB], 
+      [spisanie_history].[INWNOM] AS [INWNOM], 
+      [spisanie_history].[REGNO] AS [REGNO], 
+      [spisanie_history].[SignName] AS [SignName], 
+      [spisanie_history].[BuldingName] AS [BuldingName], 
+      [spisanie_history].[POM] AS [POM], 
+      [spisanie_history].[idSubGroup] AS [idSubGroup], 
+      [spisanie_history].[status_spisanie] AS [status_spisanie]
+      FROM [dbo].[spisanie_history] AS [spisanie_history]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vRolesFunctionAccess" EntityType="Хранилище TOROModel.vRolesFunctionAccess" store:Type="Views" store:Schema="dbo" store:Name="vRolesFunctionAccess">
+            <DefiningQuery>SELECT 
+      [vRolesFunctionAccess].[RoleID] AS [RoleID], 
+      [vRolesFunctionAccess].[FunctionShortName] AS [FunctionShortName], 
+      [vRolesFunctionAccess].[AcessToObject] AS [AcessToObject], 
+      [vRolesFunctionAccess].[Action] AS [Action], 
+      [vRolesFunctionAccess].[FunctionName] AS [FunctionName]
+      FROM [dbo].[vRolesFunctionAccess] AS [vRolesFunctionAccess]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vsprSeasonRepairDepend" EntityType="Хранилище TOROModel.vsprSeasonRepairDepend" store:Type="Views" store:Schema="dbo" store:Name="vsprSeasonRepairDepend">
+            <DefiningQuery>SELECT 
+      [vsprSeasonRepairDepend].[AvailabilityID] AS [AvailabilityID], 
+      [vsprSeasonRepairDepend].[Availability] AS [Availability], 
+      [vsprSeasonRepairDepend].[EarlyStartRepairID] AS [EarlyStartRepairID], 
+      [vsprSeasonRepairDepend].[StartWorkLimit] AS [StartWorkLimit], 
+      [vsprSeasonRepairDepend].[LateStopRepairID] AS [LateStopRepairID], 
+      [vsprSeasonRepairDepend].[StopWorkLimit] AS [StopWorkLimit]
+      FROM [dbo].[vsprSeasonRepairDepend] AS [vsprSeasonRepairDepend]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vSubdeptsInBuildings" EntityType="Хранилище TOROModel.vSubdeptsInBuildings" store:Type="Views" store:Schema="dbo" store:Name="vSubdeptsInBuildings">
+            <DefiningQuery>SELECT 
+      [vSubdeptsInBuildings].[BuldingName] AS [BuldingName], 
+      [vSubdeptsInBuildings].[SubDeptName] AS [SubDeptName], 
+      [vSubdeptsInBuildings].[BuildingID] AS [BuildingID], 
+      [vSubdeptsInBuildings].[SubDeptCode] AS [SubDeptCode], 
+      [vSubdeptsInBuildings].[IdSubDept] AS [IdSubDept], 
+      [vSubdeptsInBuildings].[NotAvailable] AS [NotAvailable]
+      FROM [dbo].[vSubdeptsInBuildings] AS [vSubdeptsInBuildings]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vUserFuncionAccess" EntityType="Хранилище TOROModel.vUserFuncionAccess" store:Type="Views" store:Schema="dbo" store:Name="vUserFuncionAccess">
+            <DefiningQuery>SELECT 
+      [vUserFuncionAccess].[UserID] AS [UserID], 
+      [vUserFuncionAccess].[FunctionShortName] AS [FunctionShortName], 
+      [vUserFuncionAccess].[AcessToObject] AS [AcessToObject], 
+      [vUserFuncionAccess].[Action] AS [Action]
+      FROM [dbo].[vUserFuncionAccess] AS [vUserFuncionAccess]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vUsersRoles" EntityType="Хранилище TOROModel.vUsersRoles" store:Type="Views" store:Schema="dbo" store:Name="vUsersRoles">
+            <DefiningQuery>SELECT 
+      [vUsersRoles].[UserId] AS [UserId], 
+      [vUsersRoles].[Login] AS [Login], 
+      [vUsersRoles].[RoleId] AS [RoleId], 
+      [vUsersRoles].[RoleName] AS [RoleName]
+      FROM [dbo].[vUsersRoles] AS [vUsersRoles]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_History_movement_NALICH" Association="Хранилище TOROModel.FK_History_movement_NALICH">
+            <End Role="NALICH" EntitySet="NALICH" />
+            <End Role="History_movement" EntitySet="History_movement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_History_movement_sprSubDept" Association="Хранилище TOROModel.FK_History_movement_sprSubDept">
+            <End Role="sprSubDept" EntitySet="sprSubDept" />
+            <End Role="History_movement" EntitySet="History_movement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_History_movement_sprSubDept1" Association="Хранилище TOROModel.FK_History_movement_sprSubDept1">
+            <End Role="sprSubDept" EntitySet="sprSubDept" />
+            <End Role="History_movement" EntitySet="History_movement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_History_movement_tUsers" Association="Хранилище TOROModel.FK_History_movement_tUsers">
+            <End Role="tUsers" EntitySet="tUsers" />
+            <End Role="History_movement" EntitySet="History_movement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_History_spisanie_NALICH" Association="Хранилище TOROModel.FK_History_spisanie_NALICH">
+            <End Role="NALICH" EntitySet="NALICH" />
+            <End Role="History_spisanie" EntitySet="History_spisanie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_History_spisanie_sprSubDept" Association="Хранилище TOROModel.FK_History_spisanie_sprSubDept">
+            <End Role="sprSubDept" EntitySet="sprSubDept" />
+            <End Role="History_spisanie" EntitySet="History_spisanie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_History_spisanie_tUsers" Association="Хранилище TOROModel.FK_History_spisanie_tUsers">
+            <End Role="tUsers" EntitySet="tUsers" />
+            <End Role="History_spisanie" EntitySet="History_spisanie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_logDataChanges_tChangesTypes" Association="Хранилище TOROModel.FK_logDataChanges_tChangesTypes">
+            <End Role="tChangesTypes" EntitySet="tChangesTypes" />
+            <End Role="logDataChanges" EntitySet="logDataChanges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_logDataChanges_tUsers" Association="Хранилище TOROModel.FK_logDataChanges_tUsers">
+            <End Role="tUsers" EntitySet="tUsers" />
+            <End Role="logDataChanges" EntitySet="logDataChanges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NALICH_sprBuildings" Association="Хранилище TOROModel.FK_NALICH_sprBuildings">
+            <End Role="sprBuildings" EntitySet="sprBuildings" />
+            <End Role="NALICH" EntitySet="NALICH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NALICH_sprSubDept" Association="Хранилище TOROModel.FK_NALICH_sprSubDept">
+            <End Role="sprSubDept" EntitySet="sprSubDept" />
+            <End Role="NALICH" EntitySet="NALICH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NALICH_tAggregateCodifer" Association="Хранилище TOROModel.FK_NALICH_tAggregateCodifer">
+            <End Role="tAggregateCodifer" EntitySet="tAggregateCodifer" />
+            <End Role="NALICH" EntitySet="NALICH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NALICH_TypeISGroup" Association="Хранилище TOROModel.FK_NALICH_TypeISGroup">
+            <End Role="TypeISGroup" EntitySet="TypeISGroup" />
+            <End Role="NALICH" EntitySet="NALICH" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RoleId" Association="Хранилище TOROModel.fk_RoleId">
+            <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+            <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sprEquipment_sprEquipmentGroup" Association="Хранилище TOROModel.FK_sprEquipment_sprEquipmentGroup">
+            <End Role="sprEquipmentGroup" EntitySet="sprEquipmentGroup" />
+            <End Role="sprEquipment" EntitySet="sprEquipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sprRepairCalc_sprSubDept" Association="Хранилище TOROModel.FK_sprRepairCalc_sprSubDept">
+            <End Role="sprSubDept" EntitySet="sprSubDept" />
+            <End Role="sprRepairCalc" EntitySet="sprRepairCalc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sprRepairCycles_sprEquipment" Association="Хранилище TOROModel.FK_sprRepairCycles_sprEquipment">
+            <End Role="sprEquipment" EntitySet="sprEquipment" />
+            <End Role="sprRepairCycles" EntitySet="sprRepairCycles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sprSHPZ_sprSubDept" Association="Хранилище TOROModel.FK_sprSHPZ_sprSubDept">
+            <End Role="sprSubDept" EntitySet="sprSubDept" />
+            <End Role="sprSHPZ" EntitySet="sprSHPZ" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sprSubDeptsInBuildings_sprBuildings" Association="Хранилище TOROModel.FK_sprSubDeptsInBuildings_sprBuildings">
+            <End Role="sprBuildings" EntitySet="sprBuildings" />
+            <End Role="sprSubDeptsInBuildings" EntitySet="sprSubDeptsInBuildings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sprSubDeptsInBuildings_sprSubDept" Association="Хранилище TOROModel.FK_sprSubDeptsInBuildings_sprSubDept">
+            <End Role="sprSubDept" EntitySet="sprSubDept" />
+            <End Role="sprSubDeptsInBuildings" EntitySet="sprSubDeptsInBuildings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tFactWorkTime_NALICH" Association="Хранилище TOROModel.FK_tFactWorkTime_NALICH">
+            <End Role="NALICH" EntitySet="NALICH" />
+            <End Role="tFactWorkTime" EntitySet="tFactWorkTime" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tFunctionAccess_tUserFunctions" Association="Хранилище TOROModel.FK_tFunctionAccess_tUserFunctions">
+            <End Role="tUserFunctions" EntitySet="tUserFunctions" />
+            <End Role="tFunctionAccess" EntitySet="tFunctionAccess" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tImportantEquipment_NALICH" Association="Хранилище TOROModel.FK_tImportantEquipment_NALICH">
+            <End Role="NALICH" EntitySet="NALICH" />
+            <End Role="tImportantEquipment" EntitySet="tImportantEquipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tImportantEquipment_sprReactors" Association="Хранилище TOROModel.FK_tImportantEquipment_sprReactors">
+            <End Role="sprReactors" EntitySet="sprReactors" />
+            <End Role="tImportantEquipment" EntitySet="tImportantEquipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tImportantEquipment_sprReactSafetyClasses" Association="Хранилище TOROModel.FK_tImportantEquipment_sprReactSafetyClasses">
+            <End Role="sprReactSafetyClasses" EntitySet="sprReactSafetyClasses" />
+            <End Role="tImportantEquipment" EntitySet="tImportantEquipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tMainMenuItems_tUserFunctions" Association="Хранилище TOROModel.FK_tMainMenuItems_tUserFunctions">
+            <End Role="tUserFunctions" EntitySet="tUserFunctions" />
+            <End Role="tMainMenuItems" EntitySet="tMainMenuItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tUsers_sprSubDept" Association="Хранилище TOROModel.FK_tUsers_sprSubDept">
+            <End Role="sprSubDept" EntitySet="sprSubDept" />
+            <End Role="tUsers" EntitySet="tUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeISGroup_sprGroup1" Association="Хранилище TOROModel.FK_TypeISGroup_sprGroup1">
+            <End Role="sprGroup" EntitySet="sprGroup" />
+            <End Role="TypeISGroup" EntitySet="TypeISGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeISGroup_sprMark" Association="Хранилище TOROModel.FK_TypeISGroup_sprMark">
+            <End Role="sprMark" EntitySet="sprMark" />
+            <End Role="TypeISGroup" EntitySet="TypeISGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeISGroup_sprModel" Association="Хранилище TOROModel.FK_TypeISGroup_sprModel">
+            <End Role="sprModel" EntitySet="sprModel" />
+            <End Role="TypeISGroup" EntitySet="TypeISGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeISGroup_sprSubGroup1" Association="Хранилище TOROModel.FK_TypeISGroup_sprSubGroup1">
+            <End Role="sprSubGroup" EntitySet="sprSubGroup" />
+            <End Role="TypeISGroup" EntitySet="TypeISGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeISGroup_sprTypeOfEquipment" Association="Хранилище TOROModel.FK_TypeISGroup_sprTypeOfEquipment">
+            <End Role="sprTypeOfEquipment" EntitySet="sprTypeOfEquipment" />
+            <End Role="TypeISGroup" EntitySet="TypeISGroup" />
+          </AssociationSet>
+          <AssociationSet Name="fk_UserId" Association="Хранилище TOROModel.fk_UserId">
+            <End Role="tUsers" EntitySet="tUsers" />
+            <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_webpages_Membership_tUsers" Association="Хранилище TOROModel.FK_webpages_Membership_tUsers">
+            <End Role="tUsers" EntitySet="tUsers" />
+            <End Role="webpages_Membership" EntitySet="webpages_Membership" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ElectronicArchive">
+          <Key>
+            <PropertyRef Name="id_doc" />
+          </Key>
+          <Property Name="id_doc" Type="int" Nullable="false" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="Title" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="History_movement">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Equipment_ID" Type="int" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="SubdeptID_sender" Type="int" Nullable="false" />
+          <Property Name="SubdeptID_recipient" Type="int" Nullable="false" />
+          <Property Name="Room" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Building" Type="int" Nullable="false" />
+          <Property Name="Data" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="History_spisanie">
+          <Key>
+            <PropertyRef Name="id_sp" />
+          </Key>
+          <Property Name="id_sp" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Equipment_ID" Type="int" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="SubdeptID_sender" Type="int" Nullable="false" />
+          <Property Name="Room" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Building" Type="int" Nullable="false" />
+          <Property Name="Data" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="logDataChanges">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="WhoChangedID" Type="int" Nullable="false" />
+          <Property Name="WhatTableChanged" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="ChangedRecordID" Type="int" Nullable="false" />
+          <Property Name="ChangedColumnName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ChangesDate" Type="datetime" Nullable="false" />
+          <Property Name="OldValueNumber" Type="int" />
+          <Property Name="OldValueText" Type="nvarchar" MaxLength="250" />
+          <Property Name="OldValueFloat" Type="real" />
+          <Property Name="OldValueDate" Type="datetime" />
+          <Property Name="OldValueBool" Type="bit" />
+          <Property Name="TypeChangesID" Type="int" Nullable="false" />
+          <Property Name="TableIDColumnName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="NALICH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="KODOP" Type="nvarchar" MaxLength="255" />
+          <Property Name="KODKOR" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATAZAP" Type="nvarchar" MaxLength="255" />
+          <Property Name="IdSubDept" Type="int" Nullable="false" />
+          <Property Name="BuildingID" Type="int" Nullable="false" />
+          <Property Name="W" Type="nvarchar" MaxLength="255" />
+          <Property Name="G" Type="nvarchar" MaxLength="255" />
+          <Property Name="P" Type="nvarchar" MaxLength="255" />
+          <Property Name="M" Type="nvarchar" MaxLength="255" />
+          <Property Name="PODSD" Type="nvarchar" MaxLength="255" />
+          <Property Name="INWNOM" Type="nvarchar" MaxLength="255" />
+          <Property Name="AggregateCode" Type="int" Nullable="false" />
+          <Property Name="REGNO" Type="nvarchar" MaxLength="255" />
+          <Property Name="NAIMOB" Type="nvarchar" MaxLength="255" />
+          <Property Name="MARKA" Type="nvarchar" MaxLength="255" />
+          <Property Name="ZAWNO" Type="nvarchar" MaxLength="255" />
+          <Property Name="ZAWOD" Type="nvarchar" MaxLength="255" />
+          <Property Name="GODWYP" Type="nvarchar" MaxLength="255" />
+          <Property Name="DWWOD" Type="nvarchar" MaxLength="255" />
+          <Property Name="WUST" Type="nvarchar" MaxLength="255" />
+          <Property Name="KSUST" Type="nvarchar" MaxLength="255" />
+          <Property Name="KPUST" Type="nvarchar" MaxLength="255" />
+          <Property Name="POM" Type="nvarchar" MaxLength="255" />
+          <Property Name="SPOSK" Type="nvarchar" MaxLength="255" />
+          <Property Name="SPOST" Type="nvarchar" MaxLength="255" />
+          <Property Name="SPOSTO" Type="nvarchar" MaxLength="255" />
+          <Property Name="SMEN" Type="float" />
+          <Property Name="KOLTEK" Type="float" />
+          <Property Name="WRASCH" Type="nvarchar" MaxLength="255" />
+          <Property Name="KOLKSTR" Type="float" />
+          <Property Name="KOLTSTR" Type="float" />
+          <Property Name="KOLOSTR" Type="float" />
+          <Property Name="PER" Type="float" />
+          <Property Name="SHIFWR" Type="nvarchar" MaxLength="255" />
+          <Property Name="KUSE" Type="float" />
+          <Property Name="KUSM" Type="float" />
+          <Property Name="KATM" Type="float" />
+          <Property Name="KATE" Type="float" />
+          <Property Name="TRUDK" Type="float" />
+          <Property Name="TRUDT" Type="float" />
+          <Property Name="TRUDTO" Type="float" />
+          <Property Name="STOIM" Type="float" />
+          <Property Name="OBOZN" Type="nvarchar" MaxLength="255" />
+          <Property Name="NTEX" Type="nvarchar" MaxLength="255" />
+          <Property Name="DPKAP" Type="nvarchar" MaxLength="255" />
+          <Property Name="KOLKAP" Type="nvarchar" MaxLength="255" />
+          <Property Name="WPR" Type="nvarchar" MaxLength="255" />
+          <Property Name="NPR" Type="float" />
+          <Property Name="DPR" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATA" Type="datetime" />
+          <Property Name="MainOGE" Type="bit" Nullable="false" />
+          <Property Name="SubjectToInspection" Type="bit" Nullable="false" />
+          <Property Name="ImportantToSafety" Type="bit" Nullable="false" />
+          <Property Name="StartUpDate" Type="date" />
+          <Property Name="id_Type" Type="int" Nullable="false" />
+          <Property Name="id_Group" Type="int" />
+          <Property Name="id_SubGroup" Type="int" />
+          <Property Name="id_Mark" Type="int" />
+          <Property Name="id_Model" Type="int" />
+          <Property Name="int_P" Type="int" />
+          <Property Name="id_TypeIsGroup" Type="int" />
+          <Property Name="status_spisanie" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SBEZRU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="REGNO" Type="nvarchar" MaxLength="255" />
+          <Property Name="PRAG" Type="nvarchar" MaxLength="255" />
+          <Property Name="KLGBEZ" Type="nvarchar" MaxLength="255" />
+          <Property Name="RU" Type="nvarchar" MaxLength="255" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="sprBrigad">
+          <Key>
+            <PropertyRef Name="KBR" />
+          </Key>
+          <Property Name="KBR" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="MASTER" Type="nvarchar" MaxLength="255" />
+          <Property Name="FIOBR" Type="nvarchar" MaxLength="255" />
+          <Property Name="KOLRAB" Type="nvarchar" MaxLength="255" />
+          <Property Name="NKW" Type="float" />
+          <Property Name="PLF" Type="float" />
+          <Property Name="TRPPR" Type="float" />
+          <Property Name="NKOR" Type="float" />
+          <Property Name="TRBR" Type="float" />
+        </EntityType>
+        <EntityType Name="sprBuildings">
+          <Key>
+            <PropertyRef Name="BuildingID" />
+          </Key>
+          <Property Name="BuildingID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BuldingName" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="NotAvailable" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sprEquipment">
+          <Key>
+            <PropertyRef Name="IdEquipment" />
+          </Key>
+          <Property Name="IdEquipment" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="W" Type="nvarchar" MaxLength="255" />
+          <Property Name="EquipmentGroup" Type="int" Nullable="false" />
+          <Property Name="SubGroup" Type="int" />
+          <Property Name="Model" Type="int" />
+          <Property Name="GroupName" Type="nvarchar" MaxLength="255" />
+          <Property Name="SubGroupName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Mark" Type="nvarchar" MaxLength="255" />
+          <Property Name="symbol_g" Type="nvarchar" MaxLength="50" />
+          <Property Name="symbol_p" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sprEquipmentGroup">
+          <Key>
+            <PropertyRef Name="GroupID" />
+          </Key>
+          <Property Name="GroupID" Type="int" Nullable="false" />
+          <Property Name="GroupName" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="SymbolID" Type="nvarchar" MaxLength="225" />
+        </EntityType>
+        <EntityType Name="sprGroup">
+          <Key>
+            <PropertyRef Name="idGroup" />
+          </Key>
+          <Property Name="idGroup" Type="int" Nullable="false" />
+          <Property Name="GroupName" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="sprMark">
+          <Key>
+            <PropertyRef Name="id_mark" />
+          </Key>
+          <Property Name="id_mark" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="mark" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="sprModel">
+          <Key>
+            <PropertyRef Name="id_model" />
+          </Key>
+          <Property Name="id_model" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="model" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sprNetsSystemsFacility">
+          <Key>
+            <PropertyRef Name="TypeID" />
+          </Key>
+          <Property Name="TypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="nvarchar" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="sprReactOperationMode">
+          <Key>
+            <PropertyRef Name="ModeID" />
+          </Key>
+          <Property Name="ModeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OperationModeName" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sprReactors">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sprReactSafetyClasses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ClassName" Type="nvarchar" Nullable="false" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="sprReairWork">
+          <Key>
+            <PropertyRef Name="WorkID" />
+          </Key>
+          <Property Name="WorkID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="WorkName" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sprReasonSheduleDeviation">
+          <Key>
+            <PropertyRef Name="ReasonID" />
+          </Key>
+          <Property Name="ReasonID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ReasonName" Type="nvarchar" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="sprRepairCalc">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdSubDept" Type="int" Nullable="false" />
+          <Property Name="Year" Type="int" />
+          <Property Name="QuarterNumber" Type="int" />
+          <Property Name="RepairPriceC" Type="float" />
+          <Property Name="MaterialPriceC" Type="float" />
+          <Property Name="RepairPriceP" Type="float" />
+          <Property Name="MaterialPriceP" Type="float" />
+          <Property Name="RepairPriceO" Type="float" />
+          <Property Name="MaterialPriceO" Type="float" />
+        </EntityType>
+        <EntityType Name="sprRepairCycles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EquipmentID" Type="int" Nullable="false" />
+          <Property Name="EquipmentName" Type="nvarchar" Nullable="false" MaxLength="350" />
+          <Property Name="MajorCoeff" Type="int" />
+          <Property Name="CurrentCoeff" Type="int" />
+          <Property Name="InspectionCoeff" Type="int" />
+          <Property Name="Period" Type="int" />
+        </EntityType>
+        <EntityType Name="sprRepairMethods">
+          <Key>
+            <PropertyRef Name="IdRepairMethod" />
+          </Key>
+          <Property Name="IdRepairMethod" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RepairMethodFullName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="RepairMethodShortName" Type="nvarchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="sprRepairTypes">
+          <Key>
+            <PropertyRef Name="IdRepairType" />
+          </Key>
+          <Property Name="IdRepairType" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RepairTypeFullName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="RepairTypeShortName" Type="nvarchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="sprSeasonRepair">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Availability" Type="nvarchar" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="sprSHPZ">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdSubDept" Type="int" Nullable="false" />
+          <Property Name="RepairType" Type="nvarchar" MaxLength="255" />
+          <Property Name="RepairMethod" Type="nvarchar" MaxLength="255" />
+          <Property Name="BalanceBill" Type="nvarchar" MaxLength="255" />
+          <Property Name="CostElements" Type="nvarchar" MaxLength="255" />
+          <Property Name="CostParticle" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="sprStartStopWorkLimit">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StartStopWorkLimit" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sprSubDept">
+          <Key>
+            <PropertyRef Name="IdSubDept" />
+          </Key>
+          <Property Name="IdSubDept" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SubDeptCode" Type="int" Nullable="false" />
+          <Property Name="SubDeptName" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="AdjustmentDate" Type="datetime" />
+          <Property Name="ShortName" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+      предупреждение 6002: В таблице или представлении "TORO.dbo.sprSubDeptsInBuildings" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.
+      -->
+        <EntityType Name="sprSubDeptsInBuildings">
+          <Key>
+            <PropertyRef Name="SubDeptID" />
+            <PropertyRef Name="BuildingID" />
+          </Key>
+          <Property Name="SubDeptID" Type="int" Nullable="false" />
+          <Property Name="BuildingID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sprSubGroup">
+          <Key>
+            <PropertyRef Name="idSubGroup" />
+          </Key>
+          <Property Name="idSubGroup" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SubGroupName" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="sprTypeOfEquipment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TypeOfEquipment" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="TypeCode" Type="nvarchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tAggregateCodifer">
+          <Key>
+            <PropertyRef Name="SignID" />
+          </Key>
+          <Property Name="SignID" Type="int" Nullable="false" />
+          <Property Name="SignName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="SignCode" Type="nvarchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="tChangesTypes">
+          <Key>
+            <PropertyRef Name="ChangesTypeID" />
+          </Key>
+          <Property Name="ChangesTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ChangesTypeName" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tFactWorkTime">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EquipmentID" Type="int" Nullable="false" />
+          <Property Name="EquipmentRegNum" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="FactWorkHours" Type="int" Nullable="false" />
+          <Property Name="AverageStatHours" Type="int" Nullable="false" />
+          <Property Name="RecordDate" Type="datetime" Nullable="false" />
+          <Property Name="LastPeriodStart" Type="datetime" />
+          <Property Name="LastPeriodEnd" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tFunctionAccess">
+          <Key>
+            <PropertyRef Name="AccessRecordID" />
+          </Key>
+          <Property Name="AccessRecordID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FunctionID" Type="int" Nullable="false" />
+          <Property Name="IsAvailableTo" Type="int" Nullable="false" />
+          <Property Name="AccessTypeUser" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tImportantEquipment">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EquipmentID" Type="int" Nullable="false" />
+          <Property Name="SecurityClassID" Type="int" Nullable="false" />
+          <Property Name="ReactorID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tMainMenuItems">
+          <Key>
+            <PropertyRef Name="MenuItemID" />
+          </Key>
+          <Property Name="MenuItemID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MenuItemName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="FunctionID" Type="int" Nullable="false" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="RussianName" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="ItemPriority" Type="int" Nullable="false" />
+          <Property Name="URLPath" Type="nvarchar" Nullable="false" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="tTypeEquipmentCatalog">
+          <Key>
+            <PropertyRef Name="ServiceID" />
+          </Key>
+          <Property Name="ServiceID" Type="int" Nullable="false" />
+          <Property Name="TypeEquipmentID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tUserFunctions">
+          <Key>
+            <PropertyRef Name="FunctionID" />
+          </Key>
+          <Property Name="FunctionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FunctionName" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="FunctionShortName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="AcessToObject" Type="nvarchar" MaxLength="50" />
+          <Property Name="Action" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tUsers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FIO" Type="nvarchar" MaxLength="200" />
+          <Property Name="Login" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="SubDeptID" Type="int" />
+          <Property Name="Position" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TypeISGroup">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idType" Type="int" Nullable="false" />
+          <Property Name="idGroup" Type="int" Nullable="false" />
+          <Property Name="idSubGroup" Type="int" />
+          <Property Name="idMark" Type="int" />
+          <Property Name="idModel" Type="int" />
+          <Property Name="oldValue" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="webpages_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ConfirmationToken" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsConfirmed" Type="bit" />
+          <Property Name="LastPasswordFailureDate" Type="datetime" />
+          <Property Name="PasswordFailuresSinceLastSuccess" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="PasswordChangedDate" Type="datetime" />
+          <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="PasswordVerificationToken" Type="nvarchar" MaxLength="128" />
+          <Property Name="PasswordVerificationTokenExpirationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="webpages_OAuthMembership">
+          <Key>
+            <PropertyRef Name="Provider" />
+            <PropertyRef Name="ProviderUserId" />
+          </Key>
+          <Property Name="Provider" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="ProviderUserId" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="webpages_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+      предупреждение 6002: В таблице или представлении "TORO.dbo.history_move" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.
+      -->
+        <EntityType Name="history_move">
+          <Key>
+            <PropertyRef Name="SubdeptID_sender" />
+            <PropertyRef Name="SubdeptID_recipient" />
+            <PropertyRef Name="Equipment_ID" />
+            <PropertyRef Name="id_Hist" />
+            <PropertyRef Name="Data_isp" />
+            <PropertyRef Name="BuildingID" />
+            <PropertyRef Name="BuldingName" />
+            <PropertyRef Name="BuildnameOld" />
+            <PropertyRef Name="BuildIDOld" />
+          </Key>
+          <Property Name="SubdeptID_sender" Type="int" Nullable="false" />
+          <Property Name="SubdeptID_recipient" Type="int" Nullable="false" />
+          <Property Name="Send" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rec" Type="nvarchar" MaxLength="50" />
+          <Property Name="FIO" Type="nvarchar" MaxLength="200" />
+          <Property Name="Equipment_ID" Type="int" Nullable="false" />
+          <Property Name="NAIMOB" Type="nvarchar" MaxLength="255" />
+          <Property Name="REGNO" Type="nvarchar" MaxLength="255" />
+          <Property Name="id_Hist" Type="int" Nullable="false" />
+          <Property Name="Data_isp" Type="date" Nullable="false" />
+          <Property Name="Room" Type="nvarchar" MaxLength="50" />
+          <Property Name="Building" Type="int" />
+          <Property Name="BuildingID" Type="int" Nullable="false" />
+          <Property Name="BuldingName" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="BuildnameOld" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="BuildIDOld" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+      предупреждение 6002: В таблице или представлении "TORO.dbo.spisanie_history" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.
+      -->
+        <EntityType Name="spisanie_history">
+          <Key>
+            <PropertyRef Name="id_sp" />
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="TypeCode" />
+            <PropertyRef Name="TypeOfEquipment" />
+            <PropertyRef Name="idGroup" />
+            <PropertyRef Name="Data" />
+            <PropertyRef Name="SubDeptCode" />
+            <PropertyRef Name="SignName" />
+            <PropertyRef Name="BuldingName" />
+            <PropertyRef Name="idSubGroup" />
+            <PropertyRef Name="status_spisanie" />
+          </Key>
+          <Property Name="id_sp" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="TypeCode" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="TypeOfEquipment" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="idGroup" Type="int" Nullable="false" />
+          <Property Name="GroupName" Type="varchar" MaxLength="150" />
+          <Property Name="oldValue" Type="nvarchar" MaxLength="50" />
+          <Property Name="SubGroupName" Type="varchar" MaxLength="500" />
+          <Property Name="mark" Type="nvarchar" MaxLength="250" />
+          <Property Name="model" Type="nvarchar" MaxLength="50" />
+          <Property Name="Data" Type="date" Nullable="false" />
+          <Property Name="FIO" Type="nvarchar" MaxLength="200" />
+          <Property Name="SubDeptCode" Type="int" Nullable="false" />
+          <Property Name="ShortName" Type="nvarchar" MaxLength="50" />
+          <Property Name="NAIMOB" Type="nvarchar" MaxLength="255" />
+          <Property Name="INWNOM" Type="nvarchar" MaxLength="255" />
+          <Property Name="REGNO" Type="nvarchar" MaxLength="255" />
+          <Property Name="SignName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="BuldingName" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="POM" Type="nvarchar" MaxLength="255" />
+          <Property Name="idSubGroup" Type="int" Nullable="false" />
+          <Property Name="status_spisanie" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+      предупреждение 6002: В таблице или представлении "TORO.dbo.vRolesFunctionAccess" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.
+      -->
+        <EntityType Name="vRolesFunctionAccess">
+          <Key>
+            <PropertyRef Name="RoleID" />
+            <PropertyRef Name="FunctionShortName" />
+            <PropertyRef Name="FunctionName" />
+          </Key>
+          <Property Name="RoleID" Type="int" Nullable="false" />
+          <Property Name="FunctionShortName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="AcessToObject" Type="nvarchar" MaxLength="50" />
+          <Property Name="Action" Type="nvarchar" MaxLength="20" />
+          <Property Name="FunctionName" Type="nvarchar" Nullable="false" MaxLength="250" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+      предупреждение 6002: В таблице или представлении "TORO.dbo.vsprSeasonRepairDepend" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.
+      -->
+        <EntityType Name="vsprSeasonRepairDepend">
+          <Key>
+            <PropertyRef Name="AvailabilityID" />
+            <PropertyRef Name="Availability" />
+            <PropertyRef Name="EarlyStartRepairID" />
+            <PropertyRef Name="StartWorkLimit" />
+            <PropertyRef Name="LateStopRepairID" />
+            <PropertyRef Name="StopWorkLimit" />
+          </Key>
+          <Property Name="AvailabilityID" Type="int" Nullable="false" />
+          <Property Name="Availability" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="EarlyStartRepairID" Type="int" Nullable="false" />
+          <Property Name="StartWorkLimit" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="LateStopRepairID" Type="int" Nullable="false" />
+          <Property Name="StopWorkLimit" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+      предупреждение 6002: В таблице или представлении "TORO.dbo.vSubdeptsInBuildings" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.
+      -->
+        <EntityType Name="vSubdeptsInBuildings">
+          <Key>
+            <PropertyRef Name="BuldingName" />
+            <PropertyRef Name="SubDeptName" />
+            <PropertyRef Name="BuildingID" />
+            <PropertyRef Name="SubDeptCode" />
+            <PropertyRef Name="IdSubDept" />
+            <PropertyRef Name="NotAvailable" />
+          </Key>
+          <Property Name="BuldingName" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="SubDeptName" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="BuildingID" Type="int" Nullable="false" />
+          <Property Name="SubDeptCode" Type="int" Nullable="false" />
+          <Property Name="IdSubDept" Type="int" Nullable="false" />
+          <Property Name="NotAvailable" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+      предупреждение 6002: В таблице или представлении "TORO.dbo.vUserFuncionAccess" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.
+      -->
+        <EntityType Name="vUserFuncionAccess">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="FunctionShortName" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="FunctionShortName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="AcessToObject" Type="nvarchar" MaxLength="50" />
+          <Property Name="Action" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+      предупреждение 6002: В таблице или представлении "TORO.dbo.vUsersRoles" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.
+      -->
+        <EntityType Name="vUsersRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="Login" />
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="RoleName" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+        </EntityType>
+        <Association Name="FK_History_movement_NALICH">
+          <End Role="NALICH" Type="Хранилище TOROModel.NALICH" Multiplicity="1" />
+          <End Role="History_movement" Type="Хранилище TOROModel.History_movement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NALICH">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="History_movement">
+              <PropertyRef Name="Equipment_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_History_movement_sprSubDept">
+          <End Role="sprSubDept" Type="Хранилище TOROModel.sprSubDept" Multiplicity="1" />
+          <End Role="History_movement" Type="Хранилище TOROModel.History_movement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprSubDept">
+              <PropertyRef Name="IdSubDept" />
+            </Principal>
+            <Dependent Role="History_movement">
+              <PropertyRef Name="SubdeptID_sender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_History_movement_sprSubDept1">
+          <End Role="sprSubDept" Type="Хранилище TOROModel.sprSubDept" Multiplicity="1" />
+          <End Role="History_movement" Type="Хранилище TOROModel.History_movement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprSubDept">
+              <PropertyRef Name="IdSubDept" />
+            </Principal>
+            <Dependent Role="History_movement">
+              <PropertyRef Name="SubdeptID_recipient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_History_movement_tUsers">
+          <End Role="tUsers" Type="Хранилище TOROModel.tUsers" Multiplicity="1" />
+          <End Role="History_movement" Type="Хранилище TOROModel.History_movement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tUsers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="History_movement">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_History_spisanie_NALICH">
+          <End Role="NALICH" Type="Хранилище TOROModel.NALICH" Multiplicity="1" />
+          <End Role="History_spisanie" Type="Хранилище TOROModel.History_spisanie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NALICH">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="History_spisanie">
+              <PropertyRef Name="Equipment_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_History_spisanie_sprSubDept">
+          <End Role="sprSubDept" Type="Хранилище TOROModel.sprSubDept" Multiplicity="1" />
+          <End Role="History_spisanie" Type="Хранилище TOROModel.History_spisanie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprSubDept">
+              <PropertyRef Name="IdSubDept" />
+            </Principal>
+            <Dependent Role="History_spisanie">
+              <PropertyRef Name="SubdeptID_sender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_History_spisanie_tUsers">
+          <End Role="tUsers" Type="Хранилище TOROModel.tUsers" Multiplicity="1" />
+          <End Role="History_spisanie" Type="Хранилище TOROModel.History_spisanie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tUsers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="History_spisanie">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_logDataChanges_tChangesTypes">
+          <End Role="tChangesTypes" Type="Хранилище TOROModel.tChangesTypes" Multiplicity="1" />
+          <End Role="logDataChanges" Type="Хранилище TOROModel.logDataChanges" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tChangesTypes">
+              <PropertyRef Name="ChangesTypeID" />
+            </Principal>
+            <Dependent Role="logDataChanges">
+              <PropertyRef Name="TypeChangesID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_logDataChanges_tUsers">
+          <End Role="tUsers" Type="Хранилище TOROModel.tUsers" Multiplicity="1" />
+          <End Role="logDataChanges" Type="Хранилище TOROModel.logDataChanges" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tUsers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="logDataChanges">
+              <PropertyRef Name="WhoChangedID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NALICH_sprBuildings">
+          <End Role="sprBuildings" Type="Хранилище TOROModel.sprBuildings" Multiplicity="1" />
+          <End Role="NALICH" Type="Хранилище TOROModel.NALICH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprBuildings">
+              <PropertyRef Name="BuildingID" />
+            </Principal>
+            <Dependent Role="NALICH">
+              <PropertyRef Name="BuildingID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NALICH_sprSubDept">
+          <End Role="sprSubDept" Type="Хранилище TOROModel.sprSubDept" Multiplicity="1" />
+          <End Role="NALICH" Type="Хранилище TOROModel.NALICH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprSubDept">
+              <PropertyRef Name="IdSubDept" />
+            </Principal>
+            <Dependent Role="NALICH">
+              <PropertyRef Name="IdSubDept" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NALICH_tAggregateCodifer">
+          <End Role="tAggregateCodifer" Type="Хранилище TOROModel.tAggregateCodifer" Multiplicity="1" />
+          <End Role="NALICH" Type="Хранилище TOROModel.NALICH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tAggregateCodifer">
+              <PropertyRef Name="SignID" />
+            </Principal>
+            <Dependent Role="NALICH">
+              <PropertyRef Name="AggregateCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NALICH_TypeISGroup">
+          <End Role="TypeISGroup" Type="Хранилище TOROModel.TypeISGroup" Multiplicity="0..1" />
+          <End Role="NALICH" Type="Хранилище TOROModel.NALICH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeISGroup">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="NALICH">
+              <PropertyRef Name="id_TypeIsGroup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_RoleId">
+          <End Role="webpages_Roles" Type="Хранилище TOROModel.webpages_Roles" Multiplicity="1" />
+          <End Role="webpages_UsersInRoles" Type="Хранилище TOROModel.webpages_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="webpages_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="webpages_UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sprEquipment_sprEquipmentGroup">
+          <End Role="sprEquipmentGroup" Type="Хранилище TOROModel.sprEquipmentGroup" Multiplicity="1" />
+          <End Role="sprEquipment" Type="Хранилище TOROModel.sprEquipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprEquipmentGroup">
+              <PropertyRef Name="GroupID" />
+            </Principal>
+            <Dependent Role="sprEquipment">
+              <PropertyRef Name="EquipmentGroup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sprRepairCalc_sprSubDept">
+          <End Role="sprSubDept" Type="Хранилище TOROModel.sprSubDept" Multiplicity="1" />
+          <End Role="sprRepairCalc" Type="Хранилище TOROModel.sprRepairCalc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprSubDept">
+              <PropertyRef Name="IdSubDept" />
+            </Principal>
+            <Dependent Role="sprRepairCalc">
+              <PropertyRef Name="IdSubDept" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sprRepairCycles_sprEquipment">
+          <End Role="sprEquipment" Type="Хранилище TOROModel.sprEquipment" Multiplicity="1" />
+          <End Role="sprRepairCycles" Type="Хранилище TOROModel.sprRepairCycles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprEquipment">
+              <PropertyRef Name="IdEquipment" />
+            </Principal>
+            <Dependent Role="sprRepairCycles">
+              <PropertyRef Name="EquipmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sprSHPZ_sprSubDept">
+          <End Role="sprSubDept" Type="Хранилище TOROModel.sprSubDept" Multiplicity="1" />
+          <End Role="sprSHPZ" Type="Хранилище TOROModel.sprSHPZ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprSubDept">
+              <PropertyRef Name="IdSubDept" />
+            </Principal>
+            <Dependent Role="sprSHPZ">
+              <PropertyRef Name="IdSubDept" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sprSubDeptsInBuildings_sprBuildings">
+          <End Role="sprBuildings" Type="Хранилище TOROModel.sprBuildings" Multiplicity="1" />
+          <End Role="sprSubDeptsInBuildings" Type="Хранилище TOROModel.sprSubDeptsInBuildings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprBuildings">
+              <PropertyRef Name="BuildingID" />
+            </Principal>
+            <Dependent Role="sprSubDeptsInBuildings">
+              <PropertyRef Name="BuildingID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sprSubDeptsInBuildings_sprSubDept">
+          <End Role="sprSubDept" Type="Хранилище TOROModel.sprSubDept" Multiplicity="1" />
+          <End Role="sprSubDeptsInBuildings" Type="Хранилище TOROModel.sprSubDeptsInBuildings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprSubDept">
+              <PropertyRef Name="IdSubDept" />
+            </Principal>
+            <Dependent Role="sprSubDeptsInBuildings">
+              <PropertyRef Name="SubDeptID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tFactWorkTime_NALICH">
+          <End Role="NALICH" Type="Хранилище TOROModel.NALICH" Multiplicity="1" />
+          <End Role="tFactWorkTime" Type="Хранилище TOROModel.tFactWorkTime" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NALICH">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tFactWorkTime">
+              <PropertyRef Name="EquipmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tFunctionAccess_tUserFunctions">
+          <End Role="tUserFunctions" Type="Хранилище TOROModel.tUserFunctions" Multiplicity="1" />
+          <End Role="tFunctionAccess" Type="Хранилище TOROModel.tFunctionAccess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tUserFunctions">
+              <PropertyRef Name="FunctionID" />
+            </Principal>
+            <Dependent Role="tFunctionAccess">
+              <PropertyRef Name="FunctionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tImportantEquipment_NALICH">
+          <End Role="NALICH" Type="Хранилище TOROModel.NALICH" Multiplicity="1" />
+          <End Role="tImportantEquipment" Type="Хранилище TOROModel.tImportantEquipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NALICH">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tImportantEquipment">
+              <PropertyRef Name="EquipmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tImportantEquipment_sprReactors">
+          <End Role="sprReactors" Type="Хранилище TOROModel.sprReactors" Multiplicity="1" />
+          <End Role="tImportantEquipment" Type="Хранилище TOROModel.tImportantEquipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprReactors">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tImportantEquipment">
+              <PropertyRef Name="ReactorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tImportantEquipment_sprReactSafetyClasses">
+          <End Role="sprReactSafetyClasses" Type="Хранилище TOROModel.sprReactSafetyClasses" Multiplicity="1" />
+          <End Role="tImportantEquipment" Type="Хранилище TOROModel.tImportantEquipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprReactSafetyClasses">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tImportantEquipment">
+              <PropertyRef Name="SecurityClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tMainMenuItems_tUserFunctions">
+          <End Role="tUserFunctions" Type="Хранилище TOROModel.tUserFunctions" Multiplicity="1" />
+          <End Role="tMainMenuItems" Type="Хранилище TOROModel.tMainMenuItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tUserFunctions">
+              <PropertyRef Name="FunctionID" />
+            </Principal>
+            <Dependent Role="tMainMenuItems">
+              <PropertyRef Name="FunctionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tUsers_sprSubDept">
+          <End Role="sprSubDept" Type="Хранилище TOROModel.sprSubDept" Multiplicity="0..1" />
+          <End Role="tUsers" Type="Хранилище TOROModel.tUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprSubDept">
+              <PropertyRef Name="IdSubDept" />
+            </Principal>
+            <Dependent Role="tUsers">
+              <PropertyRef Name="SubDeptID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeISGroup_sprGroup1">
+          <End Role="sprGroup" Type="Хранилище TOROModel.sprGroup" Multiplicity="1" />
+          <End Role="TypeISGroup" Type="Хранилище TOROModel.TypeISGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprGroup">
+              <PropertyRef Name="idGroup" />
+            </Principal>
+            <Dependent Role="TypeISGroup">
+              <PropertyRef Name="idGroup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeISGroup_sprMark">
+          <End Role="sprMark" Type="Хранилище TOROModel.sprMark" Multiplicity="0..1" />
+          <End Role="TypeISGroup" Type="Хранилище TOROModel.TypeISGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprMark">
+              <PropertyRef Name="id_mark" />
+            </Principal>
+            <Dependent Role="TypeISGroup">
+              <PropertyRef Name="idMark" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeISGroup_sprModel">
+          <End Role="sprModel" Type="Хранилище TOROModel.sprModel" Multiplicity="0..1" />
+          <End Role="TypeISGroup" Type="Хранилище TOROModel.TypeISGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprModel">
+              <PropertyRef Name="id_model" />
+            </Principal>
+            <Dependent Role="TypeISGroup">
+              <PropertyRef Name="idModel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeISGroup_sprSubGroup1">
+          <End Role="sprSubGroup" Type="Хранилище TOROModel.sprSubGroup" Multiplicity="0..1" />
+          <End Role="TypeISGroup" Type="Хранилище TOROModel.TypeISGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprSubGroup">
+              <PropertyRef Name="idSubGroup" />
+            </Principal>
+            <Dependent Role="TypeISGroup">
+              <PropertyRef Name="idSubGroup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeISGroup_sprTypeOfEquipment">
+          <End Role="sprTypeOfEquipment" Type="Хранилище TOROModel.sprTypeOfEquipment" Multiplicity="1" />
+          <End Role="TypeISGroup" Type="Хранилище TOROModel.TypeISGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprTypeOfEquipment">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TypeISGroup">
+              <PropertyRef Name="idType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_UserId">
+          <End Role="tUsers" Type="Хранилище TOROModel.tUsers" Multiplicity="1" />
+          <End Role="webpages_UsersInRoles" Type="Хранилище TOROModel.webpages_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tUsers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="webpages_UsersInRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_webpages_Membership_tUsers">
+          <End Role="tUsers" Type="Хранилище TOROModel.tUsers" Multiplicity="1" />
+          <End Role="webpages_Membership" Type="Хранилище TOROModel.webpages_Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tUsers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="webpages_Membership">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TOROModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PPREntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="logDataChanges" EntityType="TOROModel.logDataChanges" />
+          <EntitySet Name="NALICH" EntityType="TOROModel.NALICH" />
+          <EntitySet Name="SBEZRU" EntityType="TOROModel.SBEZRU" />
+          <EntitySet Name="sprBrigad" EntityType="TOROModel.sprBrigad" />
+          <EntitySet Name="sprBuildings" EntityType="TOROModel.sprBuildings" />
+          <EntitySet Name="sprEquipment" EntityType="TOROModel.sprEquipment" />
+          <EntitySet Name="sprEquipmentGroup" EntityType="TOROModel.sprEquipmentGroup" />
+          <EntitySet Name="sprGroup" EntityType="TOROModel.sprGroup" />
+          <EntitySet Name="sprMark" EntityType="TOROModel.sprMark" />
+          <EntitySet Name="sprModel" EntityType="TOROModel.sprModel" />
+          <EntitySet Name="sprNetsSystemsFacility" EntityType="TOROModel.sprNetsSystemsFacility" />
+          <EntitySet Name="sprReactOperationMode" EntityType="TOROModel.sprReactOperationMode" />
+          <EntitySet Name="sprReactors" EntityType="TOROModel.sprReactors" />
+          <EntitySet Name="sprReactSafetyClasses" EntityType="TOROModel.sprReactSafetyClasses" />
+          <EntitySet Name="sprReairWork" EntityType="TOROModel.sprReairWork" />
+          <EntitySet Name="sprReasonSheduleDeviation" EntityType="TOROModel.sprReasonSheduleDeviation" />
+          <EntitySet Name="sprRepairCalc" EntityType="TOROModel.sprRepairCalc" />
+          <EntitySet Name="sprRepairCycles" EntityType="TOROModel.sprRepairCycles" />
+          <EntitySet Name="sprRepairMethods" EntityType="TOROModel.sprRepairMethods" />
+          <EntitySet Name="sprRepairTypes" EntityType="TOROModel.sprRepairTypes" />
+          <EntitySet Name="sprSeasonRepair" EntityType="TOROModel.sprSeasonRepair" />
+          <EntitySet Name="sprSHPZ" EntityType="TOROModel.sprSHPZ" />
+          <EntitySet Name="sprStartStopWorkLimit" EntityType="TOROModel.sprStartStopWorkLimit" />
+          <EntitySet Name="sprSubDept" EntityType="TOROModel.sprSubDept" />
+          <EntitySet Name="sprSubGroup" EntityType="TOROModel.sprSubGroup" />
+          <EntitySet Name="sprTypeOfEquipment" EntityType="TOROModel.sprTypeOfEquipment" />
+          <EntitySet Name="sysdiagrams" EntityType="TOROModel.sysdiagrams" />
+          <EntitySet Name="tAggregateCodifer" EntityType="TOROModel.tAggregateCodifer" />
+          <EntitySet Name="tChangesTypes" EntityType="TOROModel.tChangesTypes" />
+          <EntitySet Name="tFactWorkTime" EntityType="TOROModel.tFactWorkTime" />
+          <EntitySet Name="tFunctionAccess" EntityType="TOROModel.tFunctionAccess" />
+          <EntitySet Name="tImportantEquipment" EntityType="TOROModel.tImportantEquipment" />
+          <EntitySet Name="tMainMenuItems" EntityType="TOROModel.tMainMenuItems" />
+          <EntitySet Name="tTypeEquipmentCatalog" EntityType="TOROModel.tTypeEquipmentCatalog" />
+          <EntitySet Name="tUserFunctions" EntityType="TOROModel.tUserFunctions" />
+          <EntitySet Name="tUsers" EntityType="TOROModel.tUsers" />
+          <EntitySet Name="TypeISGroup" EntityType="TOROModel.TypeISGroup" />
+          <EntitySet Name="webpages_Membership" EntityType="TOROModel.webpages_Membership" />
+          <EntitySet Name="webpages_OAuthMembership" EntityType="TOROModel.webpages_OAuthMembership" />
+          <EntitySet Name="webpages_Roles" EntityType="TOROModel.webpages_Roles" />
+          <EntitySet Name="vRolesFunctionAccess" EntityType="TOROModel.vRolesFunctionAccess" />
+          <EntitySet Name="vsprSeasonRepairDepend" EntityType="TOROModel.vsprSeasonRepairDepend" />
+          <EntitySet Name="vSubdeptsInBuildings" EntityType="TOROModel.vSubdeptsInBuildings" />
+          <EntitySet Name="vUserFuncionAccess" EntityType="TOROModel.vUserFuncionAccess" />
+          <EntitySet Name="vUsersRoles" EntityType="TOROModel.vUsersRoles" />
+          <AssociationSet Name="FK_logDataChanges_tChangesTypes" Association="TOROModel.FK_logDataChanges_tChangesTypes">
+            <End Role="tChangesTypes" EntitySet="tChangesTypes" />
+            <End Role="logDataChanges" EntitySet="logDataChanges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_logDataChanges_tUsers" Association="TOROModel.FK_logDataChanges_tUsers">
+            <End Role="tUsers" EntitySet="tUsers" />
+            <End Role="logDataChanges" EntitySet="logDataChanges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NALICH_sprBuildings" Association="TOROModel.FK_NALICH_sprBuildings">
+            <End Role="sprBuildings" EntitySet="sprBuildings" />
+            <End Role="NALICH" EntitySet="NALICH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NALICH_sprSubDept" Association="TOROModel.FK_NALICH_sprSubDept">
+            <End Role="sprSubDept" EntitySet="sprSubDept" />
+            <End Role="NALICH" EntitySet="NALICH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NALICH_tAggregateCodifer" Association="TOROModel.FK_NALICH_tAggregateCodifer">
+            <End Role="tAggregateCodifer" EntitySet="tAggregateCodifer" />
+            <End Role="NALICH" EntitySet="NALICH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NALICH_TypeISGroup" Association="TOROModel.FK_NALICH_TypeISGroup">
+            <End Role="TypeISGroup" EntitySet="TypeISGroup" />
+            <End Role="NALICH" EntitySet="NALICH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tFactWorkTime_NALICH" Association="TOROModel.FK_tFactWorkTime_NALICH">
+            <End Role="NALICH" EntitySet="NALICH" />
+            <End Role="tFactWorkTime" EntitySet="tFactWorkTime" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tImportantEquipment_NALICH" Association="TOROModel.FK_tImportantEquipment_NALICH">
+            <End Role="NALICH" EntitySet="NALICH" />
+            <End Role="tImportantEquipment" EntitySet="tImportantEquipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sprEquipment_sprEquipmentGroup" Association="TOROModel.FK_sprEquipment_sprEquipmentGroup">
+            <End Role="sprEquipmentGroup" EntitySet="sprEquipmentGroup" />
+            <End Role="sprEquipment" EntitySet="sprEquipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sprRepairCycles_sprEquipment" Association="TOROModel.FK_sprRepairCycles_sprEquipment">
+            <End Role="sprEquipment" EntitySet="sprEquipment" />
+            <End Role="sprRepairCycles" EntitySet="sprRepairCycles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeISGroup_sprGroup1" Association="TOROModel.FK_TypeISGroup_sprGroup1">
+            <End Role="sprGroup" EntitySet="sprGroup" />
+            <End Role="TypeISGroup" EntitySet="TypeISGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeISGroup_sprMark" Association="TOROModel.FK_TypeISGroup_sprMark">
+            <End Role="sprMark" EntitySet="sprMark" />
+            <End Role="TypeISGroup" EntitySet="TypeISGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeISGroup_sprModel" Association="TOROModel.FK_TypeISGroup_sprModel">
+            <End Role="sprModel" EntitySet="sprModel" />
+            <End Role="TypeISGroup" EntitySet="TypeISGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tImportantEquipment_sprReactors" Association="TOROModel.FK_tImportantEquipment_sprReactors">
+            <End Role="sprReactors" EntitySet="sprReactors" />
+            <End Role="tImportantEquipment" EntitySet="tImportantEquipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tImportantEquipment_sprReactSafetyClasses" Association="TOROModel.FK_tImportantEquipment_sprReactSafetyClasses">
+            <End Role="sprReactSafetyClasses" EntitySet="sprReactSafetyClasses" />
+            <End Role="tImportantEquipment" EntitySet="tImportantEquipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sprRepairCalc_sprSubDept" Association="TOROModel.FK_sprRepairCalc_sprSubDept">
+            <End Role="sprSubDept" EntitySet="sprSubDept" />
+            <End Role="sprRepairCalc" EntitySet="sprRepairCalc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sprSHPZ_sprSubDept" Association="TOROModel.FK_sprSHPZ_sprSubDept">
+            <End Role="sprSubDept" EntitySet="sprSubDept" />
+            <End Role="sprSHPZ" EntitySet="sprSHPZ" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tUsers_sprSubDept" Association="TOROModel.FK_tUsers_sprSubDept">
+            <End Role="sprSubDept" EntitySet="sprSubDept" />
+            <End Role="tUsers" EntitySet="tUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeISGroup_sprSubGroup1" Association="TOROModel.FK_TypeISGroup_sprSubGroup1">
+            <End Role="sprSubGroup" EntitySet="sprSubGroup" />
+            <End Role="TypeISGroup" EntitySet="TypeISGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeISGroup_sprTypeOfEquipment" Association="TOROModel.FK_TypeISGroup_sprTypeOfEquipment">
+            <End Role="sprTypeOfEquipment" EntitySet="sprTypeOfEquipment" />
+            <End Role="TypeISGroup" EntitySet="TypeISGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tFunctionAccess_tUserFunctions" Association="TOROModel.FK_tFunctionAccess_tUserFunctions">
+            <End Role="tUserFunctions" EntitySet="tUserFunctions" />
+            <End Role="tFunctionAccess" EntitySet="tFunctionAccess" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tMainMenuItems_tUserFunctions" Association="TOROModel.FK_tMainMenuItems_tUserFunctions">
+            <End Role="tUserFunctions" EntitySet="tUserFunctions" />
+            <End Role="tMainMenuItems" EntitySet="tMainMenuItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_webpages_Membership_tUsers" Association="TOROModel.FK_webpages_Membership_tUsers">
+            <End Role="tUsers" EntitySet="tUsers" />
+            <End Role="webpages_Membership" EntitySet="webpages_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="sprSubDeptsInBuildings" Association="TOROModel.sprSubDeptsInBuildings">
+            <End Role="sprBuildings" EntitySet="sprBuildings" />
+            <End Role="sprSubDept" EntitySet="sprSubDept" />
+          </AssociationSet>
+          <AssociationSet Name="webpages_UsersInRoles" Association="TOROModel.webpages_UsersInRoles">
+            <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+            <End Role="tUsers" EntitySet="tUsers" />
+          </AssociationSet>
+          <EntitySet Name="history_move" EntityType="TOROModel.history_move" />
+          <EntitySet Name="History_movement" EntityType="TOROModel.History_movement" />
+          <AssociationSet Name="FK_History_movement_NALICH" Association="TOROModel.FK_History_movement_NALICH">
+            <End Role="NALICH" EntitySet="NALICH" />
+            <End Role="History_movement" EntitySet="History_movement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_History_movement_sprSubDept" Association="TOROModel.FK_History_movement_sprSubDept">
+            <End Role="sprSubDept" EntitySet="sprSubDept" />
+            <End Role="History_movement" EntitySet="History_movement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_History_movement_sprSubDept1" Association="TOROModel.FK_History_movement_sprSubDept1">
+            <End Role="sprSubDept" EntitySet="sprSubDept" />
+            <End Role="History_movement" EntitySet="History_movement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_History_movement_tUsers" Association="TOROModel.FK_History_movement_tUsers">
+            <End Role="tUsers" EntitySet="tUsers" />
+            <End Role="History_movement" EntitySet="History_movement" />
+          </AssociationSet>
+          <EntitySet Name="History_spisanie" EntityType="TOROModel.History_spisanie" />
+          <AssociationSet Name="FK_History_spisanie_NALICH" Association="TOROModel.FK_History_spisanie_NALICH">
+            <End Role="NALICH" EntitySet="NALICH" />
+            <End Role="History_spisanie" EntitySet="History_spisanie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_History_spisanie_sprSubDept" Association="TOROModel.FK_History_spisanie_sprSubDept">
+            <End Role="sprSubDept" EntitySet="sprSubDept" />
+            <End Role="History_spisanie" EntitySet="History_spisanie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_History_spisanie_tUsers" Association="TOROModel.FK_History_spisanie_tUsers">
+            <End Role="tUsers" EntitySet="tUsers" />
+            <End Role="History_spisanie" EntitySet="History_spisanie" />
+          </AssociationSet>
+          <EntitySet Name="spisanie_history" EntityType="TOROModel.spisanie_history" />
+          <EntitySet Name="ElectronicArchive" EntityType="TOROModel.ElectronicArchive" />
+        </EntityContainer>
+        <EntityType Name="logDataChanges">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="WhoChangedID" Type="Int32" Nullable="false" />
+          <Property Name="WhatTableChanged" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ChangedRecordID" Type="Int32" Nullable="false" />
+          <Property Name="ChangedColumnName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ChangesDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OldValueNumber" Type="Int32" />
+          <Property Name="OldValueText" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="OldValueFloat" Type="Single" />
+          <Property Name="OldValueDate" Type="DateTime" Precision="3" />
+          <Property Name="OldValueBool" Type="Boolean" />
+          <Property Name="TypeChangesID" Type="Int32" Nullable="false" />
+          <Property Name="TableIDColumnName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tChangesTypes" Relationship="TOROModel.FK_logDataChanges_tChangesTypes" FromRole="logDataChanges" ToRole="tChangesTypes" />
+          <NavigationProperty Name="tUsers" Relationship="TOROModel.FK_logDataChanges_tUsers" FromRole="logDataChanges" ToRole="tUsers" />
+        </EntityType>
+        <EntityType Name="NALICH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="KODOP" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="KODKOR" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="DATAZAP" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="IdSubDept" Type="Int32" Nullable="false" />
+          <Property Name="BuildingID" Type="Int32" Nullable="false" />
+          <Property Name="W" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="G" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="P" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="M" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PODSD" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="INWNOM" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="AggregateCode" Type="Int32" Nullable="false" />
+          <Property Name="REGNO" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="NAIMOB" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="MARKA" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ZAWNO" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ZAWOD" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="GODWYP" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="DWWOD" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="WUST" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="KSUST" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="KPUST" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="POM" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="SPOSK" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="SPOST" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="SPOSTO" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="SMEN" Type="Double" />
+          <Property Name="KOLTEK" Type="Double" />
+          <Property Name="WRASCH" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="KOLKSTR" Type="Double" />
+          <Property Name="KOLTSTR" Type="Double" />
+          <Property Name="KOLOSTR" Type="Double" />
+          <Property Name="PER" Type="Double" />
+          <Property Name="SHIFWR" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="KUSE" Type="Double" />
+          <Property Name="KUSM" Type="Double" />
+          <Property Name="KATM" Type="Double" />
+          <Property Name="KATE" Type="Double" />
+          <Property Name="TRUDK" Type="Double" />
+          <Property Name="TRUDT" Type="Double" />
+          <Property Name="TRUDTO" Type="Double" />
+          <Property Name="STOIM" Type="Double" />
+          <Property Name="OBOZN" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="NTEX" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="DPKAP" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="KOLKAP" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="WPR" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="NPR" Type="Double" />
+          <Property Name="DPR" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="DATA" Type="DateTime" Precision="3" />
+          <Property Name="MainOGE" Type="Boolean" Nullable="false" />
+          <Property Name="SubjectToInspection" Type="Boolean" Nullable="false" />
+          <Property Name="ImportantToSafety" Type="Boolean" Nullable="false" />
+          <Property Name="StartUpDate" Type="DateTime" Precision="0" />
+          <Property Name="id_Type" Type="Int32" Nullable="false" />
+          <Property Name="id_Group" Type="Int32" />
+          <Property Name="id_SubGroup" Type="Int32" />
+          <Property Name="id_Mark" Type="Int32" />
+          <Property Name="id_Model" Type="Int32" />
+          <Property Name="int_P" Type="Int32" />
+          <Property Name="id_TypeIsGroup" Type="Int32" />
+          <NavigationProperty Name="sprBuildings" Relationship="TOROModel.FK_NALICH_sprBuildings" FromRole="NALICH" ToRole="sprBuildings" />
+          <NavigationProperty Name="sprSubDept" Relationship="TOROModel.FK_NALICH_sprSubDept" FromRole="NALICH" ToRole="sprSubDept" />
+          <NavigationProperty Name="tAggregateCodifer" Relationship="TOROModel.FK_NALICH_tAggregateCodifer" FromRole="NALICH" ToRole="tAggregateCodifer" />
+          <NavigationProperty Name="TypeISGroup" Relationship="TOROModel.FK_NALICH_TypeISGroup" FromRole="NALICH" ToRole="TypeISGroup" />
+          <NavigationProperty Name="tFactWorkTime" Relationship="TOROModel.FK_tFactWorkTime_NALICH" FromRole="NALICH" ToRole="tFactWorkTime" />
+          <NavigationProperty Name="tImportantEquipment" Relationship="TOROModel.FK_tImportantEquipment_NALICH" FromRole="NALICH" ToRole="tImportantEquipment" />
+          <NavigationProperty Name="History_movement" Relationship="TOROModel.FK_History_movement_NALICH" FromRole="NALICH" ToRole="History_movement" />
+          <NavigationProperty Name="History_spisanie" Relationship="TOROModel.FK_History_spisanie_NALICH" FromRole="NALICH" ToRole="History_spisanie" />
+          <Property Type="Boolean" Name="status_spisanie" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SBEZRU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="REGNO" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PRAG" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="KLGBEZ" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="RU" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="sprBrigad">
+          <Key>
+            <PropertyRef Name="KBR" />
+          </Key>
+          <Property Name="KBR" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="MASTER" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="FIOBR" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="KOLRAB" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="NKW" Type="Double" />
+          <Property Name="PLF" Type="Double" />
+          <Property Name="TRPPR" Type="Double" />
+          <Property Name="NKOR" Type="Double" />
+          <Property Name="TRBR" Type="Double" />
+        </EntityType>
+        <EntityType Name="sprBuildings">
+          <Key>
+            <PropertyRef Name="BuildingID" />
+          </Key>
+          <Property Name="BuildingID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="BuldingName" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="NotAvailable" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="NALICH" Relationship="TOROModel.FK_NALICH_sprBuildings" FromRole="sprBuildings" ToRole="NALICH" />
+          <NavigationProperty Name="sprSubDept" Relationship="TOROModel.sprSubDeptsInBuildings" FromRole="sprBuildings" ToRole="sprSubDept" />
+        </EntityType>
+        <EntityType Name="sprEquipment">
+          <Key>
+            <PropertyRef Name="IdEquipment" />
+          </Key>
+          <Property Name="IdEquipment" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="W" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="EquipmentGroup" Type="Int32" Nullable="false" />
+          <Property Name="SubGroup" Type="Int32" />
+          <Property Name="Model" Type="Int32" />
+          <Property Name="GroupName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="SubGroupName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Mark" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="symbol_g" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="symbol_p" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="sprEquipmentGroup" Relationship="TOROModel.FK_sprEquipment_sprEquipmentGroup" FromRole="sprEquipment" ToRole="sprEquipmentGroup" />
+          <NavigationProperty Name="sprRepairCycles" Relationship="TOROModel.FK_sprRepairCycles_sprEquipment" FromRole="sprEquipment" ToRole="sprRepairCycles" />
+        </EntityType>
+        <EntityType Name="sprEquipmentGroup">
+          <Key>
+            <PropertyRef Name="GroupID" />
+          </Key>
+          <Property Name="GroupID" Type="Int32" Nullable="false" />
+          <Property Name="GroupName" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="SymbolID" Type="String" MaxLength="225" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="sprEquipment" Relationship="TOROModel.FK_sprEquipment_sprEquipmentGroup" FromRole="sprEquipmentGroup" ToRole="sprEquipment" />
+        </EntityType>
+        <EntityType Name="sprGroup">
+          <Key>
+            <PropertyRef Name="idGroup" />
+          </Key>
+          <Property Name="idGroup" Type="Int32" Nullable="false" />
+          <Property Name="GroupName" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="TypeISGroup" Relationship="TOROModel.FK_TypeISGroup_sprGroup1" FromRole="sprGroup" ToRole="TypeISGroup" />
+        </EntityType>
+        <EntityType Name="sprMark">
+          <Key>
+            <PropertyRef Name="id_mark" />
+          </Key>
+          <Property Name="id_mark" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="mark" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="TypeISGroup" Relationship="TOROModel.FK_TypeISGroup_sprMark" FromRole="sprMark" ToRole="TypeISGroup" />
+        </EntityType>
+        <EntityType Name="sprModel">
+          <Key>
+            <PropertyRef Name="id_model" />
+          </Key>
+          <Property Name="id_model" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="model" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="TypeISGroup" Relationship="TOROModel.FK_TypeISGroup_sprModel" FromRole="sprModel" ToRole="TypeISGroup" />
+        </EntityType>
+        <EntityType Name="sprNetsSystemsFacility">
+          <Key>
+            <PropertyRef Name="TypeID" />
+          </Key>
+          <Property Name="TypeID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="sprReactOperationMode">
+          <Key>
+            <PropertyRef Name="ModeID" />
+          </Key>
+          <Property Name="ModeID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="OperationModeName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="sprReactors">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tImportantEquipment" Relationship="TOROModel.FK_tImportantEquipment_sprReactors" FromRole="sprReactors" ToRole="tImportantEquipment" />
+        </EntityType>
+        <EntityType Name="sprReactSafetyClasses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ClassName" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tImportantEquipment" Relationship="TOROModel.FK_tImportantEquipment_sprReactSafetyClasses" FromRole="sprReactSafetyClasses" ToRole="tImportantEquipment" />
+        </EntityType>
+        <EntityType Name="sprReairWork">
+          <Key>
+            <PropertyRef Name="WorkID" />
+          </Key>
+          <Property Name="WorkID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="WorkName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="sprReasonSheduleDeviation">
+          <Key>
+            <PropertyRef Name="ReasonID" />
+          </Key>
+          <Property Name="ReasonID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ReasonName" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="sprRepairCalc">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdSubDept" Type="Int32" Nullable="false" />
+          <Property Name="Year" Type="Int32" />
+          <Property Name="QuarterNumber" Type="Int32" />
+          <Property Name="RepairPriceC" Type="Double" />
+          <Property Name="MaterialPriceC" Type="Double" />
+          <Property Name="RepairPriceP" Type="Double" />
+          <Property Name="MaterialPriceP" Type="Double" />
+          <Property Name="RepairPriceO" Type="Double" />
+          <Property Name="MaterialPriceO" Type="Double" />
+          <NavigationProperty Name="sprSubDept" Relationship="TOROModel.FK_sprRepairCalc_sprSubDept" FromRole="sprRepairCalc" ToRole="sprSubDept" />
+        </EntityType>
+        <EntityType Name="sprRepairCycles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="EquipmentID" Type="Int32" Nullable="false" />
+          <Property Name="EquipmentName" Type="String" Nullable="false" MaxLength="350" Unicode="true" FixedLength="false" />
+          <Property Name="MajorCoeff" Type="Int32" />
+          <Property Name="CurrentCoeff" Type="Int32" />
+          <Property Name="InspectionCoeff" Type="Int32" />
+          <Property Name="Period" Type="Int32" />
+          <NavigationProperty Name="sprEquipment" Relationship="TOROModel.FK_sprRepairCycles_sprEquipment" FromRole="sprRepairCycles" ToRole="sprEquipment" />
+        </EntityType>
+        <EntityType Name="sprRepairMethods">
+          <Key>
+            <PropertyRef Name="IdRepairMethod" />
+          </Key>
+          <Property Name="IdRepairMethod" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RepairMethodFullName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="RepairMethodShortName" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="sprRepairTypes">
+          <Key>
+            <PropertyRef Name="IdRepairType" />
+          </Key>
+          <Property Name="IdRepairType" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RepairTypeFullName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="RepairTypeShortName" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="sprSeasonRepair">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Availability" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="sprSHPZ">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdSubDept" Type="Int32" Nullable="false" />
+          <Property Name="RepairType" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="RepairMethod" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="BalanceBill" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="CostElements" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="CostParticle" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="sprSubDept" Relationship="TOROModel.FK_sprSHPZ_sprSubDept" FromRole="sprSHPZ" ToRole="sprSubDept" />
+        </EntityType>
+        <EntityType Name="sprStartStopWorkLimit">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="StartStopWorkLimit" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="sprSubDept">
+          <Key>
+            <PropertyRef Name="IdSubDept" />
+          </Key>
+          <Property Name="IdSubDept" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="SubDeptCode" Type="Int32" Nullable="false" />
+          <Property Name="SubDeptName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="AdjustmentDate" Type="DateTime" Precision="3" />
+          <Property Name="ShortName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="NALICH" Relationship="TOROModel.FK_NALICH_sprSubDept" FromRole="sprSubDept" ToRole="NALICH" />
+          <NavigationProperty Name="sprRepairCalc" Relationship="TOROModel.FK_sprRepairCalc_sprSubDept" FromRole="sprSubDept" ToRole="sprRepairCalc" />
+          <NavigationProperty Name="sprSHPZ" Relationship="TOROModel.FK_sprSHPZ_sprSubDept" FromRole="sprSubDept" ToRole="sprSHPZ" />
+          <NavigationProperty Name="tUsers" Relationship="TOROModel.FK_tUsers_sprSubDept" FromRole="sprSubDept" ToRole="tUsers" />
+          <NavigationProperty Name="sprBuildings" Relationship="TOROModel.sprSubDeptsInBuildings" FromRole="sprSubDept" ToRole="sprBuildings" />
+          <NavigationProperty Name="History_movement" Relationship="TOROModel.FK_History_movement_sprSubDept" FromRole="sprSubDept" ToRole="History_movement" />
+          <NavigationProperty Name="History_movement1" Relationship="TOROModel.FK_History_movement_sprSubDept1" FromRole="sprSubDept" ToRole="History_movement" />
+          <NavigationProperty Name="History_spisanie" Relationship="TOROModel.FK_History_spisanie_sprSubDept" FromRole="sprSubDept" ToRole="History_spisanie" />
+          </EntityType>
+        <EntityType Name="sprSubGroup">
+          <Key>
+            <PropertyRef Name="idSubGroup" />
+          </Key>
+          <Property Name="idSubGroup" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="SubGroupName" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="TypeISGroup" Relationship="TOROModel.FK_TypeISGroup_sprSubGroup1" FromRole="sprSubGroup" ToRole="TypeISGroup" />
+        </EntityType>
+        <EntityType Name="sprTypeOfEquipment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeOfEquipment" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="TypeCode" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="TypeISGroup" Relationship="TOROModel.FK_TypeISGroup_sprTypeOfEquipment" FromRole="sprTypeOfEquipment" ToRole="TypeISGroup" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tAggregateCodifer">
+          <Key>
+            <PropertyRef Name="SignID" />
+          </Key>
+          <Property Name="SignID" Type="Int32" Nullable="false" />
+          <Property Name="SignName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="SignCode" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="NALICH" Relationship="TOROModel.FK_NALICH_tAggregateCodifer" FromRole="tAggregateCodifer" ToRole="NALICH" />
+        </EntityType>
+        <EntityType Name="tChangesTypes">
+          <Key>
+            <PropertyRef Name="ChangesTypeID" />
+          </Key>
+          <Property Name="ChangesTypeID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ChangesTypeName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="logDataChanges" Relationship="TOROModel.FK_logDataChanges_tChangesTypes" FromRole="tChangesTypes" ToRole="logDataChanges" />
+        </EntityType>
+        <EntityType Name="tFactWorkTime">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="EquipmentID" Type="Int32" Nullable="false" />
+          <Property Name="EquipmentRegNum" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="FactWorkHours" Type="Int32" Nullable="false" />
+          <Property Name="AverageStatHours" Type="Int32" Nullable="false" />
+          <Property Name="RecordDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastPeriodStart" Type="DateTime" Precision="3" />
+          <Property Name="LastPeriodEnd" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="NALICH" Relationship="TOROModel.FK_tFactWorkTime_NALICH" FromRole="tFactWorkTime" ToRole="NALICH" />
+        </EntityType>
+        <EntityType Name="tFunctionAccess">
+          <Key>
+            <PropertyRef Name="AccessRecordID" />
+          </Key>
+          <Property Name="AccessRecordID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FunctionID" Type="Int32" Nullable="false" />
+          <Property Name="IsAvailableTo" Type="Int32" Nullable="false" />
+          <Property Name="AccessTypeUser" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tUserFunctions" Relationship="TOROModel.FK_tFunctionAccess_tUserFunctions" FromRole="tFunctionAccess" ToRole="tUserFunctions" />
+        </EntityType>
+        <EntityType Name="tImportantEquipment">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="EquipmentID" Type="Int32" Nullable="false" />
+          <Property Name="SecurityClassID" Type="Int32" Nullable="false" />
+          <Property Name="ReactorID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="NALICH" Relationship="TOROModel.FK_tImportantEquipment_NALICH" FromRole="tImportantEquipment" ToRole="NALICH" />
+          <NavigationProperty Name="sprReactors" Relationship="TOROModel.FK_tImportantEquipment_sprReactors" FromRole="tImportantEquipment" ToRole="sprReactors" />
+          <NavigationProperty Name="sprReactSafetyClasses" Relationship="TOROModel.FK_tImportantEquipment_sprReactSafetyClasses" FromRole="tImportantEquipment" ToRole="sprReactSafetyClasses" />
+        </EntityType>
+        <EntityType Name="tMainMenuItems">
+          <Key>
+            <PropertyRef Name="MenuItemID" />
+          </Key>
+          <Property Name="MenuItemID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="MenuItemName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="FunctionID" Type="Int32" Nullable="false" />
+          <Property Name="ParentID" Type="Int32" />
+          <Property Name="RussianName" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="ItemPriority" Type="Int32" Nullable="false" />
+          <Property Name="URLPath" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tUserFunctions" Relationship="TOROModel.FK_tMainMenuItems_tUserFunctions" FromRole="tMainMenuItems" ToRole="tUserFunctions" />
+        </EntityType>
+        <EntityType Name="tTypeEquipmentCatalog">
+          <Key>
+            <PropertyRef Name="ServiceID" />
+          </Key>
+          <Property Name="ServiceID" Type="Int32" Nullable="false" />
+          <Property Name="TypeEquipmentID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tUserFunctions">
+          <Key>
+            <PropertyRef Name="FunctionID" />
+          </Key>
+          <Property Name="FunctionID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FunctionName" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="FunctionShortName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="AcessToObject" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Action" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tFunctionAccess" Relationship="TOROModel.FK_tFunctionAccess_tUserFunctions" FromRole="tUserFunctions" ToRole="tFunctionAccess" />
+          <NavigationProperty Name="tMainMenuItems" Relationship="TOROModel.FK_tMainMenuItems_tUserFunctions" FromRole="tUserFunctions" ToRole="tMainMenuItems" />
+        </EntityType>
+        <EntityType Name="tUsers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FIO" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Login" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SubDeptID" Type="Int32" />
+          <Property Name="Position" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="logDataChanges" Relationship="TOROModel.FK_logDataChanges_tUsers" FromRole="tUsers" ToRole="logDataChanges" />
+          <NavigationProperty Name="sprSubDept" Relationship="TOROModel.FK_tUsers_sprSubDept" FromRole="tUsers" ToRole="sprSubDept" />
+          <NavigationProperty Name="webpages_Membership" Relationship="TOROModel.FK_webpages_Membership_tUsers" FromRole="tUsers" ToRole="webpages_Membership" />
+          <NavigationProperty Name="webpages_Roles" Relationship="TOROModel.webpages_UsersInRoles" FromRole="tUsers" ToRole="webpages_Roles" />
+          <NavigationProperty Name="History_movement" Relationship="TOROModel.FK_History_movement_tUsers" FromRole="tUsers" ToRole="History_movement" />
+          <NavigationProperty Name="History_spisanie" Relationship="TOROModel.FK_History_spisanie_tUsers" FromRole="tUsers" ToRole="History_spisanie" />
+        </EntityType>
+        <EntityType Name="TypeISGroup">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="idType" Type="Int32" Nullable="false" />
+          <Property Name="idGroup" Type="Int32" Nullable="false" />
+          <Property Name="idSubGroup" Type="Int32" />
+          <Property Name="idMark" Type="Int32" />
+          <Property Name="idModel" Type="Int32" />
+          <Property Name="oldValue" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="NALICH" Relationship="TOROModel.FK_NALICH_TypeISGroup" FromRole="TypeISGroup" ToRole="NALICH" />
+          <NavigationProperty Name="sprGroup" Relationship="TOROModel.FK_TypeISGroup_sprGroup1" FromRole="TypeISGroup" ToRole="sprGroup" />
+          <NavigationProperty Name="sprMark" Relationship="TOROModel.FK_TypeISGroup_sprMark" FromRole="TypeISGroup" ToRole="sprMark" />
+          <NavigationProperty Name="sprModel" Relationship="TOROModel.FK_TypeISGroup_sprModel" FromRole="TypeISGroup" ToRole="sprModel" />
+          <NavigationProperty Name="sprSubGroup" Relationship="TOROModel.FK_TypeISGroup_sprSubGroup1" FromRole="TypeISGroup" ToRole="sprSubGroup" />
+          <NavigationProperty Name="sprTypeOfEquipment" Relationship="TOROModel.FK_TypeISGroup_sprTypeOfEquipment" FromRole="TypeISGroup" ToRole="sprTypeOfEquipment" />
+        </EntityType>
+        <EntityType Name="webpages_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ConfirmationToken" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="IsConfirmed" Type="Boolean" />
+          <Property Name="LastPasswordFailureDate" Type="DateTime" Precision="3" />
+          <Property Name="PasswordFailuresSinceLastSuccess" Type="Int32" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordChangedDate" Type="DateTime" Precision="3" />
+          <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordVerificationToken" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordVerificationTokenExpirationDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tUsers" Relationship="TOROModel.FK_webpages_Membership_tUsers" FromRole="webpages_Membership" ToRole="tUsers" />
+        </EntityType>
+        <EntityType Name="webpages_OAuthMembership">
+          <Key>
+            <PropertyRef Name="Provider" />
+            <PropertyRef Name="ProviderUserId" />
+          </Key>
+          <Property Name="Provider" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="ProviderUserId" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tUsers" Relationship="TOROModel.webpages_UsersInRoles" FromRole="webpages_Roles" ToRole="tUsers" />
+        </EntityType>
+        <EntityType Name="vRolesFunctionAccess">
+          <Key>
+            <PropertyRef Name="RoleID" />
+            <PropertyRef Name="FunctionShortName" />
+            <PropertyRef Name="FunctionName" />
+          </Key>
+          <Property Name="RoleID" Type="Int32" Nullable="false" />
+          <Property Name="FunctionShortName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="AcessToObject" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Action" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="FunctionName" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="vsprSeasonRepairDepend">
+          <Key>
+            <PropertyRef Name="AvailabilityID" />
+            <PropertyRef Name="Availability" />
+            <PropertyRef Name="EarlyStartRepairID" />
+            <PropertyRef Name="StartWorkLimit" />
+            <PropertyRef Name="LateStopRepairID" />
+            <PropertyRef Name="StopWorkLimit" />
+          </Key>
+          <Property Name="AvailabilityID" Type="Int32" Nullable="false" />
+          <Property Name="Availability" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="EarlyStartRepairID" Type="Int32" Nullable="false" />
+          <Property Name="StartWorkLimit" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LateStopRepairID" Type="Int32" Nullable="false" />
+          <Property Name="StopWorkLimit" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="vSubdeptsInBuildings">
+          <Key>
+            <PropertyRef Name="BuldingName" />
+            <PropertyRef Name="SubDeptName" />
+            <PropertyRef Name="BuildingID" />
+            <PropertyRef Name="SubDeptCode" />
+            <PropertyRef Name="IdSubDept" />
+            <PropertyRef Name="NotAvailable" />
+          </Key>
+          <Property Name="BuldingName" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="SubDeptName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="BuildingID" Type="Int32" Nullable="false" />
+          <Property Name="SubDeptCode" Type="Int32" Nullable="false" />
+          <Property Name="IdSubDept" Type="Int32" Nullable="false" />
+          <Property Name="NotAvailable" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vUserFuncionAccess">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="FunctionShortName" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="FunctionShortName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="AcessToObject" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Action" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="vUsersRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="Login" />
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="RoleName" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Login" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_logDataChanges_tChangesTypes">
+          <End Role="tChangesTypes" Type="TOROModel.tChangesTypes" Multiplicity="1" />
+          <End Role="logDataChanges" Type="TOROModel.logDataChanges" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tChangesTypes">
+              <PropertyRef Name="ChangesTypeID" />
+            </Principal>
+            <Dependent Role="logDataChanges">
+              <PropertyRef Name="TypeChangesID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_logDataChanges_tUsers">
+          <End Role="tUsers" Type="TOROModel.tUsers" Multiplicity="1" />
+          <End Role="logDataChanges" Type="TOROModel.logDataChanges" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tUsers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="logDataChanges">
+              <PropertyRef Name="WhoChangedID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NALICH_sprBuildings">
+          <End Role="sprBuildings" Type="TOROModel.sprBuildings" Multiplicity="1" />
+          <End Role="NALICH" Type="TOROModel.NALICH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprBuildings">
+              <PropertyRef Name="BuildingID" />
+            </Principal>
+            <Dependent Role="NALICH">
+              <PropertyRef Name="BuildingID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NALICH_sprSubDept">
+          <End Role="sprSubDept" Type="TOROModel.sprSubDept" Multiplicity="1" />
+          <End Role="NALICH" Type="TOROModel.NALICH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprSubDept">
+              <PropertyRef Name="IdSubDept" />
+            </Principal>
+            <Dependent Role="NALICH">
+              <PropertyRef Name="IdSubDept" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NALICH_tAggregateCodifer">
+          <End Role="tAggregateCodifer" Type="TOROModel.tAggregateCodifer" Multiplicity="1" />
+          <End Role="NALICH" Type="TOROModel.NALICH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tAggregateCodifer">
+              <PropertyRef Name="SignID" />
+            </Principal>
+            <Dependent Role="NALICH">
+              <PropertyRef Name="AggregateCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NALICH_TypeISGroup">
+          <End Role="TypeISGroup" Type="TOROModel.TypeISGroup" Multiplicity="0..1" />
+          <End Role="NALICH" Type="TOROModel.NALICH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeISGroup">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="NALICH">
+              <PropertyRef Name="id_TypeIsGroup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tFactWorkTime_NALICH">
+          <End Role="NALICH" Type="TOROModel.NALICH" Multiplicity="1" />
+          <End Role="tFactWorkTime" Type="TOROModel.tFactWorkTime" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NALICH">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tFactWorkTime">
+              <PropertyRef Name="EquipmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tImportantEquipment_NALICH">
+          <End Role="NALICH" Type="TOROModel.NALICH" Multiplicity="1" />
+          <End Role="tImportantEquipment" Type="TOROModel.tImportantEquipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NALICH">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tImportantEquipment">
+              <PropertyRef Name="EquipmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sprEquipment_sprEquipmentGroup">
+          <End Role="sprEquipmentGroup" Type="TOROModel.sprEquipmentGroup" Multiplicity="1" />
+          <End Role="sprEquipment" Type="TOROModel.sprEquipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprEquipmentGroup">
+              <PropertyRef Name="GroupID" />
+            </Principal>
+            <Dependent Role="sprEquipment">
+              <PropertyRef Name="EquipmentGroup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sprRepairCycles_sprEquipment">
+          <End Role="sprEquipment" Type="TOROModel.sprEquipment" Multiplicity="1" />
+          <End Role="sprRepairCycles" Type="TOROModel.sprRepairCycles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprEquipment">
+              <PropertyRef Name="IdEquipment" />
+            </Principal>
+            <Dependent Role="sprRepairCycles">
+              <PropertyRef Name="EquipmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeISGroup_sprGroup1">
+          <End Role="sprGroup" Type="TOROModel.sprGroup" Multiplicity="1" />
+          <End Role="TypeISGroup" Type="TOROModel.TypeISGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprGroup">
+              <PropertyRef Name="idGroup" />
+            </Principal>
+            <Dependent Role="TypeISGroup">
+              <PropertyRef Name="idGroup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeISGroup_sprMark">
+          <End Role="sprMark" Type="TOROModel.sprMark" Multiplicity="0..1" />
+          <End Role="TypeISGroup" Type="TOROModel.TypeISGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprMark">
+              <PropertyRef Name="id_mark" />
+            </Principal>
+            <Dependent Role="TypeISGroup">
+              <PropertyRef Name="idMark" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeISGroup_sprModel">
+          <End Role="sprModel" Type="TOROModel.sprModel" Multiplicity="0..1" />
+          <End Role="TypeISGroup" Type="TOROModel.TypeISGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprModel">
+              <PropertyRef Name="id_model" />
+            </Principal>
+            <Dependent Role="TypeISGroup">
+              <PropertyRef Name="idModel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tImportantEquipment_sprReactors">
+          <End Role="sprReactors" Type="TOROModel.sprReactors" Multiplicity="1" />
+          <End Role="tImportantEquipment" Type="TOROModel.tImportantEquipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprReactors">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tImportantEquipment">
+              <PropertyRef Name="ReactorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tImportantEquipment_sprReactSafetyClasses">
+          <End Role="sprReactSafetyClasses" Type="TOROModel.sprReactSafetyClasses" Multiplicity="1" />
+          <End Role="tImportantEquipment" Type="TOROModel.tImportantEquipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprReactSafetyClasses">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tImportantEquipment">
+              <PropertyRef Name="SecurityClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sprRepairCalc_sprSubDept">
+          <End Role="sprSubDept" Type="TOROModel.sprSubDept" Multiplicity="1" />
+          <End Role="sprRepairCalc" Type="TOROModel.sprRepairCalc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprSubDept">
+              <PropertyRef Name="IdSubDept" />
+            </Principal>
+            <Dependent Role="sprRepairCalc">
+              <PropertyRef Name="IdSubDept" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sprSHPZ_sprSubDept">
+          <End Role="sprSubDept" Type="TOROModel.sprSubDept" Multiplicity="1" />
+          <End Role="sprSHPZ" Type="TOROModel.sprSHPZ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprSubDept">
+              <PropertyRef Name="IdSubDept" />
+            </Principal>
+            <Dependent Role="sprSHPZ">
+              <PropertyRef Name="IdSubDept" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tUsers_sprSubDept">
+          <End Role="sprSubDept" Type="TOROModel.sprSubDept" Multiplicity="0..1" />
+          <End Role="tUsers" Type="TOROModel.tUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprSubDept">
+              <PropertyRef Name="IdSubDept" />
+            </Principal>
+            <Dependent Role="tUsers">
+              <PropertyRef Name="SubDeptID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeISGroup_sprSubGroup1">
+          <End Role="sprSubGroup" Type="TOROModel.sprSubGroup" Multiplicity="0..1" />
+          <End Role="TypeISGroup" Type="TOROModel.TypeISGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprSubGroup">
+              <PropertyRef Name="idSubGroup" />
+            </Principal>
+            <Dependent Role="TypeISGroup">
+              <PropertyRef Name="idSubGroup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeISGroup_sprTypeOfEquipment">
+          <End Role="sprTypeOfEquipment" Type="TOROModel.sprTypeOfEquipment" Multiplicity="1" />
+          <End Role="TypeISGroup" Type="TOROModel.TypeISGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprTypeOfEquipment">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TypeISGroup">
+              <PropertyRef Name="idType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tFunctionAccess_tUserFunctions">
+          <End Role="tUserFunctions" Type="TOROModel.tUserFunctions" Multiplicity="1" />
+          <End Role="tFunctionAccess" Type="TOROModel.tFunctionAccess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tUserFunctions">
+              <PropertyRef Name="FunctionID" />
+            </Principal>
+            <Dependent Role="tFunctionAccess">
+              <PropertyRef Name="FunctionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tMainMenuItems_tUserFunctions">
+          <End Role="tUserFunctions" Type="TOROModel.tUserFunctions" Multiplicity="1" />
+          <End Role="tMainMenuItems" Type="TOROModel.tMainMenuItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tUserFunctions">
+              <PropertyRef Name="FunctionID" />
+            </Principal>
+            <Dependent Role="tMainMenuItems">
+              <PropertyRef Name="FunctionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_webpages_Membership_tUsers">
+          <End Role="tUsers" Type="TOROModel.tUsers" Multiplicity="1" />
+          <End Role="webpages_Membership" Type="TOROModel.webpages_Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tUsers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="webpages_Membership">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="sprSubDeptsInBuildings">
+          <End Role="sprBuildings" Type="TOROModel.sprBuildings" Multiplicity="*" />
+          <End Role="sprSubDept" Type="TOROModel.sprSubDept" Multiplicity="*" />
+        </Association>
+        <Association Name="webpages_UsersInRoles">
+          <End Role="webpages_Roles" Type="TOROModel.webpages_Roles" Multiplicity="*" />
+          <End Role="tUsers" Type="TOROModel.tUsers" Multiplicity="*" />
+        </Association>
+        <EntityType Name="history_move">
+          <Key>
+            <PropertyRef Name="SubdeptID_sender" />
+            <PropertyRef Name="SubdeptID_recipient" />
+            <PropertyRef Name="Equipment_ID" />
+            <PropertyRef Name="id_Hist" />
+            <PropertyRef Name="Data_isp" />
+            <PropertyRef Name="BuildingID" />
+            <PropertyRef Name="BuldingName" />
+            <PropertyRef Name="BuildnameOld" />
+            <PropertyRef Name="BuildIDOld" />
+          </Key>
+          <Property Type="Int32" Name="SubdeptID_sender" Nullable="false" />
+          <Property Type="Int32" Name="SubdeptID_recipient" Nullable="false" />
+          <Property Type="String" Name="Send" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Rec" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FIO" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Equipment_ID" Nullable="false" />
+          <Property Type="String" Name="NAIMOB" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="REGNO" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="id_Hist" Nullable="false" />
+          <Property Type="DateTime" Name="Data_isp" Nullable="false" Precision="0" />
+          <Property Type="String" Name="Room" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Building" />
+          <Property Type="Int32" Name="BuildingID" Nullable="false" />
+          <Property Type="String" Name="BuldingName" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BuildnameOld" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="BuildIDOld" Nullable="false" />
+        </EntityType>
+        <EntityType Name="History_movement">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Equipment_ID" Nullable="false" />
+          <Property Type="Int32" Name="user_id" Nullable="false" />
+          <Property Type="Int32" Name="SubdeptID_sender" Nullable="false" />
+          <Property Type="Int32" Name="SubdeptID_recipient" Nullable="false" />
+          <Property Type="String" Name="Room" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Type="Int32" Name="Building" Nullable="false" />
+          <Property Type="DateTime" Name="Data" Nullable="false" Precision="0" />
+          <NavigationProperty Name="NALICH" Relationship="TOROModel.FK_History_movement_NALICH" FromRole="History_movement" ToRole="NALICH" />
+          <NavigationProperty Name="sprSubDept" Relationship="TOROModel.FK_History_movement_sprSubDept" FromRole="History_movement" ToRole="sprSubDept" />
+          <NavigationProperty Name="sprSubDept1" Relationship="TOROModel.FK_History_movement_sprSubDept1" FromRole="History_movement" ToRole="sprSubDept" />
+          <NavigationProperty Name="tUsers" Relationship="TOROModel.FK_History_movement_tUsers" FromRole="History_movement" ToRole="tUsers" />
+        </EntityType>
+        <Association Name="FK_History_movement_NALICH">
+          <End Type="TOROModel.NALICH" Role="NALICH" Multiplicity="1" />
+          <End Type="TOROModel.History_movement" Role="History_movement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NALICH">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="History_movement">
+              <PropertyRef Name="Equipment_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_History_movement_sprSubDept">
+          <End Type="TOROModel.sprSubDept" Role="sprSubDept" Multiplicity="1" />
+          <End Type="TOROModel.History_movement" Role="History_movement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprSubDept">
+              <PropertyRef Name="IdSubDept" />
+            </Principal>
+            <Dependent Role="History_movement">
+              <PropertyRef Name="SubdeptID_sender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_History_movement_sprSubDept1">
+          <End Type="TOROModel.sprSubDept" Role="sprSubDept" Multiplicity="1" />
+          <End Type="TOROModel.History_movement" Role="History_movement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprSubDept">
+              <PropertyRef Name="IdSubDept" />
+            </Principal>
+            <Dependent Role="History_movement">
+              <PropertyRef Name="SubdeptID_recipient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_History_movement_tUsers">
+          <End Type="TOROModel.tUsers" Role="tUsers" Multiplicity="1" />
+          <End Type="TOROModel.History_movement" Role="History_movement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tUsers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="History_movement">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="History_spisanie">
+          <Key>
+            <PropertyRef Name="id_sp" />
+          </Key>
+          <Property Type="Int32" Name="id_sp" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Equipment_ID" Nullable="false" />
+          <Property Type="Int32" Name="user_id" Nullable="false" />
+          <Property Type="Int32" Name="SubdeptID_sender" Nullable="false" />
+          <Property Type="String" Name="Room" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Building" Nullable="false" />
+          <Property Type="DateTime" Name="Data" Nullable="false" Precision="0" />
+          <NavigationProperty Name="NALICH" Relationship="TOROModel.FK_History_spisanie_NALICH" FromRole="History_spisanie" ToRole="NALICH" />
+          <NavigationProperty Name="sprSubDept" Relationship="TOROModel.FK_History_spisanie_sprSubDept" FromRole="History_spisanie" ToRole="sprSubDept" />
+          <NavigationProperty Name="tUsers" Relationship="TOROModel.FK_History_spisanie_tUsers" FromRole="History_spisanie" ToRole="tUsers" />
+        </EntityType>
+        <Association Name="FK_History_spisanie_NALICH">
+          <End Type="TOROModel.NALICH" Role="NALICH" Multiplicity="1" />
+          <End Type="TOROModel.History_spisanie" Role="History_spisanie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NALICH">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="History_spisanie">
+              <PropertyRef Name="Equipment_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_History_spisanie_sprSubDept">
+          <End Type="TOROModel.sprSubDept" Role="sprSubDept" Multiplicity="1" />
+          <End Type="TOROModel.History_spisanie" Role="History_spisanie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sprSubDept">
+              <PropertyRef Name="IdSubDept" />
+            </Principal>
+            <Dependent Role="History_spisanie">
+              <PropertyRef Name="SubdeptID_sender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_History_spisanie_tUsers">
+          <End Type="TOROModel.tUsers" Role="tUsers" Multiplicity="1" />
+          <End Type="TOROModel.History_spisanie" Role="History_spisanie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tUsers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="History_spisanie">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="spisanie_history">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="BuldingName" />
+            <PropertyRef Name="SignName" />
+            <PropertyRef Name="TypeCode" />
+            <PropertyRef Name="Data" />
+            <PropertyRef Name="TypeOfEquipment" />
+            <PropertyRef Name="idGroup" />
+            <PropertyRef Name="idSubGroup" />
+            <PropertyRef Name="SubDeptCode" />
+            <PropertyRef Name="id_sp" />
+            <PropertyRef Name="status_spisanie" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="ShortName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BuldingName" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="POM" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="REGNO" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="INWNOM" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SignName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NAIMOB" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TypeCode" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GroupName" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SubGroupName" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="mark" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FIO" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Data" Nullable="false" Precision="0" />
+          <Property Type="String" Name="TypeOfEquipment" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="idGroup" Nullable="false" />
+          <Property Type="Int32" Name="idSubGroup" Nullable="false" />
+          <Property Type="String" Name="oldValue" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="SubDeptCode" Nullable="false" />
+          <Property Type="Int32" Name="id_sp" Nullable="false" />
+          <Property Type="String" Name="model" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="status_spisanie" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ElectronicArchive">
+          <Key>
+            <PropertyRef Name="id_doc" />
+          </Key>
+          <Property Type="Int32" Name="id_doc" Nullable="false" />
+          <Property Type="Int32" Name="ParentId" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище TOROModelContainer" CdmEntityContainer="PPREntities">
+          <EntitySetMapping Name="logDataChanges">
+            <EntityTypeMapping TypeName="TOROModel.logDataChanges">
+              <MappingFragment StoreEntitySet="logDataChanges">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="WhoChangedID" ColumnName="WhoChangedID" />
+                <ScalarProperty Name="WhatTableChanged" ColumnName="WhatTableChanged" />
+                <ScalarProperty Name="ChangedRecordID" ColumnName="ChangedRecordID" />
+                <ScalarProperty Name="ChangedColumnName" ColumnName="ChangedColumnName" />
+                <ScalarProperty Name="ChangesDate" ColumnName="ChangesDate" />
+                <ScalarProperty Name="OldValueNumber" ColumnName="OldValueNumber" />
+                <ScalarProperty Name="OldValueText" ColumnName="OldValueText" />
+                <ScalarProperty Name="OldValueFloat" ColumnName="OldValueFloat" />
+                <ScalarProperty Name="OldValueDate" ColumnName="OldValueDate" />
+                <ScalarProperty Name="OldValueBool" ColumnName="OldValueBool" />
+                <ScalarProperty Name="TypeChangesID" ColumnName="TypeChangesID" />
+                <ScalarProperty Name="TableIDColumnName" ColumnName="TableIDColumnName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NALICH">
+            <EntityTypeMapping TypeName="TOROModel.NALICH">
+              <MappingFragment StoreEntitySet="NALICH">
+                <ScalarProperty Name="status_spisanie" ColumnName="status_spisanie" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="KODOP" ColumnName="KODOP" />
+                <ScalarProperty Name="KODKOR" ColumnName="KODKOR" />
+                <ScalarProperty Name="DATAZAP" ColumnName="DATAZAP" />
+                <ScalarProperty Name="IdSubDept" ColumnName="IdSubDept" />
+                <ScalarProperty Name="BuildingID" ColumnName="BuildingID" />
+                <ScalarProperty Name="W" ColumnName="W" />
+                <ScalarProperty Name="G" ColumnName="G" />
+                <ScalarProperty Name="P" ColumnName="P" />
+                <ScalarProperty Name="M" ColumnName="M" />
+                <ScalarProperty Name="PODSD" ColumnName="PODSD" />
+                <ScalarProperty Name="INWNOM" ColumnName="INWNOM" />
+                <ScalarProperty Name="AggregateCode" ColumnName="AggregateCode" />
+                <ScalarProperty Name="REGNO" ColumnName="REGNO" />
+                <ScalarProperty Name="NAIMOB" ColumnName="NAIMOB" />
+                <ScalarProperty Name="MARKA" ColumnName="MARKA" />
+                <ScalarProperty Name="ZAWNO" ColumnName="ZAWNO" />
+                <ScalarProperty Name="ZAWOD" ColumnName="ZAWOD" />
+                <ScalarProperty Name="GODWYP" ColumnName="GODWYP" />
+                <ScalarProperty Name="DWWOD" ColumnName="DWWOD" />
+                <ScalarProperty Name="WUST" ColumnName="WUST" />
+                <ScalarProperty Name="KSUST" ColumnName="KSUST" />
+                <ScalarProperty Name="KPUST" ColumnName="KPUST" />
+                <ScalarProperty Name="POM" ColumnName="POM" />
+                <ScalarProperty Name="SPOSK" ColumnName="SPOSK" />
+                <ScalarProperty Name="SPOST" ColumnName="SPOST" />
+                <ScalarProperty Name="SPOSTO" ColumnName="SPOSTO" />
+                <ScalarProperty Name="SMEN" ColumnName="SMEN" />
+                <ScalarProperty Name="KOLTEK" ColumnName="KOLTEK" />
+                <ScalarProperty Name="WRASCH" ColumnName="WRASCH" />
+                <ScalarProperty Name="KOLKSTR" ColumnName="KOLKSTR" />
+                <ScalarProperty Name="KOLTSTR" ColumnName="KOLTSTR" />
+                <ScalarProperty Name="KOLOSTR" ColumnName="KOLOSTR" />
+                <ScalarProperty Name="PER" ColumnName="PER" />
+                <ScalarProperty Name="SHIFWR" ColumnName="SHIFWR" />
+                <ScalarProperty Name="KUSE" ColumnName="KUSE" />
+                <ScalarProperty Name="KUSM" ColumnName="KUSM" />
+                <ScalarProperty Name="KATM" ColumnName="KATM" />
+                <ScalarProperty Name="KATE" ColumnName="KATE" />
+                <ScalarProperty Name="TRUDK" ColumnName="TRUDK" />
+                <ScalarProperty Name="TRUDT" ColumnName="TRUDT" />
+                <ScalarProperty Name="TRUDTO" ColumnName="TRUDTO" />
+                <ScalarProperty Name="STOIM" ColumnName="STOIM" />
+                <ScalarProperty Name="OBOZN" ColumnName="OBOZN" />
+                <ScalarProperty Name="NTEX" ColumnName="NTEX" />
+                <ScalarProperty Name="DPKAP" ColumnName="DPKAP" />
+                <ScalarProperty Name="KOLKAP" ColumnName="KOLKAP" />
+                <ScalarProperty Name="WPR" ColumnName="WPR" />
+                <ScalarProperty Name="NPR" ColumnName="NPR" />
+                <ScalarProperty Name="DPR" ColumnName="DPR" />
+                <ScalarProperty Name="DATA" ColumnName="DATA" />
+                <ScalarProperty Name="MainOGE" ColumnName="MainOGE" />
+                <ScalarProperty Name="SubjectToInspection" ColumnName="SubjectToInspection" />
+                <ScalarProperty Name="ImportantToSafety" ColumnName="ImportantToSafety" />
+                <ScalarProperty Name="StartUpDate" ColumnName="StartUpDate" />
+                <ScalarProperty Name="id_Type" ColumnName="id_Type" />
+                <ScalarProperty Name="id_Group" ColumnName="id_Group" />
+                <ScalarProperty Name="id_SubGroup" ColumnName="id_SubGroup" />
+                <ScalarProperty Name="id_Mark" ColumnName="id_Mark" />
+                <ScalarProperty Name="id_Model" ColumnName="id_Model" />
+                <ScalarProperty Name="int_P" ColumnName="int_P" />
+                <ScalarProperty Name="id_TypeIsGroup" ColumnName="id_TypeIsGroup" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SBEZRU">
+            <EntityTypeMapping TypeName="TOROModel.SBEZRU">
+              <MappingFragment StoreEntitySet="SBEZRU">
+                <ScalarProperty Name="REGNO" ColumnName="REGNO" />
+                <ScalarProperty Name="PRAG" ColumnName="PRAG" />
+                <ScalarProperty Name="KLGBEZ" ColumnName="KLGBEZ" />
+                <ScalarProperty Name="RU" ColumnName="RU" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sprBrigad">
+            <EntityTypeMapping TypeName="TOROModel.sprBrigad">
+              <MappingFragment StoreEntitySet="sprBrigad">
+                <ScalarProperty Name="KBR" ColumnName="KBR" />
+                <ScalarProperty Name="MASTER" ColumnName="MASTER" />
+                <ScalarProperty Name="FIOBR" ColumnName="FIOBR" />
+                <ScalarProperty Name="KOLRAB" ColumnName="KOLRAB" />
+                <ScalarProperty Name="NKW" ColumnName="NKW" />
+                <ScalarProperty Name="PLF" ColumnName="PLF" />
+                <ScalarProperty Name="TRPPR" ColumnName="TRPPR" />
+                <ScalarProperty Name="NKOR" ColumnName="NKOR" />
+                <ScalarProperty Name="TRBR" ColumnName="TRBR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sprBuildings">
+            <EntityTypeMapping TypeName="TOROModel.sprBuildings">
+              <MappingFragment StoreEntitySet="sprBuildings">
+                <ScalarProperty Name="BuildingID" ColumnName="BuildingID" />
+                <ScalarProperty Name="BuldingName" ColumnName="BuldingName" />
+                <ScalarProperty Name="NotAvailable" ColumnName="NotAvailable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sprEquipment">
+            <EntityTypeMapping TypeName="TOROModel.sprEquipment">
+              <MappingFragment StoreEntitySet="sprEquipment">
+                <ScalarProperty Name="IdEquipment" ColumnName="IdEquipment" />
+                <ScalarProperty Name="W" ColumnName="W" />
+                <ScalarProperty Name="EquipmentGroup" ColumnName="EquipmentGroup" />
+                <ScalarProperty Name="SubGroup" ColumnName="SubGroup" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="SubGroupName" ColumnName="SubGroupName" />
+                <ScalarProperty Name="Mark" ColumnName="Mark" />
+                <ScalarProperty Name="symbol_g" ColumnName="symbol_g" />
+                <ScalarProperty Name="symbol_p" ColumnName="symbol_p" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sprEquipmentGroup">
+            <EntityTypeMapping TypeName="TOROModel.sprEquipmentGroup">
+              <MappingFragment StoreEntitySet="sprEquipmentGroup">
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="SymbolID" ColumnName="SymbolID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sprGroup">
+            <EntityTypeMapping TypeName="TOROModel.sprGroup">
+              <MappingFragment StoreEntitySet="sprGroup">
+                <ScalarProperty Name="idGroup" ColumnName="idGroup" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sprMark">
+            <EntityTypeMapping TypeName="TOROModel.sprMark">
+              <MappingFragment StoreEntitySet="sprMark">
+                <ScalarProperty Name="id_mark" ColumnName="id_mark" />
+                <ScalarProperty Name="mark" ColumnName="mark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sprModel">
+            <EntityTypeMapping TypeName="TOROModel.sprModel">
+              <MappingFragment StoreEntitySet="sprModel">
+                <ScalarProperty Name="id_model" ColumnName="id_model" />
+                <ScalarProperty Name="model" ColumnName="model" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sprNetsSystemsFacility">
+            <EntityTypeMapping TypeName="TOROModel.sprNetsSystemsFacility">
+              <MappingFragment StoreEntitySet="sprNetsSystemsFacility">
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sprReactOperationMode">
+            <EntityTypeMapping TypeName="TOROModel.sprReactOperationMode">
+              <MappingFragment StoreEntitySet="sprReactOperationMode">
+                <ScalarProperty Name="ModeID" ColumnName="ModeID" />
+                <ScalarProperty Name="OperationModeName" ColumnName="OperationModeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sprReactors">
+            <EntityTypeMapping TypeName="TOROModel.sprReactors">
+              <MappingFragment StoreEntitySet="sprReactors">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sprReactSafetyClasses">
+            <EntityTypeMapping TypeName="TOROModel.sprReactSafetyClasses">
+              <MappingFragment StoreEntitySet="sprReactSafetyClasses">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sprReairWork">
+            <EntityTypeMapping TypeName="TOROModel.sprReairWork">
+              <MappingFragment StoreEntitySet="sprReairWork">
+                <ScalarProperty Name="WorkID" ColumnName="WorkID" />
+                <ScalarProperty Name="WorkName" ColumnName="WorkName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sprReasonSheduleDeviation">
+            <EntityTypeMapping TypeName="TOROModel.sprReasonSheduleDeviation">
+              <MappingFragment StoreEntitySet="sprReasonSheduleDeviation">
+                <ScalarProperty Name="ReasonID" ColumnName="ReasonID" />
+                <ScalarProperty Name="ReasonName" ColumnName="ReasonName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sprRepairCalc">
+            <EntityTypeMapping TypeName="TOROModel.sprRepairCalc">
+              <MappingFragment StoreEntitySet="sprRepairCalc">
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="IdSubDept" ColumnName="IdSubDept" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="QuarterNumber" ColumnName="QuarterNumber" />
+                <ScalarProperty Name="RepairPriceC" ColumnName="RepairPriceC" />
+                <ScalarProperty Name="MaterialPriceC" ColumnName="MaterialPriceC" />
+                <ScalarProperty Name="RepairPriceP" ColumnName="RepairPriceP" />
+                <ScalarProperty Name="MaterialPriceP" ColumnName="MaterialPriceP" />
+                <ScalarProperty Name="RepairPriceO" ColumnName="RepairPriceO" />
+                <ScalarProperty Name="MaterialPriceO" ColumnName="MaterialPriceO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sprRepairCycles">
+            <EntityTypeMapping TypeName="TOROModel.sprRepairCycles">
+              <MappingFragment StoreEntitySet="sprRepairCycles">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="EquipmentID" ColumnName="EquipmentID" />
+                <ScalarProperty Name="EquipmentName" ColumnName="EquipmentName" />
+                <ScalarProperty Name="MajorCoeff" ColumnName="MajorCoeff" />
+                <ScalarProperty Name="CurrentCoeff" ColumnName="CurrentCoeff" />
+                <ScalarProperty Name="InspectionCoeff" ColumnName="InspectionCoeff" />
+                <ScalarProperty Name="Period" ColumnName="Period" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sprRepairMethods">
+            <EntityTypeMapping TypeName="TOROModel.sprRepairMethods">
+              <MappingFragment StoreEntitySet="sprRepairMethods">
+                <ScalarProperty Name="IdRepairMethod" ColumnName="IdRepairMethod" />
+                <ScalarProperty Name="RepairMethodFullName" ColumnName="RepairMethodFullName" />
+                <ScalarProperty Name="RepairMethodShortName" ColumnName="RepairMethodShortName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sprRepairTypes">
+            <EntityTypeMapping TypeName="TOROModel.sprRepairTypes">
+              <MappingFragment StoreEntitySet="sprRepairTypes">
+                <ScalarProperty Name="IdRepairType" ColumnName="IdRepairType" />
+                <ScalarProperty Name="RepairTypeFullName" ColumnName="RepairTypeFullName" />
+                <ScalarProperty Name="RepairTypeShortName" ColumnName="RepairTypeShortName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sprSeasonRepair">
+            <EntityTypeMapping TypeName="TOROModel.sprSeasonRepair">
+              <MappingFragment StoreEntitySet="sprSeasonRepair">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Availability" ColumnName="Availability" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sprSHPZ">
+            <EntityTypeMapping TypeName="TOROModel.sprSHPZ">
+              <MappingFragment StoreEntitySet="sprSHPZ">
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="IdSubDept" ColumnName="IdSubDept" />
+                <ScalarProperty Name="RepairType" ColumnName="RepairType" />
+                <ScalarProperty Name="RepairMethod" ColumnName="RepairMethod" />
+                <ScalarProperty Name="BalanceBill" ColumnName="BalanceBill" />
+                <ScalarProperty Name="CostElements" ColumnName="CostElements" />
+                <ScalarProperty Name="CostParticle" ColumnName="CostParticle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sprStartStopWorkLimit">
+            <EntityTypeMapping TypeName="TOROModel.sprStartStopWorkLimit">
+              <MappingFragment StoreEntitySet="sprStartStopWorkLimit">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="StartStopWorkLimit" ColumnName="StartStopWorkLimit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sprSubDept">
+            <EntityTypeMapping TypeName="TOROModel.sprSubDept">
+              <MappingFragment StoreEntitySet="sprSubDept">
+                <ScalarProperty Name="IdSubDept" ColumnName="IdSubDept" />
+                <ScalarProperty Name="SubDeptCode" ColumnName="SubDeptCode" />
+                <ScalarProperty Name="SubDeptName" ColumnName="SubDeptName" />
+                <ScalarProperty Name="AdjustmentDate" ColumnName="AdjustmentDate" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sprSubGroup">
+            <EntityTypeMapping TypeName="TOROModel.sprSubGroup">
+              <MappingFragment StoreEntitySet="sprSubGroup">
+                <ScalarProperty Name="idSubGroup" ColumnName="idSubGroup" />
+                <ScalarProperty Name="SubGroupName" ColumnName="SubGroupName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sprTypeOfEquipment">
+            <EntityTypeMapping TypeName="TOROModel.sprTypeOfEquipment">
+              <MappingFragment StoreEntitySet="sprTypeOfEquipment">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TypeOfEquipment" ColumnName="TypeOfEquipment" />
+                <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="TOROModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tAggregateCodifer">
+            <EntityTypeMapping TypeName="TOROModel.tAggregateCodifer">
+              <MappingFragment StoreEntitySet="tAggregateCodifer">
+                <ScalarProperty Name="SignID" ColumnName="SignID" />
+                <ScalarProperty Name="SignName" ColumnName="SignName" />
+                <ScalarProperty Name="SignCode" ColumnName="SignCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tChangesTypes">
+            <EntityTypeMapping TypeName="TOROModel.tChangesTypes">
+              <MappingFragment StoreEntitySet="tChangesTypes">
+                <ScalarProperty Name="ChangesTypeID" ColumnName="ChangesTypeID" />
+                <ScalarProperty Name="ChangesTypeName" ColumnName="ChangesTypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tFactWorkTime">
+            <EntityTypeMapping TypeName="TOROModel.tFactWorkTime">
+              <MappingFragment StoreEntitySet="tFactWorkTime">
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="EquipmentID" ColumnName="EquipmentID" />
+                <ScalarProperty Name="EquipmentRegNum" ColumnName="EquipmentRegNum" />
+                <ScalarProperty Name="FactWorkHours" ColumnName="FactWorkHours" />
+                <ScalarProperty Name="AverageStatHours" ColumnName="AverageStatHours" />
+                <ScalarProperty Name="RecordDate" ColumnName="RecordDate" />
+                <ScalarProperty Name="LastPeriodStart" ColumnName="LastPeriodStart" />
+                <ScalarProperty Name="LastPeriodEnd" ColumnName="LastPeriodEnd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tFunctionAccess">
+            <EntityTypeMapping TypeName="TOROModel.tFunctionAccess">
+              <MappingFragment StoreEntitySet="tFunctionAccess">
+                <ScalarProperty Name="AccessRecordID" ColumnName="AccessRecordID" />
+                <ScalarProperty Name="FunctionID" ColumnName="FunctionID" />
+                <ScalarProperty Name="IsAvailableTo" ColumnName="IsAvailableTo" />
+                <ScalarProperty Name="AccessTypeUser" ColumnName="AccessTypeUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tImportantEquipment">
+            <EntityTypeMapping TypeName="TOROModel.tImportantEquipment">
+              <MappingFragment StoreEntitySet="tImportantEquipment">
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="EquipmentID" ColumnName="EquipmentID" />
+                <ScalarProperty Name="SecurityClassID" ColumnName="SecurityClassID" />
+                <ScalarProperty Name="ReactorID" ColumnName="ReactorID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tMainMenuItems">
+            <EntityTypeMapping TypeName="TOROModel.tMainMenuItems">
+              <MappingFragment StoreEntitySet="tMainMenuItems">
+                <ScalarProperty Name="MenuItemID" ColumnName="MenuItemID" />
+                <ScalarProperty Name="MenuItemName" ColumnName="MenuItemName" />
+                <ScalarProperty Name="FunctionID" ColumnName="FunctionID" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="RussianName" ColumnName="RussianName" />
+                <ScalarProperty Name="ItemPriority" ColumnName="ItemPriority" />
+                <ScalarProperty Name="URLPath" ColumnName="URLPath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tTypeEquipmentCatalog">
+            <EntityTypeMapping TypeName="TOROModel.tTypeEquipmentCatalog">
+              <MappingFragment StoreEntitySet="tTypeEquipmentCatalog">
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+                <ScalarProperty Name="TypeEquipmentID" ColumnName="TypeEquipmentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tUserFunctions">
+            <EntityTypeMapping TypeName="TOROModel.tUserFunctions">
+              <MappingFragment StoreEntitySet="tUserFunctions">
+                <ScalarProperty Name="FunctionID" ColumnName="FunctionID" />
+                <ScalarProperty Name="FunctionName" ColumnName="FunctionName" />
+                <ScalarProperty Name="FunctionShortName" ColumnName="FunctionShortName" />
+                <ScalarProperty Name="AcessToObject" ColumnName="AcessToObject" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tUsers">
+            <EntityTypeMapping TypeName="TOROModel.tUsers">
+              <MappingFragment StoreEntitySet="tUsers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FIO" ColumnName="FIO" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="SubDeptID" ColumnName="SubDeptID" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeISGroup">
+            <EntityTypeMapping TypeName="TOROModel.TypeISGroup">
+              <MappingFragment StoreEntitySet="TypeISGroup">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idType" ColumnName="idType" />
+                <ScalarProperty Name="idGroup" ColumnName="idGroup" />
+                <ScalarProperty Name="idSubGroup" ColumnName="idSubGroup" />
+                <ScalarProperty Name="idMark" ColumnName="idMark" />
+                <ScalarProperty Name="idModel" ColumnName="idModel" />
+                <ScalarProperty Name="oldValue" ColumnName="oldValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_Membership">
+            <EntityTypeMapping TypeName="TOROModel.webpages_Membership">
+              <MappingFragment StoreEntitySet="webpages_Membership">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ConfirmationToken" ColumnName="ConfirmationToken" />
+                <ScalarProperty Name="IsConfirmed" ColumnName="IsConfirmed" />
+                <ScalarProperty Name="LastPasswordFailureDate" ColumnName="LastPasswordFailureDate" />
+                <ScalarProperty Name="PasswordFailuresSinceLastSuccess" ColumnName="PasswordFailuresSinceLastSuccess" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PasswordChangedDate" ColumnName="PasswordChangedDate" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="PasswordVerificationToken" ColumnName="PasswordVerificationToken" />
+                <ScalarProperty Name="PasswordVerificationTokenExpirationDate" ColumnName="PasswordVerificationTokenExpirationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_OAuthMembership">
+            <EntityTypeMapping TypeName="TOROModel.webpages_OAuthMembership">
+              <MappingFragment StoreEntitySet="webpages_OAuthMembership">
+                <ScalarProperty Name="Provider" ColumnName="Provider" />
+                <ScalarProperty Name="ProviderUserId" ColumnName="ProviderUserId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_Roles">
+            <EntityTypeMapping TypeName="TOROModel.webpages_Roles">
+              <MappingFragment StoreEntitySet="webpages_Roles">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vRolesFunctionAccess">
+            <EntityTypeMapping TypeName="TOROModel.vRolesFunctionAccess">
+              <MappingFragment StoreEntitySet="vRolesFunctionAccess">
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="FunctionShortName" ColumnName="FunctionShortName" />
+                <ScalarProperty Name="AcessToObject" ColumnName="AcessToObject" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="FunctionName" ColumnName="FunctionName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vsprSeasonRepairDepend">
+            <EntityTypeMapping TypeName="TOROModel.vsprSeasonRepairDepend">
+              <MappingFragment StoreEntitySet="vsprSeasonRepairDepend">
+                <ScalarProperty Name="AvailabilityID" ColumnName="AvailabilityID" />
+                <ScalarProperty Name="Availability" ColumnName="Availability" />
+                <ScalarProperty Name="EarlyStartRepairID" ColumnName="EarlyStartRepairID" />
+                <ScalarProperty Name="StartWorkLimit" ColumnName="StartWorkLimit" />
+                <ScalarProperty Name="LateStopRepairID" ColumnName="LateStopRepairID" />
+                <ScalarProperty Name="StopWorkLimit" ColumnName="StopWorkLimit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vSubdeptsInBuildings">
+            <EntityTypeMapping TypeName="TOROModel.vSubdeptsInBuildings">
+              <MappingFragment StoreEntitySet="vSubdeptsInBuildings">
+                <ScalarProperty Name="BuldingName" ColumnName="BuldingName" />
+                <ScalarProperty Name="SubDeptName" ColumnName="SubDeptName" />
+                <ScalarProperty Name="BuildingID" ColumnName="BuildingID" />
+                <ScalarProperty Name="SubDeptCode" ColumnName="SubDeptCode" />
+                <ScalarProperty Name="IdSubDept" ColumnName="IdSubDept" />
+                <ScalarProperty Name="NotAvailable" ColumnName="NotAvailable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vUserFuncionAccess">
+            <EntityTypeMapping TypeName="TOROModel.vUserFuncionAccess">
+              <MappingFragment StoreEntitySet="vUserFuncionAccess">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="FunctionShortName" ColumnName="FunctionShortName" />
+                <ScalarProperty Name="AcessToObject" ColumnName="AcessToObject" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vUsersRoles">
+            <EntityTypeMapping TypeName="TOROModel.vUsersRoles">
+              <MappingFragment StoreEntitySet="vUsersRoles">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="sprSubDeptsInBuildings" TypeName="TOROModel.sprSubDeptsInBuildings" StoreEntitySet="sprSubDeptsInBuildings">
+            <EndProperty Name="sprBuildings">
+              <ScalarProperty Name="BuildingID" ColumnName="BuildingID" />
+            </EndProperty>
+            <EndProperty Name="sprSubDept">
+              <ScalarProperty Name="IdSubDept" ColumnName="SubDeptID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="webpages_UsersInRoles" TypeName="TOROModel.webpages_UsersInRoles" StoreEntitySet="webpages_UsersInRoles">
+            <EndProperty Name="webpages_Roles">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="tUsers">
+              <ScalarProperty Name="ID" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="history_move">
+            <EntityTypeMapping TypeName="TOROModel.history_move">
+              <MappingFragment StoreEntitySet="history_move">
+                <ScalarProperty Name="BuildIDOld" ColumnName="BuildIDOld" />
+                <ScalarProperty Name="BuildnameOld" ColumnName="BuildnameOld" />
+                <ScalarProperty Name="BuldingName" ColumnName="BuldingName" />
+                <ScalarProperty Name="BuildingID" ColumnName="BuildingID" />
+                <ScalarProperty Name="Building" ColumnName="Building" />
+                <ScalarProperty Name="Room" ColumnName="Room" />
+                <ScalarProperty Name="Data_isp" ColumnName="Data_isp" />
+                <ScalarProperty Name="id_Hist" ColumnName="id_Hist" />
+                <ScalarProperty Name="REGNO" ColumnName="REGNO" />
+                <ScalarProperty Name="NAIMOB" ColumnName="NAIMOB" />
+                <ScalarProperty Name="Equipment_ID" ColumnName="Equipment_ID" />
+                <ScalarProperty Name="FIO" ColumnName="FIO" />
+                <ScalarProperty Name="Rec" ColumnName="Rec" />
+                <ScalarProperty Name="Send" ColumnName="Send" />
+                <ScalarProperty Name="SubdeptID_recipient" ColumnName="SubdeptID_recipient" />
+                <ScalarProperty Name="SubdeptID_sender" ColumnName="SubdeptID_sender" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="History_movement">
+            <EntityTypeMapping TypeName="TOROModel.History_movement">
+              <MappingFragment StoreEntitySet="History_movement">
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="Building" ColumnName="Building" />
+                <ScalarProperty Name="Room" ColumnName="Room" />
+                <ScalarProperty Name="SubdeptID_recipient" ColumnName="SubdeptID_recipient" />
+                <ScalarProperty Name="SubdeptID_sender" ColumnName="SubdeptID_sender" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="Equipment_ID" ColumnName="Equipment_ID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="History_spisanie">
+            <EntityTypeMapping TypeName="TOROModel.History_spisanie">
+              <MappingFragment StoreEntitySet="History_spisanie">
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="Building" ColumnName="Building" />
+                <ScalarProperty Name="Room" ColumnName="Room" />
+                <ScalarProperty Name="SubdeptID_sender" ColumnName="SubdeptID_sender" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="Equipment_ID" ColumnName="Equipment_ID" />
+                <ScalarProperty Name="id_sp" ColumnName="id_sp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="spisanie_history">
+            <EntityTypeMapping TypeName="TOROModel.spisanie_history">
+              <MappingFragment StoreEntitySet="spisanie_history">
+                <ScalarProperty Name="status_spisanie" ColumnName="status_spisanie" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="id_sp" ColumnName="id_sp" />
+                <ScalarProperty Name="SubDeptCode" ColumnName="SubDeptCode" />
+                <ScalarProperty Name="oldValue" ColumnName="oldValue" />
+                <ScalarProperty Name="idSubGroup" ColumnName="idSubGroup" />
+                <ScalarProperty Name="idGroup" ColumnName="idGroup" />
+                <ScalarProperty Name="TypeOfEquipment" ColumnName="TypeOfEquipment" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="FIO" ColumnName="FIO" />
+                <ScalarProperty Name="mark" ColumnName="mark" />
+                <ScalarProperty Name="SubGroupName" ColumnName="SubGroupName" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+                <ScalarProperty Name="NAIMOB" ColumnName="NAIMOB" />
+                <ScalarProperty Name="SignName" ColumnName="SignName" />
+                <ScalarProperty Name="INWNOM" ColumnName="INWNOM" />
+                <ScalarProperty Name="REGNO" ColumnName="REGNO" />
+                <ScalarProperty Name="POM" ColumnName="POM" />
+                <ScalarProperty Name="BuldingName" ColumnName="BuldingName" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElectronicArchive">
+            <EntityTypeMapping TypeName="TOROModel.ElectronicArchive">
+              <MappingFragment StoreEntitySet="ElectronicArchive">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="id_doc" ColumnName="id_doc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

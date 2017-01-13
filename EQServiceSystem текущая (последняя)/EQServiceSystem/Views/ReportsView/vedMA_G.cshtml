@@ -1,0 +1,19 @@
+﻿@model EQServiceSystem.Models.Reports.vedMA_G
+<head>
+@*    <meta name="viewport" content="width=device-width" />*@
+    <title>Ведомость наличия механического оборудования и агрегатов</title>
+    <legend class = "text-info">Ведомость наличия механического оборудования и агрегатов</legend>  
+</head>
+ @using (Html.BeginForm("vedomosti", "vedomosti", FormMethod.Post))
+  {
+<body>
+  <select selected  id="idGroup" name="idGroup">
+                @foreach (var item in Model.sprGroup.ToList())
+                {
+                    <option value = "@item.GroupID">@item.GroupName</option>
+                } 
+  </select>
+      <button type="submit" name="action" value="idGroup">Сформировать ведомость</button>
+      <button type="submit" name="action" value="All-inst">Полная ведомость по институту</button>
+</body>
+ }

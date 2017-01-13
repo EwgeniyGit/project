@@ -1,0 +1,121 @@
+﻿@model EQServiceSystem.ViewModels.sprEquipmentEditor
+@using PagedList.Mvc;
+@using (Ajax.BeginForm("sprEditFilter", "Eq", new AjaxOptions { UpdateTargetId = "LoadedContent" }))
+{
+    
+    <style type="text/css">
+    tbody
+    {
+        float:left;
+        overflow:scroll;
+        height: 700px;
+    }
+    thead
+    {
+        float: left;
+    }
+    </style>
+    
+    <legend class = "text-info">Справочник оборудования</legend>
+    <div class="container">
+        <div class="filters" style="margin:0px">
+            <div class="filter-element">Вид</div>
+            <select name="all_W" class="filter-element" style="width: 527px;" onchange="EquipmentListbtn.click()">
+                @foreach (var item in Model.Type_items)
+                {
+                    <option value = "@item">@item </option>
+                }
+            </select>
+
+            <div class="filter-element">Группа</div>
+            <select name="all_G" class="filter-element" style="width: 285px;" onchange="EquipmentListbtn.click()">
+                @foreach (var item in Model.Group_items)
+                {
+                    <option value = "@item">@item </option>;
+                }
+            </select>
+            <br />
+            <div class="filter-element">Подгруппа</div>
+            <select name="all_P" class="filter-element" style="width: 480px;" onchange="EquipmentListbtn.click()">
+                @foreach (var item in Model.SubGroup_items)
+                {
+                    <option value = "@item">@item </option>
+                }
+            </select>
+
+            <div class="filter-element">Марка</div>
+            <select name="all_Marks" class="filter-element" style="width: 290px;" onchange="EquipmentListbtn.click()">
+                @foreach (var item in Model.Marks_items)
+                {
+                    <option value = "@item">@item </option>
+                }
+            </select>
+            <br>
+            <div class="filter-element">Модель</div>
+            <select name="all_Model" class="filter-element" style="width: 290px;" onchange="EquipmentListbtn.click()">
+                @foreach (var item in Model.Model_items)
+                {
+                    <option value = "@item">@item </option>
+                }
+            </select>
+            <div class="filter-element">Инвентарный №</div>
+            <input type="text" name="invnum" id="invnum" value ="@Model.InvNums">
+
+            <div class="filter-element">Рег. №</div>
+            <input type="text" name="regnum" id="regnum" value ="@Model.RegNums">
+            <input class="btn" type="submit" id="EquipmentListbtn" style="display: none" value="Применить фильтр" />
+        @Ajax.ActionLink("Сброс", "sprEdit", "Eq", new { page = 1 }, new AjaxOptions { UpdateTargetId = "LoadedContent", HttpMethod = "POST" }, new { @class = "btn" })
+       @* <input type="submit" value="Сохранить изменения" />*@
+        <table class="main-table" style="overflow: hidden; height:auto;">
+            <thead>
+            <tr>
+                <th class="column-header" style="width:42px">Вид</th>
+                <th class="column-header" style="width:63px">Группа</th>
+                <th class="column-header" style="width:348px">Наименование группы</th>
+                <th class="column-header" style="width:80px">Подгруппа</th>
+                <th class="column-header" style="width:346px">Наименование подгруппы</th>
+                <th class="column-header" style="width:60px">Модель</th>
+                <th class="column-header" style="width:150px">Марка</th>
+                <th style="visibility:hidden">Марка</th>
+            </tr>
+            </thead>
+            @for (int i = 0; i < Model.PageInfo.PageSize; i++)
+            {
+                <tr>
+                    <td style="width:39px">@Html.TextBoxFor(m => m.PagedEquipment[i].TypeCode, new { Style = "width: 39px;" } )</td>
+                    <td style="width:58px">@Html.TextBoxFor(m => m.PagedEquipment[i].idGroup, new { Style = "width: 58px;" } )</td>
+                    <td style="width:344px">@Html.TextBoxFor(m => m.PagedEquipment[i].GroupNamePrint, new { Style = "width: 344px;" } )</td>
+                    <td style="width:74px">@Html.TextBoxFor(m => m.PagedEquipment[i].OldSubgroup, new { Style = "width: 74px;" } )</td>
+                    <td style="width:344px">@Html.TextBoxFor(m => m.PagedEquipment[i].SubGroupNamePrint, new { Style = "width: 344px;" } )</td>
+                    <td style="width:54px">@Html.TextBoxFor(m => m.PagedEquipment[i].Model, new { Style = "width: 54px;" } )</td>
+                    <td style="width:144px">@Html.TextBoxFor(m => m.PagedEquipment[i].Mark, new { Style = "width: 144px;" } )</td>
+                    <td>@Html.HiddenFor(m => m.EquipmentDeskBook[i].ID)</td>
+                </tr>
+            }
+        </table>
+            Страница @(Model.PageInfo.TotalItems
+        < Model.PageInfo.PageSize ? 0 : Model.PageInfo.PageNumber) из @Model.PageInfo.TotalPages
+        Всего единиц оборудования в списке: @Model.PageInfo.TotalItems
+                   @Html.PagedListPager(Model.PagedEquipment, x => Url.Action("sprEdit", "Eq", new
+   {
+       page = x,
+       all_W = Model.Type_items[0].ToString(),
+       all_G = Model.Group_items[0].ToString(),
+       all_P = Model.SubGroup_items[0].ToString(),
+       all_Marks = Model.Marks_items[0].ToString(),
+       Model = Model.Model_items[0].ToString(),
+   }),
+   PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new PagedListRenderOptions
+  {
+      LinkToFirstPageFormat = "<<",
+      LinkToPreviousPageFormat = "Назад",
+      LinkToNextPageFormat = "Вперед",
+      LinkToLastPageFormat = ">>"
+  }
+
+      , new AjaxOptions() { HttpMethod = "POST", UpdateTargetId = "LoadedContent" }))
+    </div>
+    </div>
+}
+
+@Styles.Render("~/Content/tables-styles.css")

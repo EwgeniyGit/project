@@ -1,0 +1,368 @@
+﻿@model EQServiceSystem.Models.Equipment.Equipment
+
+@*@using (Ajax.BeginForm("GetElectronicArchive", "Equipment", new { EquipmentID = @Model.ID }, new AjaxOptions { HttpMethod = "GET", UpdateTargetId = "LoadedContent" }, new { enctype = "multipart/form-data" }))
+{*@
+@using (Ajax.BeginForm("GetAction", "Equipment", new { EquipmentID = @Model.ID }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "LoadedContent" }, new { enctype = "multipart/form-data" }))
+{
+    <style>
+button{
+    /*width:200px;*/
+    width:100%;
+    text-decoration:none; text-align:center; 
+ padding:4px 26px; 
+ border:solid 1px #004F72; 
+ -webkit-border-radius:4px;
+ -moz-border-radius:4px; 
+ border-radius: 4px; 
+ font:13px Arial, Helvetica, sans-serif; 
+ font-weight:bold; 
+ color:#E5FFFF; 
+ background-color:#3BA4C7; 
+ background-image: -moz-linear-gradient(top, #3BA4C7 0%, #1982A5 100%); 
+ background-image: -webkit-linear-gradient(top, #3BA4C7 0%, #1982A5 100%); 
+ background-image: -o-linear-gradient(top, #3BA4C7 0%, #1982A5 100%); 
+ background-image: -ms-linear-gradient(top, #3BA4C7 0% ,#1982A5 100%); 
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1982A5', endColorstr='#1982A5',GradientType=0 ); 
+ background-image: linear-gradient(top, #3BA4C7 0% ,#1982A5 100%);   
+ -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
+ -moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;  
+ box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;  
+  
+  }button:hover{
+       /*width:200px;*/
+        width:100%;
+ padding:4px 26px; 
+ border:solid 1px #004F72; 
+ -webkit-border-radius:4px;
+ -moz-border-radius:4px; 
+ border-radius: 4px; 
+ font:13px Arial, Helvetica, sans-serif; 
+ font-weight:bold; 
+ color:#E5FFFF; 
+ background-color:#3eabcf; 
+ background-image: -moz-linear-gradient(top, #3eabcf 0%, #1e93ba 100%); 
+ background-image: -webkit-linear-gradient(top, #3eabcf 0%, #1e93ba 100%); 
+ background-image: -o-linear-gradient(top, #3eabcf 0%, #1e93ba 100%); 
+ background-image: -ms-linear-gradient(top, #3eabcf 0% ,#1e93ba 100%); 
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e93ba', endColorstr='#1e93ba',GradientType=0 ); 
+ background-image: linear-gradient(top, #3eabcf 0% ,#1e93ba 100%);   
+ -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
+ -moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;  
+ box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;  
+  
+ }button:active{
+      /*width:200px;*/
+       width:100%;
+ padding:4px 26px; 
+ border:solid 1px #004F72; 
+ -webkit-border-radius:4px;
+ -moz-border-radius:4px; 
+ border-radius: 4px; 
+ font:13px Arial, Helvetica, sans-serif; 
+ font-weight:bold; 
+ color:#E5FFFF; 
+ background-color:#399dbf; 
+ background-image: -moz-linear-gradient(top, #399dbf 0%, #177391 100%); 
+ background-image: -webkit-linear-gradient(top, #399dbf 0%, #177391 100%); 
+ background-image: -o-linear-gradient(top, #399dbf 0%, #177391 100%); 
+ background-image: -ms-linear-gradient(top, #399dbf 0% ,#177391 100%); 
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#177391', endColorstr='#177391',GradientType=0 ); 
+ background-image: linear-gradient(top, #399dbf 0% ,#177391 100%);   
+ -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
+ -moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;  
+ box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;  
+  
+ }
+    </style>
+ <div class="container">
+     <table id="equipment">
+        <tr>
+            <td>
+                <table id="left-side-table">
+                        <tr>
+                            <th colspan="2" style="text-align:center">Электронный паспорт <br />оборудования</th>
+                        </tr>
+                        <tr>
+                            <th>Регистрационный №</th>
+                            <th>@Html.TextBoxFor(m => m.REGNO, new { @style = "color:black"} )</th>
+                        </tr>
+                        <tr>
+                            <td>Инвентарный №</td>
+                            <td>@Html.EditorFor(m => m.INWNOM, new { @style = "width: 95%;"} )</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Подразделение</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">@Html.TextBoxFor(m => m.SubDeptName, new { @style = "width: 97.5%;"} )</td>
+                        </tr>
+                        <tr>
+                            <td>Здание</td>
+                            <td>@Html.EditorFor(m => m.BuildingName, new { @style = "min-width: 95%;"})</td>
+                        </tr>
+                        <tr>
+                            <td>Помещение</td>
+                            <td>@Html.EditorFor(m => m.POM, new { @style = "width: 95%;"})</td>
+                        </tr>
+                        <tr>
+                            <td>Ввод в эксплуатацию</td>
+                            <td>@Html.TextBoxFor(m => m.DWWOD, new { @style = "width: 95%;"} )</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Завод-изготовитель</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">@Html.TextBoxFor(m => m.ZAWOD, new { @style = "width: 97.5%;"} )</td>
+                        </tr>
+                        <tr>
+                            <td>Заводской №</td>
+                            <td>@Html.TextBoxFor(m=>m.ZAWNO, new { @style = "width: 95%;"} )</td>
+                        </tr>
+                        <tr>
+                            <td>Год выпуска</td>
+                            <td>@Html.TextBoxFor(m=>m.GODWYP, new { @style = "width: 95%;"} )</td>
+                        </tr>
+                        <tr>
+                            <td>Обозначение по схеме</td>
+                            <td>@Html.TextBoxFor(m=>m.OBOZN, new { @style = "width: 95%;"} )</td>
+                        </tr>
+                        <tr>
+                            <td>Стоимость</td>
+                            <td>@Html.TextBoxFor(m=>m.STOIM, new { @style = "width: 95%;"} )</td>
+                        </tr>
+                     </table>
+                <table style="width:100%; margin-top:30%">
+                    <tr>
+                            <td>                                                 
+                                  <button type="submit" name="actions"  value="GetElectronicArchive">Электронный архив</button>
+                                <br>
+                                   <button type="submit" name="actions"  value="Movement">Движение</button>
+                                <br>
+                                   <button type="submit" name="actions"  value="Repair_history">История ремонтов</button>
+                            </td>
+                        </tr>
+                </table>
+            </td>
+            <td>
+             <table id="main-table-equipment">
+                 <tr>
+                     <td id="equipment-info">
+                         <table>
+                             <tr>
+                                 <td>Вид</td>
+                                 <td>@Html.TextBoxFor(m => m.W_Name, new { @style = "width: 100%;"} )</td>
+                                 <td>@Html.TextBoxFor(m => m.W, new { @style = "width: 30px;"} )</td>
+                             </tr>
+                             <tr>
+                                 <td>Группа</td>
+                                 <td>@Html.TextBoxFor(m => m.G_Name, new { @style = "width: 100%;"} )</td>
+                                 <td>@Html.TextBoxFor(m => m.G, new { @style = "width: 30px;"} )</td>
+                             </tr>
+                             <tr>
+                                 <td>Подгруппа</td>
+                                 <td>@Html.TextBoxFor(m => m.P_Name, new { @style = "width: 100%;"} )</td>
+                                 <td>@Html.TextBoxFor(m => m.P, new { @style = "width: 30px;"} )</td>
+                             </tr>
+                             <tr>
+                                 <td>Модель</td>
+                                 <td colspan="2">@Html.TextBoxFor(m => m.M, new { @style = "width: 99%;"} )</td>
+                             </tr>
+                             <tr>
+                                 <td>Марка</td>
+                                 <td colspan="2">@Html.TextBoxFor(m => m.MARKA, new { @style = "width: 99%;"} )</td>
+                             </tr>
+                             <tr>
+                                 <td>Принадлежность <br />к агрегату</td>
+                                 <td colspan="2">@Html.TextBoxFor(m => m.AggregateAttachment, new { @style = "width: 99%;"} )</td>
+                             </tr>
+                             <tr>
+                                 <td>Наименование /1</td>
+                                 <td colspan="2">@Html.TextBoxFor(m => m.NAIMOB, new { @style = "width: 99%;"} )</td>
+                             </tr>
+                             <tr>
+                                 <td>Наименование /2</td>
+                                 <td colspan="2">@Html.TextBoxFor(m => m.Name2, new { @style = "width: 99%;"} )</td>
+                             </tr>
+                         </table>
+                     </td>
+                     <td id ="equipment-category">
+                         <div class="sub-header">Категория оборудования</div>
+                         <table id="categories">
+                             <tr>
+                                 <td>@Html.CheckBoxFor(m => m.ImportantToSafety)</td>
+                                 <td>систем, важных для безопасности РУ</td>
+                             </tr>
+                             <tr>
+                                 <td>@Html.TextBoxFor(m => m.ReactorAttachment, new { @style = "width: 100px;"} )</td>
+                                 <td>Класс безопасности @Html.TextBoxFor(m => m.SecurityClass, new { @style = "width: 30px;"} )</td>
+                             </tr>
+                             <tr>
+                                 <td>@Html.CheckBoxFor(m => m.MainOGE)</td>
+                                 <td>основное (ОГЭ)</td>
+                             </tr>
+                             <tr>
+                                 <td>@Html.EditorFor(m => m.SubjectToInspection)</td>
+                                 <td>подлежащее освидетельствованию</td>
+                             </tr>
+                             <tr>
+                                 <td>@Html.CheckBoxFor(m => m.SubordinatedRosTechNadzor)</td>
+                                 <td>подведомственное Ростехнадзору</td>
+                             </tr>
+                             <tr>
+                                 <td>Региональный №</td>
+                                 <td>@Html.TextBoxFor(m => m.NTEX, new { @style = "width: 99%;"} )</td>
+                             </tr>
+                             <tr>
+                                 <td>Шифр установок,<br /> сетей, систем</td>
+                                 <td>@Html.TextBoxFor(m => m.WUST, new { @style = "width: 30px;"} ) @Html.TextBoxFor(m => m.KSUST, new { @style = "width: 30px;"} ) @Html.TextBoxFor(m => m.KPUST, new { @style = "width: 30px;"} )</td>
+                             </tr>
+                         </table>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td colspan="2" id="repair-works">
+                         <div class="sub-header">Ремонтные работы</div>
+                         <table id="RepairsWork">
+                             <tr>
+                                 <td style="width:500px"
+>
+                                     <table id="left-part" style="border-spacing: 2px 0px!important;">
+                                         <tr>
+                                             <td colspan="2">Шифр возможных ремонтов @Html.TextBoxFor(m => m.SHIFWR)</td>
+                                         </tr>
+                                         <tr>
+                                             <td style="background-color:#c4c4c4">Способ ремонта
+                                                 <table  id="kto">
+                                                     <tr>
+                                                         <th  style="text-align:center;color:blue;width:30px;background-color:#c4c4c4">
+                                                             K
+                                                         </th>
+                                                          <th  style="text-align:center;color:blue;width:30px;background-color:#c4c4c4">
+                                                              T
+                                                         </th>
+                                                          <th  style="text-align:center;color:blue;width:30px;background-color:#c4c4c4">
+                                                              O
+                                                         </th>
+                                                     </tr>
+                                                     <tr>
+                                                          <td>
+                                                              @Html.TextBoxFor(m => m.SPOSK, new { @style = "width: 30px; text-align:center;"} )
+                                                         </td>
+                                                          <td>
+                                                              @Html.TextBoxFor(m => m.SPOST, new { @style = "width: 30px;text-align:center;"} )
+                                                         </td>
+                                                          <td>
+                                                              @Html.TextBoxFor(m => m.SPOSTO, new { @style = "width: 30px;text-align:center;"} )
+                                                         </td>
+                                                     </tr>
+                                                 </table>
+                                                 </td>
+                                                 
+                                                @*  К @Html.TextBoxFor(m => m.SPOSK, new { @style = "width: 30px;"} ) Т @Html.TextBoxFor(m => m.SPOST, new { @style = "width: 30px;"} ) О @Html.TextBoxFor(m => m.SPOSTO, new { @style = "width: 30px;"} )</td>*@
+                                             <td style="background-color:#c4c4c4">Сменность @Html.TextBoxFor(m => m.SMEN, new { @style = "width: 30px;"})</td>
+                                         </tr>
+@*                                         <tr>
+                                             
+                                         </tr>*@
+                                         <tr>
+                                             <td colspan="2"> <div class="sub-header">Ремонтный цикл</div></td>
+                                         </tr>
+                                         <tr>
+                                             <td></td>
+                                             <td text-align: right>Интервалы/мес./:</td>
+                                         </tr>
+                                         <tr>
+                                             <td>Вид расчета @Html.TextBoxFor(m => m.WRASCH, new { @style = "width: 30px;"} )</td>
+                                             <td>Ремонт/ТО @Html.TextBoxFor(m => m.WRASCH, new { @style = "width: 30px; color:red"} )</td>
+                                         </tr>
+                                         <tr>
+                                             <td>Структура @Html.TextBoxFor(m => m.KOLKSTR, new { @style = "width: 30px;"} ) @Html.TextBoxFor(m => m.KOLTSTR, new { @style = "width: 30px;"} ) @Html.TextBoxFor(m => m.KOLOSTR, new { @style = "width: 30px;"} )</td>
+                                             <td>Т/Т @Html.TextBoxFor(m => m.WRASCH, new { @style = "width: 30px;color:red"} )</td>
+                                         </tr>
+                                         <tr>
+                                             <td>Период @Html.TextBoxFor(m => m.PER)</td>
+                                             <td>К/К @Html.TextBoxFor(m => m.WRASCH, new { @style = "width: 30px;color:red"} )</td>
+                                         </tr>
+                                         <tr>
+                                             <td colspan="2"> <div class="sub-header">Трудоемкость(н/ч)</div></td>
+                                         </tr>
+                                         <tr>
+                                             <td>
+                                                 <table>
+                                         <tr>
+                                             <td></td>
+                                             <td style="width:35px;text-align:center">K</td>
+                                             <td style="width:35px;text-align:center">T</td>
+                                             <td style="width:35px;text-align:center">O</td>
+                                         </tr>
+                                          <tr>
+                                             <td>механическая часть</td>
+                                             <td  style="width:30px;"> @Html.TextBoxFor(m => m.WRASCH, new { @style = "width: 35px;color:red"} )</td>
+                                             <td  style="width:30px;"> @Html.TextBoxFor(m => m.WRASCH, new { @style = "width: 35px;color:red"} )</td>
+                                             <td  style="width:30px;"> @Html.TextBoxFor(m => m.WRASCH, new { @style = "width: 35px;color:red"} )</td>
+                                         </tr>
+                                          <tr>
+                                             <td>электрическая часть</td>
+                                             <td  style="width:30px;"> @Html.TextBoxFor(m => m.WRASCH, new { @style = "width: 35px;color:red"} )</td>
+                                             <td  style="width:30px;"> @Html.TextBoxFor(m => m.WRASCH, new { @style = "width: 35px;color:red"} )</td>
+                                             <td  style="width:30px;"> @Html.TextBoxFor(m => m.WRASCH, new { @style = "width: 35px;color:red"} )</td>
+                                         </tr>
+                                                     </table>
+                                                 </td>
+                                             </tr>
+
+                                     </table> 
+                                 </td>                                                                     
+                                 <td>
+                                     <table id="right-part">
+                                         <tr>
+                                             <th colspan="2">Коэффициенты условий труда</th>
+                                         </tr>
+                                         <tr>
+                                             <td style="width:185px;">Механическая часть @Html.TextBoxFor(m => m.KUSM, new { @style = "width: 30px;"} )</td>
+                                             <td>Электрическая часть @Html.TextBoxFor(m => m.KUSE, new { @style = "width: 30px;"} )</td>
+                                         </tr>
+                                         <tr>
+                                             <th colspan="2">Категории ремонтной сложности</th>
+                                         </tr>
+                                         <tr>
+                                             <td>Механическая часть @Html.TextBoxFor(m => m.KATM, new { @style = "width: 30px;"} )</td>
+                                             <td>Электрическая часть @Html.TextBoxFor(m => m.KATE, new { @style = "width: 30px;"} )</td>
+                                         </tr>
+                                         <tr>
+                                             <th colspan="2">Трудоемкость энергообслуживания</th>
+                                         </tr>
+                                         <tr>
+                                             <td style="width:100px;">Кап. ремонт @Html.TextBoxFor(m => m.TRUDK, new { @style = "width: 40px;"} )</td>
+                                             <td>Тек. ремонт @Html.TextBoxFor(m => m.TRUDT, new { @style = "width: 30px;"} ) ТО @Html.TextBoxFor(m => m.TRUDTO, new { @style = "width: 30px;"} )</td>
+                                         </tr>
+                                         <tr>
+                                             <th colspan="2">Последний ремонт</th>
+                                         </tr>
+                                         <tr>
+                                             <td>Дата @Html.TextBoxFor(m => m.DPR)</td>
+                                             <td>Вид @Html.TextBoxFor(m => m.WPR, new { @style = "width: 40px;"} ) № @Html.TextBoxFor(m => m.NPR, new { @style = "width: 40px;"} )</td>
+                                         </tr>
+                                         <tr>
+                                             <th colspan="2">Последний кап. ремонт</th>
+                                         </tr>
+                                         <tr>
+                                             <td>Дата: @Model.DPKAP Количество: @Model.KOLKAP</td>
+                                             <td>Количество тек. ремонтов: @Model.KOLTEK</td>
+                                         </tr>
+                                     </table>
+                                 </td>
+                             </tr>
+                         </table>
+                     </td>
+                 </tr>
+             </table>
+            </td>
+        </tr>
+    </table>    
+ </div>
+    <div>
+    @Ajax.ActionLink("<<Назад", "Index","Eq",new {page=1}, new AjaxOptions { HttpMethod="GET", UpdateTargetId="LoadedContent" })
+    </div>
+}
+@Styles.Render("~/Content/equipment.css")

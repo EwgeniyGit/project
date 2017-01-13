@@ -1,0 +1,179 @@
+﻿@model EQServiceSystem.ViewModels.AdminEquipmentRU
+@using PagedList.Mvc;
+<legend class="text-info">Оборудование</legend>
+<div class="bg-danger">@ViewBag.Message</div>
+<style type="text/css">
+    tbody {
+        float: left;
+        overflow: scroll;
+        height: 600px;
+    }
+
+    thead {
+        border: 2px;
+        float: left;
+    }
+      #EquipmentList {display: table; width: 100%; }
+    .ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+        font-size: 10px;
+    } 
+    .ui-autocomplete { height: 50%; overflow-y: scroll; overflow-x: hidden;}
+</style>
+<script src="@Url.Content("~/Scripts/jquery-ui-1.8.24.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    function Check(){
+        var autocompleteUrl = Send();     
+    }
+    function autocomplete(list) {
+        $("#name").autocomplete({
+            source: list,
+            minLength:3});
+    }
+    function Send() {  
+        var input = document.getElementsByName('i')
+        for (c = 0; c < (input).length; c++) {
+            if (input[c].checked) i = input[c].value;
+        }
+        var w = document.getElementById('W').value;//вид
+        var g = document.getElementById('G').value;//группа
+        var p = document.getElementById('P').value;//подгруппа
+        var m = document.getElementById('M').value;//марка
+        var ru = document.getElementById('RU').value;//РУ
+        var name = document.getElementById('name').value;//строка поиска по названию
+        var regnum = document.getElementById('regnum').value;
+        var invnum = document.getElementById('invnum').value;
+        var list;
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("Find", "Eq")",
+            data: 'i=' + "RUList" + '&all_W=' + w + '&all_G=' + g + '&all_P=' + p + '&all_Marks=' + m + '&SubDepts=' + d + '&Buildings=' + b + '&Rooms=' + r + '&RU=' + ru + '&term=' + name + '&RegNums=' + regnum + '&Invnums=' + invnum,
+            success: function autocomplete(data) { $("input#name").autocomplete({ source: data }); return data; }
+        });
+        
+    }
+  </script>
+@using (Ajax.BeginForm("GetAdminEquipmentListRU", "Eq", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "LoadedContent" }))
+{
+    <div class="container" id="EquipmentList">
+
+        <div class="filters" style="margin:0px">
+            <div class="filter-element">Вид</div>
+            <select name="all_W" id="W" class="filter-element" style="width: 527px;" onchange="EquipmentListbtn.click()">
+                @foreach (var item in Model.All_Type_name_items)
+                {
+                    <option value = "@item">@item </option>
+                }
+            </select>
+
+            <div class="filter-element">Группа</div>
+            <select name="all_G" id="G" class="filter-element" style="width: 285px;" onchange="EquipmentListbtn.click()">
+                @foreach (var item in Model.All_Group_name_items)
+                {
+                    <option value = "@item">@item </option>;
+                }
+            </select>
+            <br />
+            <div class="filter-element">Подгруппа</div>
+            <select name="all_P" id="P" class="filter-element" style="width: 480px;" onchange="EquipmentListbtn.click()">
+                @foreach (var item in Model.All_SubGroup_name_items)
+                {
+                    <option value = "@item">@item </option>
+                }
+            </select>
+
+            <div class="filter-element">Марка</div>
+            <select name="all_Marks" id="M" class="filter-element" style="width: 290px;" onchange="EquipmentListbtn.click()">
+                @foreach (var item in Model.All_Marks_name_items)
+                {
+                    <option value = "@item">@item </option>
+                }
+            </select>
+
+            <input class="btn" type="submit" id="EquipmentListbtn" style="display: none" value="Применить фильтр" />
+            @*<input type="button" value="Очистить фильтры" onclick='@Url.Action("GetEquipmentList", "Equipment")/>*@
+            @* @using (@Ajax.ActionLink("GetEquipmentList", "Equipment", new AjaxOptions { UpdateTargetId = "LoadedContent", HttpMethod="GET"}))
+             {
+                  <input class="filter-element" type="submit" value="Очистить фильтры"/>
+             }*@
+        </div>
+        <div class="filters" name="admin-filters">
+            <div class="filter-element">Реакторная установка</div>
+            <select name="RU" id="RU" class="filter-element" style="width: 169px;" onchange="EquipmentListbtn.click()">
+                @foreach (var item in Model.RU)
+                {
+                    <option value = "@item">@item </option>
+                }
+            </select> 
+              <div class="filter-element">Рег. №</div>
+              <input type="text" name="regnum" id="regnum" value ="@Model.RegNums">
+               <div class="filter-element">Инвентарный №</div>
+              <input type="text" name="invnum" id="invnum" value ="@Model.InvNums">
+               @Ajax.ActionLink("Сброс", "Index", "Eq", new { page = 1 }, new AjaxOptions { UpdateTargetId = "LoadedContent", HttpMethod = "GET" }, new { @class = "btn" })
+        </div>
+
+        <table id="eqTable" class="main-table" style="overflow: hidden; width: 1500px">
+            <thead>
+                <tr>
+                    <th class="column-header" style="width: 50px">РУ</th>
+                    <th class="column-header" style="width: 105px">Подразделение</th>
+                    <th class="column-header" style="width: 55px">Здание</th>
+                    <th class="column-header" style="width: 104px">Помещение</th>
+                    <th class="column-header" style="width: 56px">Рег. №</th>
+                    <th class="column-header" style="width: 64px">Инв. №</th>
+                    <th class="column-header" style="width: 103px">Тип агрегата</th>
+                    <th class="column-header" style="width: 440px">Наименование <input type="search" id="name" name="name" placeholder="учитывайте регистр" value="@Model.nameL" onchange="Check()"/><a class="tooltip" href="#" style="color:white">?<span class="custom help"><img src="~/Resources/icon/Help.png" alt="помощь" height="48" width="48" /><em><br></em>Для поиска наберите текст и нажмите Enter</span></a></th>
+                    <th class="column-header" style="width: 32px">Вид</th>
+                    <th class="column-header" style="width: 52px">Группа</th>
+                    <th class="column-header" style="width: 50px">Подгруппа</th>
+                    <th class="column-header" style="width: 55px">Марка</th>
+                </tr>
+            </thead>
+            @for (int i = 0; i < Model.PageInfo.PageSize; i++)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m => m.PagedEquipment[i].RU, new { style = "width: 50px;" })</td>
+                    <td>@Html.DisplayFor(m => m.PagedEquipment[i].SubDeptName, new { style = "width: 105px;" })</td>
+                    <td>@Html.DisplayFor(m => m.PagedEquipment[i].BuildingName, new { style = "width: 51px;" })</td>
+                    <td>@Html.DisplayFor(m => m.PagedEquipment[i].Room, new { style = "width: 100px;" })</td>
+                    <td>@Html.DisplayFor(m => m.PagedEquipment[i].RegNumber, new { style = "width: 52px;" })</td>
+                    <td>@Html.DisplayFor(m => m.PagedEquipment[i].InvNumber, new { style = "width: 60px;" })</td>
+                    <td>@Html.DisplayFor(m => m.PagedEquipment[i].AggregateOfType, new { style = "width: 100px;" })</td>
+                    <td style="width: 440px">@Ajax.ActionLink(@Model.PagedEquipment[i].Name, "GetEqiupmentPassport", "Equipment", new { EquipmentID = @Model.PagedEquipment[i].ID }, new AjaxOptions { UpdateTargetId = "LoadedContent", HttpMethod = "POST" }, null)</td>
+                    <td>@Html.DisplayFor(m => m.PagedEquipment[i].W, new { style = "width: 27px;" })</td>
+                    <td>@Html.DisplayFor(m => m.PagedEquipment[i].G, new { style = "width: 50px;" })</td>
+                    <td>@Html.DisplayFor(m => m.PagedEquipment[i].P, new { style = "width: 74px;" })</td>
+                    <td>@Html.DisplayFor(m => m.PagedEquipment[i].Mark, new { style = "width: 50px;" })</td>
+                </tr>
+            }
+
+        </table>
+        Страница @(Model.PageInfo.TotalItems
+        < Model.PageInfo.PageSize ? 0 : Model.PageInfo.PageNumber) из @Model.PageInfo.TotalPages
+        Всего единиц оборудования в списке: @Model.PageInfo.TotalItems
+        @Html.PagedListPager(Model.PagedEquipment, x => Url.Action("RuInd", "Eq", new
+   {
+       page = x,
+       all_W = Model.All_Type_name_items[0].ToString(),
+       all_G = Model.All_Group_name_items[0].ToString(),
+       all_P = Model.All_SubGroup_name_items[0].ToString(),
+       all_Marks = Model.All_Marks_name_items[0].ToString(),
+       RU=Model.RU[0].ToString(),
+       name=Model.nameL,
+       RegNums=Model.RegNums,
+       InvNums=Model.InvNums
+       
+   }),
+   PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new PagedListRenderOptions
+  {
+      LinkToFirstPageFormat = "<<",
+      LinkToPreviousPageFormat = "Назад",
+      LinkToNextPageFormat = "Вперед",
+      LinkToLastPageFormat = ">>"
+  }
+
+      , new AjaxOptions() { HttpMethod = "POST", UpdateTargetId = "LoadedContent" }))
+    </div>    
+}
+@Styles.Render("~/Content/tables-styles.css")
+@Styles.Render("~/Content/tip.css")
+

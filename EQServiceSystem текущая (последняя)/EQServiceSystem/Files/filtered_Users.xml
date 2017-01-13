@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfEquipmentElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EquipmentElement>
+    <ID>16662</ID>
+    <SubDeptName>РУ ВК-50</SubDeptName>
+    <BuildingName>126</BuildingName>
+    <Room>126</Room>
+    <RegNumber>25821</RegNumber>
+    <InvNumber>524450</InvNumber>
+    <AggregateOfType>-</AggregateOfType>
+    <Name>ПРОМЫВАТЕЛЬ ГАЗА КИСЛОРОДА</Name>
+    <W>Э</W>
+    <G>01</G>
+    <GroupName>1 Сооружения</GroupName>
+    <SubGroupName> </SubGroupName>
+    <TypeName>Э Электрическое оборудование</TypeName>
+    <TypeCode>Э</TypeCode>
+    <idType>0</idType>
+    <idGroup>0</idGroup>
+    <idSubgroup>0</idSubgroup>
+  </EquipmentElement>
+  <EquipmentElement>
+    <ID>18726</ID>
+    <SubDeptName>РУ ВК-50</SubDeptName>
+    <BuildingName>126</BuildingName>
+    <Room>126</Room>
+    <RegNumber>25760</RegNumber>
+    <InvNumber>524450</InvNumber>
+    <AggregateOfType>-</AggregateOfType>
+    <Name>БАК ДЛЯ ДИСТИЛЛЯТА</Name>
+    <W>Э</W>
+    <G>01</G>
+    <GroupName>1 Сооружения</GroupName>
+    <SubGroupName> </SubGroupName>
+    <TypeName>Э Электрическое оборудование</TypeName>
+    <TypeCode>Э</TypeCode>
+    <idType>0</idType>
+    <idGroup>0</idGroup>
+    <idSubgroup>0</idSubgroup>
+  </EquipmentElement>
+  <EquipmentElement>
+    <ID>18727</ID>
+    <SubDeptName>РУ ВК-50</SubDeptName>
+    <BuildingName>126</BuildingName>
+    <Room>126</Room>
+    <RegNumber>25761</RegNumber>
+    <InvNumber>524450</InvNumber>
+    <AggregateOfType>-</AggregateOfType>
+    <Name>РАЗДЕЛИТЕЛЬНАЯ КОЛОНКА ВОДОРОДА</Name>
+    <W>Э</W>
+    <G>01</G>
+    <GroupName>1 Сооружения</GroupName>
+    <SubGroupName> </SubGroupName>
+    <TypeName>Э Электрическое оборудование</TypeName>
+    <TypeCode>Э</TypeCode>
+    <idType>0</idType>
+    <idGroup>0</idGroup>
+    <idSubgroup>0</idSubgroup>
+  </EquipmentElement>
+  <EquipmentElement>
+    <ID>18728</ID>
+    <SubDeptName>РУ ВК-50</SubDeptName>
+    <BuildingName>126</BuildingName>
+    <Room>126</Room>
+    <RegNumber>25762</RegNumber>
+    <InvNumber>524450</InvNumber>
+    <AggregateOfType>-</AggregateOfType>
+    <Name>РЕГУЛЯТОР ДАВЛЕНИЯ ВОДОРОДА</Name>
+    <W>Э</W>
+    <G>01</G>
+    <GroupName>1 Сооружения</GroupName>
+    <SubGroupName> </SubGroupName>
+    <TypeName>Э Электрическое оборудование</TypeName>
+    <TypeCode>Э</TypeCode>
+    <idType>0</idType>
+    <idGroup>0</idGroup>
+    <idSubgroup>0</idSubgroup>
+  </EquipmentElement>
+  <EquipmentElement>
+    <ID>18729</ID>
+    <SubDeptName>РУ ВК-50</SubDeptName>
+    <BuildingName>126</BuildingName>
+    <Room>126</Room>
+    <RegNumber>25763</RegNumber>
+    <InvNumber>524450</InvNumber>
+    <AggregateOfType>-</AggregateOfType>
+    <Name>ПРОМЫВАТЕЛЬ ГАЗА ВОДОРОДА</Name>
+    <W>Э</W>
+    <G>01</G>
+    <GroupName>1 Сооружения</GroupName>
+    <SubGroupName> </SubGroupName>
+    <TypeName>Э Электрическое оборудование</TypeName>
+    <TypeCode>Э</TypeCode>
+    <idType>0</idType>
+    <idGroup>0</idGroup>
+    <idSubgroup>0</idSubgroup>
+  </EquipmentElement>
+  <EquipmentElement>
+    <ID>18730</ID>
+    <SubDeptName>РУ ВК-50</SubDeptName>
+    <BuildingName>126</BuildingName>
+    <Room>126</Room>
+    <RegNumber>25764</RegNumber>
+    <InvNumber>524450</InvNumber>
+    <AggregateOfType>-</AggregateOfType>
+    <Name>РЕГУЛЯТОР ДАВЛЕНИЯ КИСЛОРОДА</Name>
+    <W>Э</W>
+    <G>01</G>
+    <GroupName>1 Сооружения</GroupName>
+    <SubGroupName> </SubGroupName>
+    <TypeName>Э Электрическое оборудование</TypeName>
+    <TypeCode>Э</TypeCode>
+    <idType>0</idType>
+    <idGroup>0</idGroup>
+    <idSubgroup>0</idSubgroup>
+  </EquipmentElement>
+  <EquipmentElement>
+    <ID>18731</ID>
+    <SubDeptName>РУ ВК-50</SubDeptName>
+    <BuildingName>126</BuildingName>
+    <Room>126</Room>
+    <RegNumber>25765</RegNumber>
+    <InvNumber>524450</InvNumber>
+    <AggregateOfType>-</AggregateOfType>
+    <Name>УРАВНИТЕЛЬНЫЙ БАК</Name>
+    <W>Э</W>
+    <G>01</G>
+    <GroupName>1 Сооружения</GroupName>
+    <SubGroupName> </SubGroupName>
+    <TypeName>Э Электрическое оборудование</TypeName>
+    <TypeCode>Э</TypeCode>
+    <idType>0</idType>
+    <idGroup>0</idGroup>
+    <idSubgroup>0</idSubgroup>
+  </EquipmentElement>
+  <EquipmentElement>
+    <ID>18732</ID>
+    <SubDeptName>РУ ВК-50</SubDeptName>
+    <BuildingName>126</BuildingName>
+    <Room>126</Room>
+    <RegNumber>25766</RegNumber>
+    <InvNumber>524450</InvNumber>
+    <AggregateOfType>-</AggregateOfType>
+    <Name>РАЗДЕЛИТЕЛЬНАЯ КОЛОНКА КИСЛОРОДА</Name>
+    <W>Э</W>
+    <G>01</G>
+    <GroupName>1 Сооружения</GroupName>
+    <SubGroupName> </SubGroupName>
+    <TypeName>Э Электрическое оборудование</TypeName>
+    <TypeCode>Э</TypeCode>
+    <idType>0</idType>
+    <idGroup>0</idGroup>
+    <idSubgroup>0</idSubgroup>
+  </EquipmentElement>
+  <EquipmentElement>
+    <ID>18733</ID>
+    <SubDeptName>РУ ВК-50</SubDeptName>
+    <BuildingName>126</BuildingName>
+    <Room>126</Room>
+    <RegNumber>25767</RegNumber>
+    <InvNumber>524450</InvNumber>
+    <AggregateOfType>-</AggregateOfType>
+    <Name>РЕСИВЕР №1</Name>
+    <W>Э</W>
+    <G>01</G>
+    <GroupName>1 Сооружения</GroupName>
+    <SubGroupName> </SubGroupName>
+    <TypeName>Э Электрическое оборудование</TypeName>
+    <TypeCode>Э</TypeCode>
+    <idType>0</idType>
+    <idGroup>0</idGroup>
+    <idSubgroup>0</idSubgroup>
+  </EquipmentElement>
+  <EquipmentElement>
+    <ID>18734</ID>
+    <SubDeptName>РУ ВК-50</SubDeptName>
+    <BuildingName>126</BuildingName>
+    <Room>126</Room>
+    <RegNumber>25768</RegNumber>
+    <InvNumber>524450</InvNumber>
+    <AggregateOfType>-</AggregateOfType>
+    <Name>РЕСИВЕР №2</Name>
+    <W>Э</W>
+    <G>01</G>
+    <GroupName>1 Сооружения</GroupName>
+    <SubGroupName> </SubGroupName>
+    <TypeName>Э Электрическое оборудование</TypeName>
+    <TypeCode>Э</TypeCode>
+    <idType>0</idType>
+    <idGroup>0</idGroup>
+    <idSubgroup>0</idSubgroup>
+  </EquipmentElement>
+  <EquipmentElement>
+    <ID>18735</ID>
+    <SubDeptName>РУ ВК-50</SubDeptName>
+    <BuildingName>126</BuildingName>
+    <Room>126</Room>
+    <RegNumber>25769</RegNumber>
+    <InvNumber>524450</InvNumber>
+    <AggregateOfType>-</AggregateOfType>
+    <Name>РЕСИВЕР №3</Name>
+    <W>Э</W>
+    <G>01</G>
+    <GroupName>1 Сооружения</GroupName>
+    <SubGroupName> </SubGroupName>
+    <TypeName>Э Электрическое оборудование</TypeName>
+    <TypeCode>Э</TypeCode>
+    <idType>0</idType>
+    <idGroup>0</idGroup>
+    <idSubgroup>0</idSubgroup>
+  </EquipmentElement>
+  <EquipmentElement>
+    <ID>11819</ID>
+    <SubDeptName>РУ ВК-50</SubDeptName>
+    <BuildingName>126</BuildingName>
+    <Room>126</Room>
+    <RegNumber>22964</RegNumber>
+    <InvNumber>524450</InvNumber>
+    <AggregateOfType>А</AggregateOfType>
+    <Name>ЭЛЕКТРОЛИЗЕР СЭУ-4М</Name>
+    <W>Э</W>
+    <G>01</G>
+    <P>16</P>
+    <Mark>СЭУ-4М</Mark>
+    <GroupName>1 Сооружения</GroupName>
+    <SubGroupName>16 Электролизерные установки</SubGroupName>
+    <TypeName>Э Электрическое оборудование</TypeName>
+    <TypeCode>Э</TypeCode>
+    <idType>0</idType>
+    <idGroup>0</idGroup>
+    <idSubgroup>0</idSubgroup>
+  </EquipmentElement>
+</ArrayOfEquipmentElement>

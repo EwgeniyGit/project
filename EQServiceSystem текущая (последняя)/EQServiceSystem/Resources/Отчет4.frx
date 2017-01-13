@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" TextQuality="Regular" ReportInfo.Description="Demonstrates simple list report. To create it:&#13;&#10;&#13;&#10;- go to &quot;Data&quot; menu and select &quot;Choose Report Data...&quot; item to select datasource;&#13;&#10;&#13;&#10;- go to &quot;Report|Configure Bands...&quot; menu to create the band structure;&#13;&#10;&#13;&#10;- return to the report page, doubleclick the data band to show its editor;&#13;&#10;&#13;&#10;- choose the datasource;&#13;&#10;&#13;&#10;- drag data from the Data Dictionary window to the band." ReportInfo.Created="01/17/2008 03:05:57" ReportInfo.Modified="08/24/2015 11:35:59" ReportInfo.CreatorVersion="2015.3.0.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqHwzMSgwTFaHpjtG3vsOj8XRZFnUB6mPS9z5AAan1hDOThHrADRKRoCpt41FyH3MYENKGkf4H2qJ7mnJlv3JPEVZFLC1snMp3ToqNRPiYEjla5AYkZurBSMxWvtquOeP4Qu/kItpsxEehcKru4PWFqIVSUJUHIiZJHVjmYf2MK/wL9DrLmB18MAIFV6skZluJcGOSblq/TIZCYhtGlEE2yA==">
+      <TableDataSource Name="Table" DataType="System.Int32" Enabled="true">
+        <Column Name="IdSubDept" DataType="System.Int32"/>
+        <Column Name="BuildingID" DataType="System.Int32"/>
+        <Column Name="W" DataType="System.String"/>
+        <Column Name="G" DataType="System.String"/>
+        <Column Name="P" DataType="System.String"/>
+        <Column Name="M" DataType="System.String"/>
+        <Column Name="INWNOM" DataType="System.String"/>
+        <Column Name="REGNO" DataType="System.String"/>
+        <Column Name="NAIMOB" DataType="System.String"/>
+        <Column Name="MARKA" DataType="System.String"/>
+        <Column Name="ZAWNO" DataType="System.String"/>
+        <Column Name="ZAWOD" DataType="System.String"/>
+        <Column Name="GODWYP" DataType="System.String"/>
+        <Column Name="DWWOD" DataType="System.String"/>
+        <Column Name="WUST" DataType="System.String"/>
+        <Column Name="POM" DataType="System.String"/>
+        <Column Name="SPOSK" DataType="System.String"/>
+        <Column Name="SPOST" DataType="System.String"/>
+        <Column Name="SPOSTO" DataType="System.String"/>
+        <Column Name="SMEN" DataType="System.Double"/>
+        <Column Name="WRASCH" DataType="System.String"/>
+        <Column Name="KOLKSTR" DataType="System.Double"/>
+        <Column Name="KOLTSTR" DataType="System.Double"/>
+        <Column Name="KOLOSTR" DataType="System.Double"/>
+        <Column Name="PER" DataType="System.Double"/>
+        <Column Name="SHIFWR" DataType="System.String"/>
+        <Column Name="KUSE" DataType="System.Double"/>
+        <Column Name="KUSM" DataType="System.Double"/>
+        <Column Name="KATM" DataType="System.Double"/>
+        <Column Name="KATE" DataType="System.Double"/>
+        <Column Name="TRUDK" DataType="System.Double"/>
+        <Column Name="TRUDT" DataType="System.Double"/>
+        <Column Name="TRUDTO" DataType="System.Double"/>
+        <Column Name="STOIM" DataType="System.Double"/>
+        <Column Name="OBOZN" DataType="System.String"/>
+        <Column Name="DPKAP" DataType="System.String"/>
+        <Column Name="SubDeptCode" DataType="System.Int32"/>
+        <Column Name="ShortName" DataType="System.String"/>
+        <Column Name="SubDeptID" DataType="System.Int32"/>
+        <Column Name="BuldingName" DataType="System.String"/>
+        <Column Name="SignID" DataType="System.Int32"/>
+        <Column Name="SignCode" DataType="System.String"/>
+        <Column Name="Expr2" DataType="System.Int32"/>
+        <Column Name="GroupName" DataType="System.String"/>
+        <Column Name="SubGroupName" DataType="System.String"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <Total Name="Total" TotalType="Count" Evaluator="Data1" PrintOn="GroupFooter2"/>
+    <Total Name="Total1" Expression="[Table.KATM]+[Table.KATE]" Evaluator="Data1" PrintOn="GroupFooter2"/>
+    <Total Name="Total2" TotalType="Count" Evaluator="Data1" PrintOn="GroupFooter1"/>
+    <Total Name="Total3" Expression="[Table.KATM]+[Table.KATE]" Evaluator="Data1" PrintOn="GroupFooter1"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Landscape="true" PaperWidth="297" PaperHeight="210" RawPaperSize="9">
+    <ReportTitleBand Name="ReportTitle1" Width="1047.06" Height="85.05">
+      <TextObject Name="Text1" Left="47.25" Top="9.45" Width="1048.95" Height="75.6" CanBreak="false" Text="Ведомость наличия механического, технологического оборудования и агрегатов&#13;&#10;по [Table.ShortName] подразделению на   [Year([Date])]     год&#13;&#10;(здание [Table.BuldingName])" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold"/>
+      <TextObject Name="Text12" Left="963.9" Top="66.15" Width="66.15" Height="18.9" Text="Ф.Н0111" HorzAlign="Center" Font="Times New Roman, 10pt"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="88.62" Width="1047.06" Height="103.95">
+      <TextObject Name="Text3" Top="28.35" Width="47.25" Height="37.8" Border.Lines="All" Fill.Color="Gainsboro" Text="Регис&#13;&#10;номер&#13;&#10;обор." HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text5" Left="47.25" Top="28.35" Width="18.9" Height="37.8" Border.Lines="All" Fill.Color="Gainsboro" Text="П&#13;&#10;А&#13;&#10;Г" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text13" Left="66.15" Top="28.35" Width="37.8" Height="37.8" Border.Lines="All" Fill.Color="Gainsboro" Text="Вид&#13;&#10;гр.&#13;&#10;об." HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text14" Top="66.15" Width="47.25" Height="37.8" Border.Lines="All" Fill.Color="Gainsboro" Text="Шифр&#13;&#10;под-&#13;&#10;разд." HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text15" Left="47.25" Top="66.15" Width="56.7" Height="37.8" Border.Lines="All" Fill.Color="Gainsboro" Text="Подгр&#13;&#10;мод.&#13;&#10;обор." HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text16" Left="103.95" Top="28.35" Width="122.85" Height="75.6" Border.Lines="All" Fill.Color="Gainsboro" Text="Наименование &#13;&#10;оборудования" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text17" Left="226.8" Top="28.35" Width="170.1" Height="37.8" Border.Lines="All" Fill.Color="Gainsboro" Text="Модель, тип, марка" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text18" Left="226.8" Top="66.15" Width="66.15" Height="37.8" Border.Lines="All" Fill.Color="Gainsboro" Text="Заводской&#13;&#10;номер" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text19" Left="292.95" Top="66.15" Width="56.7" Height="37.8" Border.Lines="All" Fill.Color="Gainsboro" Text="Дата&#13;&#10;выпуска" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text20" Left="349.65" Top="66.15" Width="47.25" Height="37.8" Border.Lines="All" Fill.Color="Gainsboro" Text="Дата ввода" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text21" Left="396.9" Top="28.35" Width="122.85" Height="75.6" Border.Lines="All" Fill.Color="Gainsboro" Text="Завод-изготовитель" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text22" Left="538.65" Top="28.35" Width="56.7" Height="47.25" Border.Lines="All" Fill.Color="Gainsboro" Text="Рем. цикл&#13;&#10;струк-ра&#13;&#10;период" HorzAlign="Right" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text23" Left="519.75" Top="28.35" Width="18.9" Height="47.25" Border.Lines="All" Fill.Color="Gainsboro" Text="В&#13;&#10;Р" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text25" Left="519.75" Top="75.6" Width="75.6" Height="28.35" Border.Lines="All" Fill.Color="Gainsboro" Text="Обозначен.&#13;&#10;по схеме" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text26" Left="595.35" Top="28.35" Width="94.5" Height="47.25" Border.Lines="All" Fill.Color="Gainsboro" Text="Здание&#13;&#10;Помещение" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text27" Left="595.35" Top="75.6" Width="47.25" Height="28.35" Border.Lines="All" Fill.Color="Gainsboro" Text="Способ КТО" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text28" Left="642.6" Top="75.6" Width="47.25" Height="28.35" Border.Lines="All" Fill.Color="Gainsboro" Text="Инвент. номер" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text29" Left="689.85" Top="28.35" Width="47.25" Height="37.8" Border.Lines="All" Fill.Color="Gainsboro" Text="Шиф&#13;&#10;воз&#13;&#10;рем" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text30" Left="689.85" Top="66.15" Width="47.25" Height="37.8" Border.Lines="All" Fill.Color="Gainsboro" Text="Смен-&#13;&#10;ность" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text31" Left="737.1" Top="28.35" Width="47.25" Height="37.8" Border.Lines="All" Fill.Color="Gainsboro" Text="Коэф.&#13;&#10;ус. р&#13;&#10;мех." HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text32" Left="737.1" Top="66.15" Width="47.25" Height="37.8" Border.Lines="All" Fill.Color="Gainsboro" Text="Коэф.&#13;&#10;ус. р&#13;&#10;элек." HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text33" Left="784.35" Top="28.35" Width="47.25" Height="37.8" Border.Lines="All" Fill.Color="Gainsboro" Text="Катег.&#13;&#10;рем.сл.&#13;&#10;механ." HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text34" Left="784.35" Top="66.15" Width="47.25" Height="37.8" Border.Lines="All" Fill.Color="Gainsboro" Text="Катег.&#13;&#10;рем.сл.&#13;&#10;электр." HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text35" Left="831.6" Top="28.35" Width="103.95" Height="37.8" Border.Lines="All" Fill.Color="Gainsboro" Text="Стоимость&#13;&#10;оборудования" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text36" Left="831.6" Top="66.15" Width="141.75" Height="18.9" Border.Lines="All" Fill.Color="Gainsboro" Text="Трудоем-сть элект" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text40" Left="935.55" Top="28.35" Width="113.4" Height="37.8" Border.Lines="All" Fill.Color="Gainsboro" Text="Регистр.&#13;&#10;номер&#13;&#10;технадз." HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text41" Left="973.35" Top="66.15" Width="75.6" Height="37.8" Border.Lines="All" Fill.Color="Gainsboro" Text="Шифр&#13;&#10;устан&#13;&#10;сети" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text11" Left="9.45" Width="94.5" Height="18.9" Text="Лист [Page#]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 10pt"/>
+      <TextObject Name="Text43" Left="113.4" Width="56.7" Height="18.9" Text="Дата" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 10pt"/>
+      <TextObject Name="Text37" Left="831.6" Top="85.05" Width="47.25" Height="18.9" Border.Lines="All" Fill.Color="Gainsboro" Text="Кап.р." HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text38" Left="878.85" Top="85.05" Width="47.25" Height="18.9" Border.Lines="All" Fill.Color="Gainsboro" Text="Тек.р." HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text39" Left="926.1" Top="85.05" Width="47.25" Height="18.9" Border.Lines="All" Fill.Color="Gainsboro" Text="Тех." HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Date" Left="179.55" Width="85.05" Height="18.9" Text="[FormatDateTime(DateTime.Now,&quot;Short Date&quot;)]" VertAlign="Center" Font="Times New Roman, 10pt"/>
+    </PageHeaderBand>
+    <GroupHeaderBand Name="GroupHeader1" Top="196.14" Width="1047.06" Condition="[Table.BuildingID]">
+      <GroupHeaderBand Name="GroupHeader2" Top="199.71" Width="1047.06" Height="37.8" Condition="[Table.GroupName]">
+        <TextObject Name="Text2" Top="9.45" Width="623.7" Height="18.9" Text="Группа [[Table.GroupName]]" Font="Times New Roman, 10pt"/>
+        <DataBand Name="Data1" Top="241.09" Width="1047.06" Height="47.25" Border.Lines="Top, Bottom" Border.Width="1.5" DataSource="Table">
+          <TextObject Name="Text44" Width="47.25" Height="18.9" Border.Lines="All" Text="[Table.REGNO]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text45" Left="47.25" Width="18.9" Height="18.9" Border.Lines="All" Text="[Table.SignCode]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text46" Left="66.15" Width="37.8" Height="18.9" Border.Lines="All" Text="[Table.W][Table.G]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text47" Top="18.9" Width="47.25" Height="28.35" Border.Lines="All" Text="[Table.SubDeptCode]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text48" Left="47.25" Top="18.9" Width="56.7" Height="28.35" Border.Lines="All" Text="[Table.P][Table.M]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text50" Left="226.8" Width="170.1" Height="18.9" Border.Lines="All" Text="[Table.MARKA]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text51" Left="226.8" Top="18.9" Width="56.7" Height="28.35" Border.Lines="All" Text="[Table.ZAWNO]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text52" Left="283.5" Top="18.9" Width="56.7" Height="28.35" Border.Lines="All" Text="[Table.GODWYP]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text53" Left="340.2" Top="18.9" Width="56.7" Height="28.35" Border.Lines="All" Text="[Table.DWWOD]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text54" Left="396.9" Width="122.85" Height="47.25" Border.Lines="All" Text="[Table.ZAWOD]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text56" Left="538.65" Width="56.7" Height="28.35" Border.Lines="All" Text="[Table.KOLKSTR] [Table.KOLTSTR] [Table.KOLOSTR] [Table.PER]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text58" Left="519.75" Top="28.35" Width="75.6" Height="18.9" Border.Lines="All" Text="[Table.OBOZN]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text59" Left="595.35" Width="94.5" Height="28.35" Border.Lines="All" Text="[Table.BuldingName]&#13;&#10;[Table.POM]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text60" Left="595.35" Top="28.35" Width="47.25" Height="18.9" Border.Lines="All" Text="[Table.SPOSK][Table.SPOST][Table.SPOSTO]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text61" Left="642.6" Top="28.35" Width="47.25" Height="18.9" Border.Lines="All" Text="[Table.INWNOM]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text62" Left="689.85" Width="47.25" Height="18.9" Border.Lines="All" Text="[Table.SHIFWR]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text63" Left="689.85" Top="18.9" Width="47.25" Height="28.35" Border.Lines="All" Text="[Table.SMEN]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text64" Left="737.1" Width="47.25" Height="18.9" Border.Lines="All" Text="[Table.KUSE]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text65" Left="737.1" Top="18.9" Width="47.25" Height="28.35" Border.Lines="All" Text="[Table.KUSM]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text66" Left="784.35" Width="47.25" Height="18.9" Border.Lines="All" Text="[Table.KATM]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text67" Left="784.35" Top="18.9" Width="47.25" Height="28.35" Border.Lines="All" Text="[Table.KATE]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text68" Left="831.6" Width="103.95" Height="18.9" Border.Lines="All" Text="[Table.STOIM]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text70" Left="831.6" Top="18.9" Width="47.25" Height="28.35" Border.Lines="All" Text="[Table.TRUDK]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text71" Left="878.85" Top="18.9" Width="47.25" Height="28.35" Border.Lines="All" Text="[Table.TRUDT]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text72" Left="926.1" Top="18.9" Width="47.25" Height="28.35" Border.Lines="All" Text="[Table.TRUDTO]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text73" Left="935.55" Width="113.4" Height="18.9" Border.Lines="All" Text="[Table.DPKAP]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text74" Left="973.35" Top="18.9" Width="75.6" Height="28.35" Border.Lines="All" Text="[Table.WUST]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text8" Left="519.75" Width="18.9" Height="28.35" Border.Lines="Right, Top, Bottom" Text="[Table.WRASCH] " HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+          <TextObject Name="Text49" Left="103.95" Width="122.85" Height="47.25" Border.Lines="All" Text="[Table.NAIMOB]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt"/>
+        </DataBand>
+        <GroupFooterBand Name="GroupFooter2" Top="291.91" Width="1047.06" Height="37.8">
+          <TextObject Name="Text4" Left="9.45" Width="113.4" Height="18.9" Text="Итоги по группе" Font="Times New Roman, 10pt"/>
+          <TextObject Name="Text75" Left="132.3" Width="481.95" Height="18.9" Text="[Table.GroupName]" Font="Times New Roman, 10pt"/>
+          <TextObject Name="Text6" Left="9.45" Top="18.9" Width="198.45" Height="18.9" Text="Количество физических единиц" Font="Times New Roman, 10pt"/>
+          <TextObject Name="Text7" Left="226.8" Top="18.9" Width="94.5" Height="18.9" Text="[Total]" Font="Times New Roman, 10pt"/>
+          <TextObject Name="Text9" Left="349.65" Top="18.9" Width="245.7" Height="18.9" Text="Категория ремонтной сложности" Font="Times New Roman, 10pt"/>
+          <TextObject Name="Text10" Left="604.8" Top="18.9" Width="94.5" Height="18.9" Text="[Total1]" Font="Times New Roman, 10pt"/>
+        </GroupFooterBand>
+      </GroupHeaderBand>
+      <GroupFooterBand Name="GroupFooter1" Top="333.28" Width="1047.06" Height="37.8">
+        <TextObject Name="Text76" Left="9.45" Width="122.85" Height="18.9" Text="Итоги по зданию" Font="Times New Roman, 10pt"/>
+        <TextObject Name="Text77" Left="132.3" Width="141.75" Height="18.9" Text="[Table.BuldingName]" Font="Times New Roman, 10pt"/>
+        <TextObject Name="Text78" Left="9.45" Top="18.9" Width="198.45" Height="18.9" Text="Количество физических единиц" Font="Times New Roman, 10pt"/>
+        <TextObject Name="Text80" Left="349.65" Top="18.9" Width="245.7" Height="18.9" Text="Категория ремонтной сложности" Font="Times New Roman, 10pt"/>
+        <TextObject Name="Text24" Left="226.8" Top="18.9" Width="94.5" Height="18.9" Text="[Total2]" Font="Times New Roman, 10pt"/>
+        <TextObject Name="Text55" Left="604.8" Top="18.9" Width="94.5" Height="18.9" Text="[Total3]" Font="Times New Roman, 10pt"/>
+      </GroupFooterBand>
+    </GroupHeaderBand>
+  </ReportPage>
+</Report>

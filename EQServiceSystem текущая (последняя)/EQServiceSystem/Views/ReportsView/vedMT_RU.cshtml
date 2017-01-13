@@ -1,0 +1,18 @@
+﻿@model EQServiceSystem.Models.Reports.vedMT_RU
+<head>
+    <title>Ведомость наличия механического и технологического оборудования систем важных для безопасности РУ</title>
+    <legend class = "text-info">Ведомость наличия механического и технологического оборудования систем важных для безопасности РУ</legend>  
+</head>
+ @using (Html.BeginForm("vedomosti", "vedomosti", FormMethod.Post))
+  {
+<body>
+  <select selected  id="IdRU" name="IdRU">
+                @foreach (var item in Model.sprRU.ToList())
+                {
+                    <option value = "@item.ID">@item.Name</option>
+                } 
+  </select>
+      <button type="submit" name="action" value="idRU">Сформировать ведомость</button>
+      <button type="submit" name="action" value="AllRU">Полная ведомость по институту</button>
+</body>
+ }

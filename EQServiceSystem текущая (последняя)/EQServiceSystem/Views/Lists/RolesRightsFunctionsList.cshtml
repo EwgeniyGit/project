@@ -1,0 +1,71 @@
+﻿@model EQServiceSystem.ViewModels.RolesRightsFunctionsList
+
+@using (Ajax.BeginForm("AddUserFunction", "Lists", new AjaxOptions { HttpMethod = "GET", UpdateTargetId = "LoadedContent" }))
+{
+    <legend class = "text-info">Список функций</legend>
+    <div class="bg-danger">@ViewBag.Message</div> 
+    
+    <div class="container" id ="UserFunctions">
+        <input type="submit" value ="Добавить функцию" />
+        <table class="table-bordered">
+            <tr class="row">
+                <th>ID Функции</th>
+                <th>Полное название</th>
+                <th>Краткое название</th>
+                <th>Доступ к объекту</th>
+                <th>Действие</th>
+            </tr>
+            @foreach (var item in Model.UserFunctions)
+            {
+                <tr class="row">
+                    <td>@item.FunctionID</td>
+                    <td>@item.FunctionName</td>
+                    <td>@item.FunctionShortName</td>
+                    <td>@item.AcessToObject</td>
+                    <td>@item.Action</td>
+                </tr>
+            }
+        </table>
+    </div>
+}
+
+    <legend class = "text-info">Список ролей</legend>
+    <div class="container" id="UserRoles">
+        <table class="table-bordered">
+            <tr class="row">
+                <th>ID роли</th>
+                <th>Имя роли</th>
+            </tr>
+            @foreach (var item in Model.UserRoles)
+            {
+                <tr class="row">
+                    <td>@item.RoleId</td>
+                    <td>@Ajax.ActionLink(item.RoleName, "RoleInfo", "Lists", new {RoleName = @item.RoleName}, new AjaxOptions{UpdateTargetId="LoadedContent"}, null)</td>
+                </tr>
+            }
+        </table>
+    </div>
+ 
+@using (Ajax.BeginForm("AddFunctionAccess", "Lists", new AjaxOptions { HttpMethod = "GET", UpdateTargetId = "LoadedContent" }))
+{
+    <legend class = "text-info">Доступ к функциям</legend>    
+    
+    <div class="container" id="FunctionAccess">
+        <input type="submit" value ="Добавить доступ" />
+        <table class="table-bordered">
+            <tr>
+                <th>Название функции</th>
+                <th>Доступно для</th>
+            </tr>
+            @foreach (var item in Model.AccessRecords)
+            {
+                <tr>
+                    <td>@item.FunctionName</td>
+                    <td>@item.AvailableTo</td>
+                </tr>
+            }
+        </table>
+    </div>
+}
+
+@Styles.Render("~/Content/bootstrap.css")

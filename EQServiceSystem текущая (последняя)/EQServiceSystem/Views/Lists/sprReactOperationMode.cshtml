@@ -1,0 +1,26 @@
+﻿@model List<EQDataModel.sprReactOperationMode>
+
+<legend class = "text-info">Справочник режимов работы РУ</legend>
+
+@using (Ajax.BeginForm("sprReactOperationMode", "Lists", new AjaxOptions { UpdateTargetId = "LoadedContent", HttpMethod = "POST" }))
+{
+    @ViewBag.Message
+    <div class="container" id ="ReactOperationModesList">
+        <table class="main-table">
+            <tr>
+                <th class="column-header">Код режима</th>
+                <th class="column-header">Наименование</th>
+            </tr>
+            
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+                        <td class="table-label">@Html.DisplayFor(m => m[i].ModeID)</td>
+                        <td class="table-label">@Html.DisplayFor(m => m[i].OperationModeName)</td>
+                    </tr>
+                }
+        </table>
+    </div>
+}
+
+@Styles.Render("~/Content/tables-styles.css")

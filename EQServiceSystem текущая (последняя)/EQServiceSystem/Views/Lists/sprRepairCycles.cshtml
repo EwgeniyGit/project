@@ -1,0 +1,66 @@
+﻿@model EQServiceSystem.ViewModels.sprRepairCylceEditor
+
+<legend class = "text-info">Справочник ремонтных циклов</legend>
+
+@using (Ajax.BeginForm("sprRepairCycles", "Lists", new AjaxOptions { UpdateTargetId = "LoadedContent", HttpMethod = "POST" }))
+{
+    
+    <style type="text/css">
+        .fixed_headers td:nth-child(1),
+        .fixed_headers th:nth-child(1) {
+          min-width: 420px;
+        }
+        .fixed_headers td:nth-child(2),
+        .fixed_headers th:nth-child(2) {
+          min-width: 220px;
+        }
+        .fixed_headers td:nth-child(3),
+        .fixed_headers th:nth-child(3) {
+          min-width: 170px;
+        }
+        .fixed_headers td:nth-child(4),
+        .fixed_headers th:nth-child(4) {
+          min-width: 160px;
+        }
+        .fixed_headers td:nth-child(5),
+        .fixed_headers th:nth-child(5) {
+          min-width: 130px;
+        }
+        .fixed_headers td:nth-child(6),
+        .fixed_headers th:nth-child(6) {
+          width: 60px;
+        }
+    </style>
+    
+    @ViewBag.Message
+    <div class="container" id ="RepairCyclesList">
+        <table class="fixed_headers">
+            <thead>
+            <tr>             
+                <th>Наименование оборудования</th>
+                <th>Группа</th>
+                <th>Коэффициент капитального ремонта</th>
+                <th>Коэффициент текущего ремонта</th>
+                <th>Коэффициент обслуживания</th>
+                <th>Период</th>                
+            </tr>
+            </thead>
+            
+                @for (int i = 0; i < Model.RepairCycleItems.Count; i++)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(m => m.RepairCycleItems[i].EquimpentName)</td>
+                        <td>@Html.DisplayFor(m=>m.RepairCycleItems[i].EquipmentGroup)</td>
+                        <td>@Html.DisplayFor(m => m.RepairCycleItems[i].MajorCoeff)</td>
+                        <td>@Html.DisplayFor(m => m.RepairCycleItems[i].CurrentCoeff)</td>
+                        <td>@Html.DisplayFor(m => m.RepairCycleItems[i].InspectionCoeff)</td>
+                        <td>@Html.DisplayFor(m => m.RepairCycleItems[i].Period)</td>
+                        <td style ="display:none">@Html.HiddenFor(m => m.RepairCycleItems[i].ID)</td>
+                        <td style ="display:none">@Html.DisplayFor(m => m.RepairCycleItems[i].EquipmentID)</td>
+                    </tr>
+                }
+        </table>
+    </div>
+}
+
+@Styles.Render("~/Content/StickyHeader.css")

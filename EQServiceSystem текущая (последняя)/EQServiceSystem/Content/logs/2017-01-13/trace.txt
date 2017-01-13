@@ -1,0 +1,2 @@
+2017-01-13 13:32:37.8237|TRACE|EQServiceSystem.Controllers.EquipmentController|Upload: 4,01392,1
+2017-01-13 14:07:37.3107|TRACE|EQServiceSystem.Controllers.EquipmentController|Upload: 4,01392,2

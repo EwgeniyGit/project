@@ -1,0 +1,282 @@
+﻿@model EQServiceSystem.ViewModels.AdminEquipmentFullCollection
+@using PagedList.Mvc;
+<legend class="text-info">Оборудование</legend>
+<div class="bg-danger">@ViewBag.Message</div>
+<style type="text/css">
+    tbody {
+        float: left;
+        overflow: scroll;
+        height: 600px;
+        width:1240px;
+    }
+
+    thead {
+        border: 2px;
+        float: left;
+    }
+    #EquipmentList {display: table; width: 100%; }
+    .ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+        font-size: 10px;
+    } 
+    .ui-autocomplete { height: 50%; overflow-y: scroll; overflow-x: hidden;}
+  
+  #eqTable {
+    /*table-layout: fixed; /* Фиксированная ширина ячеек */
+    /*width: 98%; /* Ширина таблицы */
+   }
+  #col1 { width: 110px; text-align:center; }
+  #col2 { width: 156px;  text-align:center; }
+  #col3 { width: 90px;  text-align:center;}
+  #col4 { width: 83px; } /*ru*/
+  #col5 { width: 62px;  text-align:center;}
+  #col6 { width: 72px;  text-align:center;}
+  #col7 { width: 31px;  text-align:center;}
+  #col8 { width: 355px; }
+  #col9 { width: 31px;  text-align:center; }
+  #col10 { width: 55px;  text-align:center;}
+  #col11 { width: 80px;  text-align:center;}
+  #col12 { width: 133px; }
+
+</style>
+@*<script
+  src="@Url.Content("~/Scripts/jquery-1.9.1.js")"
+  type="text/javascript"></script>*@                            @* //пропадает меню*@
+<script src="@Url.Content("~/Scripts/jquery-ui-1.8.24.js")" type="text/javascript"></script>
+    
+<script type="text/javascript">
+    function Check(){
+        var autocompleteUrl = Send();     
+    }
+    function autocomplete(list) {
+        $("#name").autocomplete({
+            source: list,
+            minLength:3});
+    }
+    function Send() {  
+        var input = document.getElementsByName('i')
+        for (c = 0; c < (input).length; c++) {
+            if (input[c].checked) i = input[c].value;
+        }
+        var w = document.getElementById('W').value;//вид
+        var g = document.getElementById('G').value;//группа
+        var p = document.getElementById('P').value;//подгруппа
+        var m = document.getElementById('M').value;//марка
+        var d = document.getElementById('D').value;//подразделение
+        var b = document.getElementById('B').value;//здание
+        var r = document.getElementById('R').value;//помещение
+        var ru = document.getElementById('RU').value;//
+        var name = document.getElementById('name').value;//строка поиска по названию
+        var list;
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("Find", "Eq")",
+            data: 'i='+i+'&all_W='+w+'&all_G='+g+'&all_P='+p+'&all_Marks='+m+'&SubDepts='+d+'&Buildings='+b+'&Rooms='+r+'&RU='+ru+'&term='+name,
+            success: function autocomplete(data) { $("input#name").autocomplete({ source: data }); return data; }
+        });
+        
+    }
+  </script>
+<link
+  href="@Url.Content(
+    "~/Content/themes/base/jquery-ui.css")"
+  rel="Stylesheet" type="text/css" />
+@using (Ajax.BeginForm("RadioButtonCheck", "Eq", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "LoadedContent" }))
+{
+    if (ViewBag.Param==null)
+    {
+        <label><input type="radio"  name="i" id="1" value="1" checked="checked" onchange="$('#form0').submit();"/> Подразделения</label>
+        <label><input type="radio" name="i" id="2" value="2" onchange="$('#form0').submit();"/> Реакторные установки</label>
+     }
+    else if (ViewBag.Param == 1)
+    {
+     <label><input type="radio"  name="i" id="1" value="1"  checked="checked" onchange="$('#form0').submit();"/> Подразделения</label>
+    <label><input type="radio" name="i" id="2" value="2" onchange="$('#form0').submit();"/> Реакторные установки</label>
+    }
+    else if (ViewBag.Param == 2)
+    {
+    <label><input type="radio"  name="i" id="1" value="1" onchange="$('#form0').submit();"/> Подразделения</label>
+    <label><input type="radio" name="i" id="2" value="2" checked="checked" onchange="$('#form0').submit();"/> Реакторные установки</label>
+    }
+    <script Defer >
+        $(function () {
+            if (document.getElementById('1').checked) {
+                document.getElementById('RU').style.visibility = 'hidden';
+                document.getElementById('RU').style.display = 'table-footer-group';
+                document.getElementById('Podr').style.visibility = 'visible';
+                document.getElementById('Podr').style.display = 'table-header-group';
+            }
+            if (document.getElementById('2').checked) {
+                document.getElementById('Podr').style.visibility = 'hidden';
+                document.getElementById('RU').style.visibility = 'visible';
+                document.getElementById('Podr').style.display = 'table-footer-group';
+                document.getElementById('RU').style.display = 'table-header-group';
+            }
+        });
+     </script>
+    <div class="container" id="EquipmentList">
+
+        <div class="filters" style="margin:0px">
+            <div class="filter-element">Вид</div>
+            <select name="all_W" id="W" class="filter-element" style="width: 527px;" onchange="EquipmentListbtn.click()">
+                @foreach (var item in Model.All_Type_name_items)
+                {
+                    <option value = "@item">@item </option>
+                }
+            </select>
+
+            <div class="filter-element">Группа</div>
+            <select name="all_G" id="G" class="filter-element" style="width: 285px;" onchange="EquipmentListbtn.click()">
+                @foreach (var item in Model.All_Group_name_items)
+                {
+                    <option value = "@item">@item </option>;
+                }
+            </select>
+            <br />
+            <div class="filter-element">Подгруппа</div>
+            <select name="all_P" id="P" class="filter-element" style="width: 480px;" onchange="EquipmentListbtn.click()">
+                @foreach (var item in Model.All_SubGroup_name_items)
+                {
+                    <option value = "@item">@item </option>
+                }
+            </select>
+
+            <div class="filter-element">Марка</div>
+            <select name="all_Marks" id="M" class="filter-element" style="width: 290px;" onchange="EquipmentListbtn.click()">
+                @foreach (var item in Model.All_Marks_name_items)
+                {
+                    <option value = "@item">@item </option>
+                }
+            </select>
+             
+            <input class="btn" type="submit" id="EquipmentListbtn" style="display:none"  value="Применить фильтр" />
+            @*<input type="button" value="Очистить фильтры" onclick='@Url.Action("GetEquipmentList", "Equipment")/>*@
+            @* @using (@Ajax.ActionLink("GetEquipmentList", "Equipment", new AjaxOptions { UpdateTargetId = "LoadedContent", HttpMethod="GET"}))
+             {
+                  <input class="filter-element" type="submit" value="Очистить фильтры"/>
+             }*@
+        </div>
+        <div class="filters" name="admin-filters">
+             @if (ViewBag.Param == 1)
+    {
+            <div id="Podr">
+            <div class="filter-element">Подразделение</div>
+            <select name="SubDepts" id="D" class="filter-element" style="width: 169px;" onchange="EquipmentListbtn.click()">
+                @foreach (var item in Model.SubDepts)
+                {
+                    <option value = "@item">@item </option>
+                }
+            </select>
+
+            <div class="filter-element">Здание</div>
+            <select name="Buildings" id="B" class="filter-element" style="width: 210px;" onchange="EquipmentListbtn.click()">
+                @foreach (var item in Model.Buildings)
+                {
+                    <option value = @item>@item </option>
+                }
+            </select>
+            <div class="filter-element">Помещение</div>
+            <select name="Rooms" id="R" class="filter-element" style="width: 100px;" onchange="EquipmentListbtn.click()">
+                @foreach (var item in Model.Rooms)
+                {
+                    <option value = @item>@item </option>
+                }
+            </select>       
+                @Ajax.ActionLink("Сброс", "Index", "Eq", new { page = 1 }, new AjaxOptions { UpdateTargetId = "LoadedContent", HttpMethod = "GET" }, new { @class = "btn" })
+             </div>
+             }
+             @if (ViewBag.Param == 2)
+           {
+             <div class="filter-element" id="RU">Реакторная установка
+            <select name="RU" id="RU" class="filter-element" style="width: 169px;" onchange="EquipmentListbtn.click()">
+                @foreach (var item in Model.RU)
+                {
+                    <option value = "@item">@item </option>
+                }
+            </select> 
+                 @Ajax.ActionLink("Сброс", "Index", "Eq", new { page = 1 }, new AjaxOptions { UpdateTargetId = "LoadedContent", HttpMethod = "GET" }, new { @class = "btn" })
+             </div>
+              <br>
+            }
+            <div class="filter-element">Рег. №</div>
+              <input type="text" name="regnum" id="regnum" value ="@Model.RegNums">
+               <div class="filter-element">Инвентарный №</div>
+              <input type="text" name="invnum" id="invnum" value ="@Model.InvNums">
+        </div>    
+        <table id="eqTable" class="main-table" style="overflow: hidden">
+            <thead>
+                <tr>
+                     @if (@ViewBag.Param == 1)
+                     {
+                    <th class="column-header" style="width:108px">Подразделение</th>
+                    <th class="column-header" style="width:155px">Здание</th>
+                    <th class="column-header" style="width:88px">Помещение</th>
+                     }
+                     @if (@ViewBag.Param == 2)
+                     {     
+                      <th class="column-header" style="width:81px">РУ</th>
+                     }
+                    <th class="column-header" style="width:60px">Рег. №</th>
+                    <th class="column-header" style="width:70px">Инв. №</th>
+                    <th class="column-header" style="width:29px"><a class="tooltip" href="#" style="color:white">Тип<span class="custom help" style="width:400px; color:black"><em style="font-size:20px; color:green">Тип агрегата</em> "-": Оборудование не является агрегатом<br> "А": Механическая и электрическая часть агрегата <br>"М": Только механическая часть агрегата<br>"Э": Только электрическая часть агрегата<br>"К": Коммутационная аппаратура<br> "В": Вторичные цепи</span></a></th>
+                    <th class="column-header" style="width:353px"> Наименование <input type="search" id="name" name="name" placeholder="учитывайте регистр" value="@Model.nameL" onchange="Check()"/><a class="tooltip" href="#" style="color:white">?<span class="custom help" style="color:black"><img src="~/Resources/icon/Help.png" alt="помощь" height="48" width="48" /><em><br></em>Для поиска наберите текст и нажмите Enter</span></a></th>
+                    <th class="column-header" style="width:29px">Вид</th>
+                    <th class="column-header" style="width:53px">Группа</th>
+                    <th class="column-header" style="width:52px">Подгруппа</th>
+                    <th class="column-header" style="width:154px">Марка</th>
+                </tr>
+            </thead>
+            @for (int i = 0; i < Model.PageInfo.PageSize; i++)
+            {
+                <tr>
+                    @if (@ViewBag.Param == 1)
+                    { 
+                    <td id="col1">@Html.DisplayFor(m => m.PagedEquipment[i].SubDeptName, new { style = "width: 110px;" })</td>
+                    <td id="col2">@Html.DisplayFor(m => m.PagedEquipment[i].BuildingName, new { style = "width: 115px;" })</td>
+                    <td id="col3">@Html.DisplayFor(m => m.PagedEquipment[i].Room, new { style = "width: 106px;" })</td>
+                    }
+                    @if (@ViewBag.Param == 2)
+                    {
+                    <td id="col4">@Html.DisplayFor(m => m.PagedEquipment[i].RU, new { style = "width: 105px;" })</td>}
+                    <td id="col5">@Html.DisplayFor(m => m.PagedEquipment[i].RegNumber, new { style = "width: 66px;" })</td>
+                    <td id="col6">@Html.DisplayFor(m => m.PagedEquipment[i].InvNumber, new { style = "width: 105px;" })</td>
+                    <td id="col7">@Html.DisplayFor(m => m.PagedEquipment[i].AggregateOfType, new { style = "width: 442px;" })</td>
+                    <td id="col8">@Ajax.ActionLink(@Model.PagedEquipment[i].Name, "GetEqiupmentPassport", "Equipment", new { EquipmentID = @Model.PagedEquipment[i].ID }, new AjaxOptions { UpdateTargetId = "LoadedContent", HttpMethod = "POST" }, null)</td>
+                    <td id="col9">@Html.DisplayFor(m => m.PagedEquipment[i].W, new { style = "width: 34px;" })</td>
+                    <td id="col10">@Html.DisplayFor(m => m.PagedEquipment[i].G, new { style = "width: 55px;" })</td>
+                    <td id="col11">@Html.DisplayFor(m => m.PagedEquipment[i].P, new { style = "width: 74px;" })</td>
+                    <td id="col12">@Html.DisplayFor(m => m.PagedEquipment[i].Mark, new { style = "width: 50px;" })</td>
+                </tr>
+            }
+
+        </table>
+        Страница @(Model.PageInfo.TotalItems
+        < Model.PageInfo.PageSize ? 0 : Model.PageInfo.PageNumber) из @Model.PageInfo.TotalPages
+        Всего единиц оборудования в списке: @Model.PageInfo.TotalItems
+        @Html.PagedListPager(Model.PagedEquipment, x => Url.Action("GetAdminEquipmentFullList", "Eq", new
+   {
+       i=ViewBag.Param,
+       paged = x,
+       all_W = Model.All_Type_name_items[0].ToString(),
+       all_G = Model.All_Group_name_items[0].ToString(),
+       all_P = Model.All_SubGroup_name_items[0].ToString(),
+       all_Marks = Model.All_Marks_name_items[0].ToString(),
+       SubDepts = Model.SubDepts[0].ToString(),
+       Buildings = Model.Buildings[0].ToString(),
+       Rooms = Model.Rooms[0].ToString(),
+       RU=Model.RU.Count<1?"":Model.RU[0].ToString(),
+       name=Model.nameL
+   }),
+   PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new PagedListRenderOptions
+  {
+      LinkToFirstPageFormat = "<<",
+      LinkToPreviousPageFormat = "Назад",
+      LinkToNextPageFormat = "Вперед",
+      LinkToLastPageFormat = ">>"
+  }
+
+      , new AjaxOptions() { HttpMethod = "POST", UpdateTargetId = "LoadedContent" }))
+    </div>    
+}
+@Styles.Render("~/Content/tables-styles.css")
+@Styles.Render("~/Content/tip.css")
+

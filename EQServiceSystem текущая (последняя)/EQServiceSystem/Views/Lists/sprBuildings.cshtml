@@ -1,0 +1,46 @@
+﻿@model List<EQDataModel.vSubdeptsInBuildings>
+
+<legend class = "text-info">Справочник зданий</legend>
+
+@using (Ajax.BeginForm("sprBuildings", "Lists", new AjaxOptions { UpdateTargetId = "LoadedContent", HttpMethod = "POST" }))
+{
+    <style type="text/css">
+        .fixed_headers td:nth-child(1),
+        .fixed_headers th:nth-child(1) {
+          min-width: 170px;
+        }
+        .fixed_headers td:nth-child(2),
+        .fixed_headers th:nth-child(2) {
+          width: 530px;
+        }
+    </style>
+    
+    @ViewBag.Message
+    <div class="container" id ="BuildingsList">
+        <input type="submit" value="Сохранить изменения" />
+        <table class="fixed_headers" style="width:720px">
+            <thead>
+            <tr>
+                <th>Здание</th>
+                <th>Подразделение</th>
+                <th style="display:none">ID здания</th>
+                <th style="display:none">Код подразделения</th>
+                <th style="display:none">ID подразделения</th>
+            </tr>
+            </thead>
+            
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+                        <td>@Html.EditorFor(m => m[i].BuldingName, new { style="width: 90%"})</td>
+                        <td>@Html.DisplayFor(m => m[i].SubDeptName)</td>
+                        <td style="display:none">@Html.HiddenFor(m => m[i].BuildingID)</td>
+                        <td style="display:none">@Html.HiddenFor(m => m[i].SubDeptCode)</td>
+                        <td style="display:none">@Html.HiddenFor(m => m[i].IdSubDept)</td>
+                    </tr>
+                }
+        </table>
+    </div>
+}
+
+@Styles.Render("~/Content/StickyHeader.css")

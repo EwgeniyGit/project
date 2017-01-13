@@ -1,0 +1,328 @@
+﻿@model EQServiceSystem.ViewModels.table_move_Model
+<style>
+    #container1 {
+        width: 1040px;
+        height: 420px;
+    }
+
+    #container2 {
+        width: 1040px;
+        height: 300px;
+    }
+
+    #ttable {
+        background-color: rgba(255, 185, 0, 0.11);
+        width: 1240px;
+        height: 300px;
+        /*border: 1px solid black;*/
+    }
+    #tablediv {
+        background-color: rgba(255, 185, 0, 0.11);
+        width: 1240px;
+        height: 50px;
+        border: 1px solid black;
+    }
+
+    #table2 {
+        width: 1240px;
+        height: 200px;
+        border: 1px solid black;
+        display:block;
+    }
+
+    #scroll_body {
+        height: 100%;
+        overflow: auto;
+    }
+     #scroll_body2 {
+        height: 170px;
+        overflow: auto;
+        display: block;
+    }
+
+    thead > tr, tbody {
+        /*display: block;*/
+    }
+
+    .selected {
+        background-color: #9999FF;
+    }
+
+    .selected_p {
+        background-color: rgba(0, 255, 28, 0.37);
+    }
+    /*.selected td { border: solid blue 1px; }*/
+    .head_table {
+        width:1200px;
+        font-size: 20px;
+        text-align: right;
+        font-style: italic;
+    }
+
+    p {
+        margin-bottom: 0px;
+    }
+
+    #id {
+        text-align: center;
+        width: 37px;
+    }
+
+    #col1 {
+        width: 111px;
+        text-align: center;
+    }
+
+    #col2 {
+        width: 62px;
+        text-align: center;
+    }
+
+    #col3 {
+        width: 71px;
+        text-align: center;
+    }
+
+    #col4 {
+        width: 220px;
+        text-align: center;
+    }
+
+    #col5 {
+        width: 30px;
+        text-align: center;
+    }
+
+    #col6 {
+        width: 55px;
+        text-align: center;
+    }
+
+    #col7 {
+        width: 80px;
+        text-align: center;
+    }
+
+    #col8 {
+        width: 500px;
+        text-align: center;
+    }
+ 
+    td {
+        border: 1px inset #9c9595; /* Параметры рамки */
+        cursor: pointer;
+    }
+    .scrolList {
+  
+    }
+</style>
+<script language="javascript">
+    var selected_row1 = null;
+    var selected_row2 = null;
+    function select_row_table1(row) {
+        //if(selected_row1 != null) selected_row1.className = '';
+        selected_row1 = row;
+        if (selected_row1 != null) {
+            selected_row1.className = 'selected_p';
+            // 0 номер ячейки строки
+            var cell = $("td", selected_row1).eq(0);
+
+            row.setAttribute('onclick', 'select_row_table2(this)');
+            $("#table2 tbody").append(row);
+            //console.log(row);
+        }
+    }
+    function select_row_table2(row2) {
+        //if (selected_row2 != null) selected_row2.className = '';
+        selected_row2 = row2;
+        if (selected_row2 != null) {
+            selected_row2.className = 'selected';
+            var cell = $("td", selected_row2).eq(0);
+            row2.setAttribute('onclick', 'select_row_table1(this)');
+            $("#ttable tbody").append(row2);
+            //console.log(row2);
+        }
+    }
+    function arraytocontroller() {
+
+        if (confirm("Вы уверены что хотите сохранить изменения?")) {
+            alert("You pressed OK!");
+            var arr = $('#table2 tr').map(function (i, el) {
+                return $('td:first-child', el).text();
+            }).get();
+            arr.splice(0, 1);
+            var subs = document.getElementById('SubDepts_sender').value;
+            var subr = document.getElementById('SubDepts_recipient').value;
+            var pstData = { data: arr, SubDepts_sender: subs, SubDepts_recipient: subr }; // отправка в контроллер
+            $.post('@Url.Action("GetMoveList", "Eq")', $.param(pstData, true));
+        }
+        else {
+            alert("You pressed Cancel!");
+            //тут просто остаемся на странице
+        }
+    }
+    document.addEventListener('keydown', function (event) {  //запрет отправки формы по enter
+        if (event.keyCode == 13) {
+            event.preventDefault();
+        }
+    });
+    //$(function () {
+
+    //    //$('div#loading').hide();
+
+    //    var page = 0;
+    //    var _inCallback = false;
+    //    function loadItems() {
+    //        if (page > -1 && !_inCallback) {
+    //            _inCallback = true;
+    //            page++;
+    //            //$('div#loading').show();
+
+    //            $.ajax({
+    //                type: 'GET',
+    //                url: '/movement/Index/' + page,
+    //                success: function (data, textstatus) {
+    //                    if (data != '') {
+    //                        $("#scrolList").append(data);
+    //                    }
+    //                    else {
+    //                        page = -1;
+    //                    }
+    //                    _inCallback = false;
+    //                    //$("div#loading").hide();
+    //                }
+    //            });
+    //        }
+    //    }
+    //    // обработка события скроллинга
+
+    //    $('div#scrolList').scroll(function () {
+    //        //console.log($('div#scrolList').scrollTop() + " " +$('div#scrolList').height() + " " + $(window).height());
+    //        var scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
+    //        if (scrollBottom == $(document).height() - $(window).height()) {
+    //            loadItems();
+    //        }
+    //    });
+
+    //})
+</script>
+@*@using (Ajax.BeginForm("GetAction", "Eq", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "partial" }))
+{
+*@@*<div id="partial">*@
+    <div id="container1">
+
+        <div class="filters" style="margin: 0px">
+
+            <div class="filter-element">Вид</div>
+            <select name="all_W" id="W" class="filter-element" onchange="submit.click()">
+                  @foreach (var item in Model.All_Type_name_items)
+                {
+                    <option value = "@item">@item </option>;
+                }
+            </select>
+
+            <div class="filter-element">Группа</div>
+            <select name="all_G" id="G" class="filter-element" onchange="submit.click()">
+                  @foreach (var item in Model.All_Group_name_items)
+                {
+                    <option value = "@item">@item </option>;
+                }
+            </select>
+            <br>
+            <div class="filter-element">Подгруппа</div>
+            <select name="all_P" id="P" class="filter-element"  onchange="submit.click()">
+                @foreach (var item in Model.All_SubGroup_name_items)
+                {
+                    <option value = "@item">@item </option>;
+                }
+            </select>
+
+            <div class="filter-element">Принадлежность к агрегату</div>
+            <select class="filter-element" name="agr" onchange="submit.click()">
+                @foreach (var item in Model.AggregatCodifer)
+                {
+                    <option value = "@item">@item </option>;
+                }
+            </select>
+            <br>
+            <div class="filter-element">Рег. №</div>
+            <input type="text" name="regnum" value ="@Model.RegNums" onkeydown="if (event.keyCode == 13) {submit.click();}">
+
+            <div class="filter-element">Инвентарный №</div>
+            <input type="text" name="invnum" value ="@Model.InvNums" onkeydown="if (event.keyCode == 13) {submit.click();}">
+
+            <div class="filter-element">Наименование</div>
+             <input type="text" name="name" value ="@Model.Nameobr" onkeydown="if (event.keyCode == 13) {submit.click();}"> 
+            <input type="submit" class="btn" id="reset" name="reset" value="Сброс">   
+        </div>
+        <div class="head_table">
+            <p>Общий список оборудования</p>
+        </div>
+        <table id="tablediv">
+            <thead>
+                <tr class="fixed">
+                    <th class="column-header" style="width: 35px">id</th>
+                    <th class="column-header" style="width: 110px">Подразделение</th>
+                    <th class="column-header" style="width: 60px">Рег. №</th>
+                    <th class="column-header" style="width: 70px">Инв. №</th>
+                    <th class="column-header" style="width: 220px">принадлежность к агр-ту</th>
+                    <th class="column-header" style="width: 29px">Вид</th>
+                    <th class="column-header" style="width: 53px">Группа</th>
+                    <th class="column-header" style="width: 52px">Подгруппа</th>
+                    <th class="column-header" style="width: 490px">Наименование</th>
+                </tr>
+            </thead>
+        </table>
+        <div id="scrolList" style="overflow:scroll; width:1260px;  height: 300px;" >
+       @* @{
+             Html.RenderPartial("move_eq",@Model.Equipment);
+         }*@
+            <table id="ttable">
+               <tbody id="scroll_body">
+                @foreach (var item in Model.Equipment.AsEnumerable())
+                 {
+                <tr onclick='select_row_table1(this)'>
+                <td id="id">@(item.ID)</td>
+                <td id="col1">@Html.DisplayFor(m => item.SubDeptName)</td>
+                <td id="col2">@Html.DisplayFor(m => item.RegNumber)</td>
+                <td id="col3">@Html.DisplayFor(m => item.InvNumber)</td>
+                <td id="col4">@Html.DisplayFor(m => item.AggregateOfType)</td>
+                <td id="col5">@Html.DisplayFor(m => item.W)</td>
+                <td id="col6">@Html.DisplayFor(m => item.G)</td>
+                <td id="col7">@Html.DisplayFor(m => item.P)</td>
+                <td id="col8">@Html.DisplayFor(m => item.Name)</td>
+                </tr>
+                }
+               </tbody>
+             </table>
+         </div>
+    </div>
+    <div id="container2">
+        <div class="head_table">
+            <p>Cписок оборудования для передачи</p>
+        </div>
+        <table id="table2" name="table_send">
+            <thead>
+                <tr class="fixed">
+                    <th class="column-header" style="width: 35px">id</th>
+                    <th class="column-header" style="width: 110px">Подразделение</th>
+                    <th class="column-header" style="width: 60px">Рег. №</th>
+                    <th class="column-header" style="width: 70px">Инв. №</th>
+                    <th class="column-header" style="width: 204px">Тип</th>
+                    <th class="column-header" style="width: 29px">Вид</th>
+                    <th class="column-header" style="width: 53px">Группа</th>
+                    <th class="column-header" style="width: 52px">Подгруппа</th>
+                    <th class="column-header" style="width: 490px">Наименование</th>
+                </tr>
+            </thead>
+            <tbody id="scroll_body2">
+            </tbody>
+        </table>
+        <div id="buttongroup" style="display: block">
+    <button type="submit" name="actions" value="partial_moved" class="btn" onclick="arraytocontroller()">Передать</button>
+</div>
+    </div>
+@*</div>*@
+@* <div id="loading" hidden><img src='@Url.Content("~/Content/loading_spinner.gif")'></div>*@
+@*}*@
+@Styles.Render("~/Content/tables-styles.css")

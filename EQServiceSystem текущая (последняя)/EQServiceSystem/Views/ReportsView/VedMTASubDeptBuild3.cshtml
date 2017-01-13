@@ -1,0 +1,36 @@
+﻿@model EQServiceSystem.Models.Reports.VedMTASubDeptBuild
+<script>
+    $("select#sprSubDept").change(function () {
+     var depId = $(this).val();
+     $.ajax({
+         url: 'vedomosti/SelectedSubDept',
+         type: 'POST',
+         data: JSON.stringify({ depId: depId }),
+         dataType: 'json',
+         contentType: 'application/json',
+         success: function (data) {
+             $("select#BuildingID").html("");
+             $('select#BuildingID').append('<option value="0">Здание</option>');
+             $.each(data, function (i, mod) {
+                 $("select#BuildingID").append(
+                     $('<option></option>').val(mod.Id).html(mod.Name));
+             });
+         }
+     });
+    });
+</script>
+<head>
+    <meta name="viewport" content="width=device-width" />
+   @* <title>Ведомость наличия энергетического оборудования и агрегатов по подразделению</title>*@
+    <legend class = "text-info">Ведомость наличия механического, технологического оборудования и агрегатов по институту</legend>  
+</head>
+ @using (Html.BeginForm("vedomosti", "vedomosti", FormMethod.Post))
+  {
+<body>
+    @Html.DropDownListFor(m => m.sprSubDept, new SelectList(Model.sprSubDept, "IdSubDept", "ShortName"), "Подразделение")
+ <select id="BuildingID" name="BuildingID"></select>
+       <button type="submit" name="action" value="Report1">Сформировать ведомость</button>
+       <button type="submit" name="action" value="All-in">Полная ведомость</button>
+    
+</body>
+ }

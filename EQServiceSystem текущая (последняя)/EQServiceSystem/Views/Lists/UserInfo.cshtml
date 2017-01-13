@@ -1,0 +1,45 @@
+﻿@model EQServiceSystem.Models.UserInfo
+
+@using (Ajax.BeginForm("ChangeRole", "Lists", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "LoadedContent" }))
+{
+<legend class = "text-info">@Html.DisplayFor(m => m.UserName)</legend>
+
+<div class="container">
+    ID: 
+    @Html.DisplayFor(m => m.UserID)
+    <select name ="CurrUserID" hidden="hidden"> <option value="@Model.UserID"> </option> </select>
+    <br />
+
+    Роль:
+    <select name="SelectedRoleID" class="editor-field">        
+       @foreach (var item in Model.AllRoles)
+       {
+               if (item.RoleName == Model.UserRole)
+               {
+                   <option value = "@item.RoleId" selected="selected"> @item.RoleName </option>
+               }
+               else
+               {
+                   <option value = "@item.RoleId"> @item.RoleName </option>
+               }
+       }
+    </select>
+    <input type="submit" value="Задать роль" />
+    </div> 
+}
+
+@using (Ajax.BeginForm("ChangeRoleFunc", "Lists", new AjaxOptions { HttpMethod = "GET", UpdateTargetId = "LoadedRoleFuncsList" }))
+{
+    <div class="container">
+    <select name ="CurrUserID" hidden="hidden"> <option value="@Model.UserID"> </option> </select>    
+    <input type="submit" value="Функции доступа" name="RoleFuncs"/>
+    </div>
+}
+        <div id ="LoadedRoleFuncsList">
+
+        </div>
+
+ 
+
+@Styles.Render("~/Content/bootstrap.css")
+

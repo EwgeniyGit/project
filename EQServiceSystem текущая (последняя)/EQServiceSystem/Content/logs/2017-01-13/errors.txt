@@ -1,0 +1,3 @@
+2017-01-13 08:42:33.9962|ERROR|EQServiceSystem.Controllers.EquipmentController|'C:/Users/Aleshin/Desktop/ППР ПРОЕКТЫ/EQServiceSystem текущая (последняя)/EQServiceSystem/Files/01392_4_1_CompHS.dof' является физическим путем, а требуется виртуальный путь.
+2017-01-13 08:45:18.5786|ERROR|EQServiceSystem.Controllers.EquipmentController|'C:/Users/Aleshin/Desktop/ППР ПРОЕКТЫ/EQServiceSystem текущая (последняя)/EQServiceSystem/Files/01392_4_1_CompHS.dof' является физическим путем, а требуется виртуальный путь.
+2017-01-13 09:02:29.5066|ERROR|EQServiceSystem.Controllers.EquipmentController|'C:/Users/Aleshin/Desktop/ППР ПРОЕКТЫ/EQServiceSystem текущая (последняя)/EQServiceSystem/Files/01392_4_1_Desert.jpg' является физическим путем, а требуется виртуальный путь.

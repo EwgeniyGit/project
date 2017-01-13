@@ -1,0 +1,109 @@
+﻿@model EQServiceSystem.ViewModels.CalculationNormEditor
+
+<legend class = "text-info">Справочник нормативов для расчета капитального ремонта</legend>
+
+@using (Ajax.BeginForm("AddNewRepairCalculationNorms", "Lists", new AjaxOptions { UpdateTargetId = "LoadedContent", HttpMethod = "POST" }))
+{
+    <input class="filter-element" type="submit" value="Добавить за следующий квартал"/>
+}
+
+@using (Ajax.BeginForm("sprRepairCalculationNorms", "Lists", new AjaxOptions { UpdateTargetId = "LoadedContent", HttpMethod = "POST" }))
+{
+    <style type="text/css">
+        .fixed_headers td:nth-child(1),
+        .fixed_headers th:nth-child(1) {
+          min-width: 110px;
+        }
+        .fixed_headers td:nth-child(2),
+        .fixed_headers th:nth-child(2) {
+          min-width: 170px;
+        }
+        .fixed_headers td:nth-child(3),
+        .fixed_headers th:nth-child(3) {
+          min-width: 30px;
+        }
+        .fixed_headers td:nth-child(4),
+        .fixed_headers th:nth-child(4) {
+          min-width: 110px;
+        }
+        .fixed_headers td:nth-child(5),
+        .fixed_headers th:nth-child(5) {
+          min-width: 130px;
+        }
+        .fixed_headers td:nth-child(6),
+        .fixed_headers th:nth-child(6) {
+          min-width: 110px;
+        }
+        .fixed_headers td:nth-child(7),
+        .fixed_headers th:nth-child(7) {
+          min-width: 130px;
+        }
+        .fixed_headers td:nth-child(8),
+        .fixed_headers th:nth-child(8) {
+          min-width: 110px;
+        }
+        .fixed_headers td:nth-child(9),
+        .fixed_headers th:nth-child(9) {
+          width: 110px;
+        }
+        .fixed_headers td:nth-child(10),
+        .fixed_headers th:nth-child(10) {
+          width: 90px;
+        }
+    </style>
+    
+    @ViewBag.Message
+    <div class="container" id ="NormsList">
+
+        <div class="filters">
+            <div class="filter-element">Фильтр по году</div>
+            <select name="AllYears" class="filter-element">
+                @foreach (var item in Model.Years)
+                {
+                    <option value = @item> @item </option>
+                }
+            </select>
+
+            <input class="filter-element" type="submit" value="Применить фильтр"/>
+            @Ajax.ActionLink("Очистить фильтры", "sprRepairCalculationNorms", "Lists", new AjaxOptions{UpdateTargetId="LoadedContent", HttpMethod="GET"})
+            
+        </div>
+
+        <table class="fixed_headers">
+            <thead>
+            <tr>
+                <th>Код подразделения</th>
+                <th>Подразделение</th>
+                <th>Год</th>
+                <th>Квартал</th>
+                <th>Стоимость ремонта/Ц</th>
+                <th>Стоимость материалов/Ц</th>
+                <th>Стоимость ремонта/П</th>
+                <th>Стоимость материалов/П</th>
+                <th>Стоимость ремонта/О</th>
+                <th>Стоимость материалов/О</th>
+                <th style ="display:none">Номер записи</th>
+            </tr>
+            </thead>
+            
+                @for (int i = 0; i < Model.CalcNormCollection.Count; i++)
+                {
+                    <tr>
+                        <td>@Model.CalcNormCollection[i].SubDeptID</td>
+                        <td>@Model.CalcNormCollection[i].SubDeptName</td>
+                        <td>@Model.CalcNormCollection[i].Year</td>
+                        <td>@Model.CalcNormCollection[i].QuarterNumber</td>
+                        <td>@Model.CalcNormCollection[i].RepairPriceC</td>
+                        <td>@Model.CalcNormCollection[i].MaterialPriceC</td>
+                        <td>@Model.CalcNormCollection[i].RepairPriceP</td>
+                        <td>@Model.CalcNormCollection[i].MaterialPriceP</td>
+                        <td>@Model.CalcNormCollection[i].RepairPriceO</td>
+                        <td>@Model.CalcNormCollection[i].MaterialPriceO</td>
+                        <td style="display:none">@Html.HiddenFor(m => m.CalcNormCollection[i].RecordID)</td>
+                    </tr>
+                }
+        </table>
+    </div>
+}
+
+@Styles.Render("~/Content/StickyHeader.css")

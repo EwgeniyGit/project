@@ -1,0 +1,71 @@
+﻿@model EQServiceSystem.Models.MenuLogic
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>@ViewBag.Message</title>
+        @Styles.Render("~/Content/NewStyles.css")
+        @Styles.Render("~/Content/equipment.css")
+        @Scripts.Render("~/Scripts/jquery-1.9.1.js")
+        @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
+        @Scripts.Render("~/bundles/modernizr")
+        
+</head>
+
+<body>
+    <div id="cssmenu">
+        <ul>
+            @foreach (var item in Model.AllMenuItems)
+            {
+                if(item.ParentID==5) //Сначала выводим основные пункты меню
+                {
+                    if (Model.AllMenuItems.Where(x => x.ParentID==item.MenuItemID).Count()>0) //Смотрим - если есть подпункты - делаем его раскрывающимся
+                    {
+                        <li class='active has-sub'><a href='#'><span>@item.RussianName</span></a>
+                            <ul>
+                                @foreach(var subitem in Model.AllMenuItems.Where(s => s.ParentID==item.MenuItemID)) //Загружаем подпункты
+                                {
+                                     if (Model.AllMenuItems.Where(sb => sb.ParentID==subitem.MenuItemID).Count()>0)
+                                     {
+                                         <li class='active has-sub'><a href='#'><span>@subitem.RussianName</span></a>
+                                         <ul>
+                                              @foreach(var subsubitem in Model.AllMenuItems.Where(sb => sb.ParentID==subitem.MenuItemID)) //Загружаем 2 уровень подпунктов
+                                              {
+                                                  if (@subsubitem.RussianName.Length<50)
+                                                  {
+                                                     <li><a><span>@Ajax.ActionLink(@subsubitem.RussianName, @subsubitem.MenuItemName, "Lists", new AjaxOptions { UpdateTargetId = "LoadedContent", InsertionMode = InsertionMode.Replace })</span></a></li>
+                                                  }
+                                                  else
+                                                  {
+                                                     <li><b><span>@Ajax.ActionLink(@subsubitem.RussianName, @subsubitem.MenuItemName, "Lists", new AjaxOptions { UpdateTargetId = "LoadedContent", InsertionMode = InsertionMode.Replace })</span></b></li>
+                                                  }
+                                              }
+                                         </ul>
+                                         </li>
+                                     }
+                                    else
+                                     {
+                                    <li><a><span>@Ajax.ActionLink(@subitem.RussianName, @subitem.MenuItemName, "Lists", new AjaxOptions { UpdateTargetId = "LoadedContent", InsertionMode = InsertionMode.Replace })</span></a></li>
+                                     }
+                                }
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li><a href='#'><span>@item.RussianName</span></a></li>
+                    }
+                }
+            }
+        </ul>
+    </div>
+    @RenderBody()
+    @RenderSection("scripts", required: false)
+</body>
+</html>

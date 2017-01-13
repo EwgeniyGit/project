@@ -1,0 +1,67 @@
+﻿@model List<EQServiceSystem.ViewModels.SHPZ>
+
+@using (Ajax.BeginForm("SprSHPZ", "Lists", new AjaxOptions { UpdateTargetId = "LoadedContent" }))
+{
+    <style type="text/css">
+        .fixed_headers td:nth-child(1),
+        .fixed_headers th:nth-child(1) {
+          min-width: 140px;
+        }
+        .fixed_headers td:nth-child(2),
+        .fixed_headers th:nth-child(2) {
+          min-width: 400px;
+        }
+        .fixed_headers td:nth-child(3),
+        .fixed_headers th:nth-child(3) {
+          min-width: 120px;
+        }
+        .fixed_headers td:nth-child(4),
+        .fixed_headers th:nth-child(4) {
+          min-width: 120px;
+        }
+        .fixed_headers td:nth-child(5),
+        .fixed_headers th:nth-child(5) {
+          min-width: 130px;
+        }
+        .fixed_headers td:nth-child(6),
+        .fixed_headers th:nth-child(6) {
+          min-width: 120px;
+        }
+        .fixed_headers td:nth-child(7),
+        .fixed_headers th:nth-child(7) {
+          width: 120px;
+        }
+    </style>
+    
+    <legend class = "text-info">Справочник ШПЗ</legend>
+    <div class="container">
+        <input type="submit" value="Сохранить изменения" />
+        <table class="fixed_headers">
+            <thead>
+            <tr>
+                <th>Код подразделения</th>
+                <th>Подразделение</th>
+                <th>Способ ремонта</th>
+                <th>Вид ремонта</th>
+                <th>Балансовый счет</th>
+                <th>Элемент затрат</th>
+                <th>Статья затрат</th>
+            </tr>
+            </thead>
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td>@Html.TextBoxFor(m => m[i].IdSubDept, new { style="width:80%" }) </td>
+                    <td>@Html.TextBoxFor(m => m[i].SubDeptName, new { style="width:80%" })</td>
+                    <td>@Html.TextBoxFor(m => m[i].RepairType, new { style="width:80%" })</td>
+                    <td>@Html.TextBoxFor(m => m[i].RepairMethod, new { style="width:80%" })</td>
+                    <td>@Html.TextBoxFor(m => m[i].BalanceBill, new { style="width:80%" })</td>
+                    <td>@Html.TextBoxFor(m => m[i].CostElements, new { style="width:80%" })</td>
+                    <td>@Html.TextBoxFor(m => m[i].CostParticle, new { style="width:80%" })</td>
+                </tr>
+            }
+        </table>
+    </div>
+}
+
+@Styles.Render("~/Content/StickyHeader.css")

@@ -1,0 +1,41 @@
+﻿@model EQServiceSystem.ViewModels.FunctionAccessManager
+
+@using (Ajax.BeginForm("AddFunctionAccess", "Lists", new AjaxOptions { UpdateTargetId = "LoadedContent", HttpMethod = "POST"})) 
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Добавление доступа</legend>
+
+        <div class="editor-label">
+            Выбор функции
+        </div>
+        <div class="editor-field">
+            <select name="SelectedFunctionID">
+                @foreach(var item in Model.AllFunctions)
+                {
+                    <option value = @item.FunctionID> @item.FunctionName </option>
+                }
+            </select>
+        </div>
+
+        <div class="editor-field">
+            @Html.HiddenFor(m => m.AccessTypeUser)
+        </div>
+
+        <div id ="LoadedItemsToSelecting">
+
+        </div>
+    </fieldset>
+}
+
+@using (Ajax.BeginForm("ShowItemsToSelect", "Lists", new AjaxOptions { UpdateTargetId = "LoadedItemsToSelecting" }))
+{
+    <input type="submit" value="Для роли" name="ToRole"/>
+    <input type="submit" value="Для пользователя" name="ToUser"/>
+}
+
+<div>
+    @Ajax.ActionLink("Назад к списку", "RolesRightsFunctionsList", new AjaxOptions { HttpMethod="GET", UpdateTargetId="LoadedContent" })
+</div>
